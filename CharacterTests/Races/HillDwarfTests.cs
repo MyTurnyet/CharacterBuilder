@@ -50,13 +50,6 @@ namespace CharacterTests.Races
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnSize()
-        {
-            //arrange
-            CharacterRace.HillDwarf.Size().Should().Be(Size.Small);
-            //act
-
-            //assert
-        }
+        public void ShouldReturnSize() => CharacterRace.HillDwarf.Size().Should().Be(Size.Medium);
     }
 }
