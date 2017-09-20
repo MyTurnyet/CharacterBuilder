@@ -1,6 +1,6 @@
 ﻿namespace Characters.Attributes
 {
-    public class Speed
+    public class Speed : ISpeed
     {
         private readonly int _distance;
 

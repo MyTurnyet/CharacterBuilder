@@ -7,6 +7,6 @@ namespace Characters.Races
         bool Equals(object obj);
         int GetHashCode();
         IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
-        Speed Speed();
+        ISpeed Speed();
     }
 }

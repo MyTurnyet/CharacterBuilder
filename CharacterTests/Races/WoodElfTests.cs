@@ -40,10 +40,10 @@ namespace CharacterTests.Races
         public void ShouldReturnSpeed()
         {
             //arrange
-            Speed expectedSpeed = new Speed(35);
+            ISpeed expectedSpeed = new Speed(35);
 
             //act
-            Speed actualsSpeed = CharacterRace.WoodElf.Speed();
+            ISpeed actualsSpeed = CharacterRace.WoodElf.Speed();
             //assert
             actualsSpeed.Should().Be(expectedSpeed);
         }
