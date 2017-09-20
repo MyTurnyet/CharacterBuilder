@@ -8,36 +8,23 @@ namespace CharacterTests.Physical
     public class SizeTests
     {
         [TestMethod, TestCategory("Unit")]
-        public void ShouldEquate()
-        {
-            //arrange
-            Size size1 = new Size("Tiny", 1);
-            Size size2 = new Size("Tiny", 1);
+        public void ShouldEquate() => Size.Tiny.Should().Be(Size.Tiny);
 
-            //assert
-            size2.Should().Be(size1);
-        }
         [TestMethod, TestCategory("Unit")]
-        public void ShouldNotEquate()
-        {
-            //arrange
-            Size size1 = new Size("Tiny", 1);
-            Size size2 = new Size("Small", 3);
-
-            //assert
-            size2.Should().NotBe(size1);
-        }
+        public void ShouldNotEquate() => Size.Tiny.Should().NotBe(Size.Medium);
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldOrderSize()
         {
-            //arrange
-            Size tiny = new Size("Tiny", 1);
-            Size small = new Size("Small", 3);
-
             //assert
-            (tiny < small).Should().BeTrue();
-            (small > tiny).Should().BeTrue();
+            (Size.Tiny < Size.Small).Should().BeTrue();
+            (Size.Small < Size.Medium).Should().BeTrue();
+            (Size.Medium < Size.Large).Should().BeTrue();
+            (Size.Large < Size.Gargantuan).Should().BeTrue();
+            (Size.Gargantuan > Size.Large).Should().BeTrue();
+            (Size.Large > Size.Medium).Should().BeTrue();
+            (Size.Medium > Size.Small).Should().BeTrue();
+            (Size.Small > Size.Tiny).Should().BeTrue();
         }
     }
 }

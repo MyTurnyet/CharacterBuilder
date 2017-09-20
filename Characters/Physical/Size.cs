@@ -5,7 +5,13 @@
         private readonly string _title;
         private readonly int _value;
 
-        public Size(string title, int value)
+        public static Size Tiny = new Size("Tiny",1);
+        public static Size Small = new Size("Small",3);
+        public static Size Medium = new Size("Medium",5);
+        public static Size Large = new Size("Large",7);
+        public static Size Huge = new Size("Huge",11);
+        public static Size Gargantuan = new Size("Gargantuan", 13);
+        private Size(string title, int value)
         {
             _title = title;
             _value = value;
