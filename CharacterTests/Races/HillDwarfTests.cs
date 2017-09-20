@@ -48,5 +48,15 @@ namespace CharacterTests.Races
             //assert
             actualsSpeed.Should().Be(expectedSpeed);
         }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSize()
+        {
+            //arrange
+            CharacterRace.HillDwarf.Size().Should().Be(Size.Small);
+            //act
+
+            //assert
+        }
     }
 }

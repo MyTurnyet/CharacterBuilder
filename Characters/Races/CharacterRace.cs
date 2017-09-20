@@ -26,5 +26,6 @@ namespace Characters.Races
         public static bool operator ==(CharacterRace left, CharacterRace right) => Equals(left, right);
         public static bool operator !=(CharacterRace left, CharacterRace right) => !Equals(left, right);
 
+        public abstract Size Size();
     }
 }
