@@ -6,9 +6,9 @@ namespace Characters.Attributes
     {
         bool Equals(object obj);
         int GetHashCode();
-        bool MatchesName(ICharacterAttributeName attributeName);
-        CharacterAttributeScore Score();
+        bool MatchesName(IAttributeName attributeName);
+        AttributeScore Score();
         void ApplyRacialBonus(CharacterRace human);
-        void Set(CharacterAttributeScore expectedScore);
+        void Set(AttributeScore expectedScore);
     }
 }

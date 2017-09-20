@@ -11,8 +11,8 @@ namespace CharacterTests.Attributes
         public void ShouldEquate()
         {
             //arrange
-            ICharacterAttributeScore score1 = new CharacterAttributeScore(4);
-            ICharacterAttributeScore score2 = new CharacterAttributeScore(4);
+            IAttributeScore score1 = new AttributeScore(4);
+            IAttributeScore score2 = new AttributeScore(4);
 
             //assert
             score2.Should().Be(score1);
@@ -21,8 +21,8 @@ namespace CharacterTests.Attributes
         public void ShouldNotEquate()
         {
             //arrange
-            ICharacterAttributeScore score1 = new CharacterAttributeScore(4);
-            ICharacterAttributeScore score2 = new CharacterAttributeScore(8);
+            IAttributeScore score1 = new AttributeScore(4);
+            IAttributeScore score2 = new AttributeScore(8);
 
             //assert
             score2.Should().NotBe(score1);
@@ -31,9 +31,9 @@ namespace CharacterTests.Attributes
         public void ShouldAdd()
         {
             //arrange
-            CharacterAttributeScore score1 = new CharacterAttributeScore(4);
-            CharacterAttributeScore score2 = new CharacterAttributeScore(8);
-            ICharacterAttributeScore totalScore = new CharacterAttributeScore(12);
+            AttributeScore score1 = new AttributeScore(4);
+            AttributeScore score2 = new AttributeScore(8);
+            IAttributeScore totalScore = new AttributeScore(12);
             //assert
             totalScore.Should().Be(score1 + score2);
         }
@@ -41,9 +41,9 @@ namespace CharacterTests.Attributes
         public void ShouldSubtract()
         {
             //arrange
-            CharacterAttributeScore score1 = new CharacterAttributeScore(6);
-            CharacterAttributeScore score2 = new CharacterAttributeScore(8);
-            ICharacterAttributeScore totalScore = new CharacterAttributeScore(2);
+            AttributeScore score1 = new AttributeScore(6);
+            AttributeScore score2 = new AttributeScore(8);
+            IAttributeScore totalScore = new AttributeScore(2);
             //assert
             totalScore.Should().Be(score2 - score1);
         }

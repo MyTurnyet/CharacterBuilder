@@ -5,7 +5,7 @@ namespace Characters.Races
     public class HillDwarf:Dwarf
     {
         public HillDwarf() : base("Hill Dwarf"){}
-        public override ICharacterAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (CharacterAttributeScore)base.RacialAttributeAdjustment(attribute) + ApplyWisdomBonus(attribute);
-        private CharacterAttributeScore ApplyWisdomBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Wisdom) ? new CharacterAttributeScore(0) : new CharacterAttributeScore(1);
+        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (AttributeScore)base.RacialAttributeAdjustment(attribute) + ApplyWisdomBonus(attribute);
+        private AttributeScore ApplyWisdomBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Wisdom) ? new AttributeScore(0) : new AttributeScore(1);
     }
 }

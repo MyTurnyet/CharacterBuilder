@@ -8,6 +8,6 @@
         ICharacterAttribute Intellegence();
         ICharacterAttribute Wisdom();
         ICharacterAttribute Charisma();
-        ICharacterAttribute MatchesName(ICharacterAttributeName attributeName);
+        ICharacterAttribute MatchesName(IAttributeName attributeName);
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Characters.Attributes
 {
-    public interface ICharacterAttributeName
+    public interface IAttributeScore
     {
         bool Equals(object obj);
         int GetHashCode();

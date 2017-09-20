@@ -6,8 +6,8 @@ namespace Characters.Races
     {
         public Dwarf(string race) : base(race){}
 
-        public override ICharacterAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyConstitutionBonus(attribute);
-        private ICharacterAttributeScore ApplyConstitutionBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Constitution) ? new CharacterAttributeScore(0) : new CharacterAttributeScore(2);
+        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyConstitutionBonus(attribute);
+        private IAttributeScore ApplyConstitutionBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Constitution) ? new AttributeScore(0) : new AttributeScore(2);
         public override Speed Speed() => new Speed(25);
     }
 }

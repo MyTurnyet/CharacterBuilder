@@ -27,7 +27,7 @@ namespace Characters
             _attributes.Add(attribute);
 
         }
-        public ICharacterAttribute Attribute(ICharacterAttributeName attributeName)
+        public ICharacterAttribute Attribute(IAttributeName attributeName)
         {
             ICharacterAttribute attribute = _attributeSet.MatchesName(attributeName);
             attribute.ApplyRacialBonus((CharacterRace)_race);

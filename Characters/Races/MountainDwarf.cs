@@ -6,7 +6,7 @@ namespace Characters.Races
     {
         public MountainDwarf():base("Mountain Dwarf"){}
 
-        public override ICharacterAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (CharacterAttributeScore)base.RacialAttributeAdjustment(attribute) + ApplyStrengthBonus(attribute);
-        private static CharacterAttributeScore ApplyStrengthBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Strength) ? new CharacterAttributeScore(0) : new CharacterAttributeScore(2);
+        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (AttributeScore)base.RacialAttributeAdjustment(attribute) + ApplyStrengthBonus(attribute);
+        private static AttributeScore ApplyStrengthBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Strength) ? new AttributeScore(0) : new AttributeScore(2);
     }
 }

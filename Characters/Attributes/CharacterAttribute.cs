@@ -4,11 +4,11 @@ namespace Characters.Attributes
 {
     public class CharacterAttribute : ICharacterAttribute
     {
-        private readonly ICharacterAttributeName _name;
-        private ICharacterAttributeScore _value;
-        private ICharacterAttributeScore _racialAttributeAdjustment = new CharacterAttributeScore(0);
+        private readonly IAttributeName _name;
+        private IAttributeScore _value;
+        private IAttributeScore _racialAttributeAdjustment = new AttributeScore(0);
 
-        public CharacterAttribute(ICharacterAttributeName name, ICharacterAttributeScore value)
+        public CharacterAttribute(IAttributeName name, IAttributeScore value)
         {
             _name = name;
             _value = value;
@@ -18,11 +18,11 @@ namespace Characters.Attributes
         protected bool Equals(CharacterAttribute other) => _name.Equals(other._name);
         public static bool operator ==(CharacterAttribute left, CharacterAttribute right) => Equals(left, right);
         public static bool operator !=(CharacterAttribute left, CharacterAttribute right) => !Equals(left, right);
-        public bool MatchesName(ICharacterAttributeName attributeName) => attributeName.Equals(_name);
-        public CharacterAttributeScore Score() => BaseScore() + (CharacterAttributeScore)_racialAttributeAdjustment;
-        private CharacterAttributeScore BaseScore() => (CharacterAttributeScore)_value;
+        public bool MatchesName(IAttributeName attributeName) => attributeName.Equals(_name);
+        public AttributeScore Score() => BaseScore() + (AttributeScore)_racialAttributeAdjustment;
+        private AttributeScore BaseScore() => (AttributeScore)_value;
         public void ApplyRacialBonus(CharacterRace race) => _racialAttributeAdjustment = race.RacialAttributeAdjustment(this);
-        public void Set(CharacterAttributeScore score)
+        public void Set(AttributeScore score)
         {
             _value = score;
         }

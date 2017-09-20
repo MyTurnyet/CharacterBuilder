@@ -20,7 +20,7 @@ namespace Characters.Races
         public override bool Equals(object obj) => (CharacterRace)obj != null && ((CharacterRace)obj)._race == _race;
         protected bool Equals(CharacterRace other) => string.Equals(_race, other._race);
         public override int GetHashCode() => (_race != null ? _race.GetHashCode() : 0);
-        public abstract ICharacterAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
+        public abstract IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
         public abstract Speed Speed();
         public static bool operator ==(CharacterRace left, CharacterRace right) => Equals(left, right);
         public static bool operator !=(CharacterRace left, CharacterRace right) => !Equals(left, right);

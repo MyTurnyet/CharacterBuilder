@@ -6,8 +6,8 @@ namespace Characters.Races
     {
         private readonly Speed _fleetFootBonus = new Speed(5);
         public WoodElf() : base("Wood Elf") { }
-        public override ICharacterAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (CharacterAttributeScore)base.RacialAttributeAdjustment(attribute) + ApplyWisdomBonus(attribute);
-        private CharacterAttributeScore ApplyWisdomBonus(ICharacterAttribute attribute) => attribute.MatchesName(CharacterAttributeName.Wisdom) ? new CharacterAttributeScore(1) : new CharacterAttributeScore(0);
+        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (AttributeScore)base.RacialAttributeAdjustment(attribute) + ApplyWisdomBonus(attribute);
+        private AttributeScore ApplyWisdomBonus(ICharacterAttribute attribute) => attribute.MatchesName(CharacterAttributeName.Wisdom) ? new AttributeScore(1) : new AttributeScore(0);
         public override Speed Speed() => base.Speed() + _fleetFootBonus;
     }
 }

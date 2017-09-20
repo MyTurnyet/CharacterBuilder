@@ -12,28 +12,28 @@ namespace CharacterTests.Races
         public void ShouldApplyRacialBonus()
         {
             //arrange
-            ICharacterAttribute strAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new CharacterAttributeScore(12));
-            ICharacterAttribute dexAttribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new CharacterAttributeScore(14));
-            ICharacterAttribute conAttribute = new CharacterAttribute(CharacterAttributeName.Constitution, new CharacterAttributeScore(2));
-            ICharacterAttribute intAttribute = new CharacterAttribute(CharacterAttributeName.Intelligence, new CharacterAttributeScore(5));
-            ICharacterAttribute wizAttribute = new CharacterAttribute(CharacterAttributeName.Wisdom, new CharacterAttributeScore(7));
-            ICharacterAttribute chrAttribute = new CharacterAttribute(CharacterAttributeName.Charisma, new CharacterAttributeScore(9));
+            ICharacterAttribute strAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(12));
+            ICharacterAttribute dexAttribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(14));
+            ICharacterAttribute conAttribute = new CharacterAttribute(CharacterAttributeName.Constitution, new AttributeScore(2));
+            ICharacterAttribute intAttribute = new CharacterAttribute(CharacterAttributeName.Intelligence, new AttributeScore(5));
+            ICharacterAttribute wizAttribute = new CharacterAttribute(CharacterAttributeName.Wisdom, new AttributeScore(7));
+            ICharacterAttribute chrAttribute = new CharacterAttribute(CharacterAttributeName.Charisma, new AttributeScore(9));
 
             //act
-            ICharacterAttributeScore expectedStr = CharacterRace.WoodElf.RacialAttributeAdjustment(strAttribute);
-            ICharacterAttributeScore expectedDex = CharacterRace.WoodElf.RacialAttributeAdjustment(dexAttribute);
-            ICharacterAttributeScore expectedCon = CharacterRace.WoodElf.RacialAttributeAdjustment(conAttribute);
-            ICharacterAttributeScore expectedInt = CharacterRace.WoodElf.RacialAttributeAdjustment(intAttribute);
-            ICharacterAttributeScore expectedWiz = CharacterRace.WoodElf.RacialAttributeAdjustment(wizAttribute);
-            ICharacterAttributeScore expectedChr = CharacterRace.WoodElf.RacialAttributeAdjustment(chrAttribute);
+            IAttributeScore expectedStr = CharacterRace.WoodElf.RacialAttributeAdjustment(strAttribute);
+            IAttributeScore expectedDex = CharacterRace.WoodElf.RacialAttributeAdjustment(dexAttribute);
+            IAttributeScore expectedCon = CharacterRace.WoodElf.RacialAttributeAdjustment(conAttribute);
+            IAttributeScore expectedInt = CharacterRace.WoodElf.RacialAttributeAdjustment(intAttribute);
+            IAttributeScore expectedWiz = CharacterRace.WoodElf.RacialAttributeAdjustment(wizAttribute);
+            IAttributeScore expectedChr = CharacterRace.WoodElf.RacialAttributeAdjustment(chrAttribute);
 
             //assert
-            expectedStr.Should().Be(new CharacterAttributeScore(0));
-            expectedDex.Should().Be(new CharacterAttributeScore(2));
-            expectedCon.Should().Be(new CharacterAttributeScore(0));
-            expectedInt.Should().Be(new CharacterAttributeScore(0));
-            expectedWiz.Should().Be(new CharacterAttributeScore(1));
-            expectedChr.Should().Be(new CharacterAttributeScore(0));
+            expectedStr.Should().Be(new AttributeScore(0));
+            expectedDex.Should().Be(new AttributeScore(2));
+            expectedCon.Should().Be(new AttributeScore(0));
+            expectedInt.Should().Be(new AttributeScore(0));
+            expectedWiz.Should().Be(new AttributeScore(1));
+            expectedChr.Should().Be(new AttributeScore(0));
         }
 
         [TestMethod, TestCategory("Unit")]

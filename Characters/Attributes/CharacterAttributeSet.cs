@@ -22,9 +22,9 @@ namespace Characters.Attributes
         public ICharacterAttribute Intellegence() => GetAttributeFromName(CharacterAttributeName.Intelligence);
         public ICharacterAttribute Wisdom() => GetAttributeFromName(CharacterAttributeName.Wisdom);
         public ICharacterAttribute Charisma() => GetAttributeFromName(CharacterAttributeName.Charisma);
-        public ICharacterAttribute MatchesName(ICharacterAttributeName attributeName) => GetAttributeFromName(attributeName);
-        private ICharacterAttribute GetAttributeFromName(ICharacterAttributeName name) => _attributes.First(arrib => arrib.MatchesName(name));
-        private ICharacterAttribute CharacterDefaultAttribute(ICharacterAttributeName attributeName) => new CharacterAttribute(attributeName, new CharacterAttributeScore(0));
+        public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
+        private ICharacterAttribute GetAttributeFromName(IAttributeName name) => _attributes.First(arrib => arrib.MatchesName(name));
+        private ICharacterAttribute CharacterDefaultAttribute(IAttributeName attributeName) => new CharacterAttribute(attributeName, new AttributeScore(0));
 
     }
 }

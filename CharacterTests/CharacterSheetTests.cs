@@ -40,8 +40,8 @@ namespace CharacterTests
         public void ShouldApplyRacialBonusToAttributes()
         {
             //arrange
-            CharacterAttributeScore expectedDexterityScore = new CharacterAttributeScore(12);
-            CharacterAttributeScore expectedWisdomScore = new CharacterAttributeScore(9);
+            AttributeScore expectedDexterityScore = new AttributeScore(12);
+            AttributeScore expectedWisdomScore = new AttributeScore(9);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
             //assert
             _characterSheet.Attribute(CharacterAttributeName.Strength).Score().Should().Be(_strAttribute.Score());
@@ -56,12 +56,12 @@ namespace CharacterTests
         #region Helper Methods
         private void SetupAttributes()
         {
-            _strAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new CharacterAttributeScore(16));
-            _dexAttribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new CharacterAttributeScore(10));
-            _conAttribute = new CharacterAttribute(CharacterAttributeName.Constitution, new CharacterAttributeScore(13));
-            _intAttribute = new CharacterAttribute(CharacterAttributeName.Intelligence, new CharacterAttributeScore(14));
-            _wizAttribute = new CharacterAttribute(CharacterAttributeName.Wisdom, new CharacterAttributeScore(8));
-            _chrAttribute = new CharacterAttribute(CharacterAttributeName.Charisma, new CharacterAttributeScore(6));
+            _strAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(16));
+            _dexAttribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
+            _conAttribute = new CharacterAttribute(CharacterAttributeName.Constitution, new AttributeScore(13));
+            _intAttribute = new CharacterAttribute(CharacterAttributeName.Intelligence, new AttributeScore(14));
+            _wizAttribute = new CharacterAttribute(CharacterAttributeName.Wisdom, new AttributeScore(8));
+            _chrAttribute = new CharacterAttribute(CharacterAttributeName.Charisma, new AttributeScore(6));
             _attributeSet = new CharacterAttributeSet();
             _attributeSet.Strength().Set(_strAttribute.Score());
             _attributeSet.Dexterity().Set(_dexAttribute.Score());

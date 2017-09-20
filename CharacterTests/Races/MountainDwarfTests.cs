@@ -13,28 +13,28 @@ namespace CharacterTests.Races
         public void ShouldApplyRacialBonus()
         {
             //arrange
-            ICharacterAttribute strAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new CharacterAttributeScore(12));
-            ICharacterAttribute dexAttribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new CharacterAttributeScore(14));
-            ICharacterAttribute conAttribute = new CharacterAttribute(CharacterAttributeName.Constitution, new CharacterAttributeScore(2));
-            ICharacterAttribute intAttribute = new CharacterAttribute(CharacterAttributeName.Intelligence, new CharacterAttributeScore(5));
-            ICharacterAttribute wizAttribute = new CharacterAttribute(CharacterAttributeName.Wisdom, new CharacterAttributeScore(7));
-            ICharacterAttribute chrAttribute = new CharacterAttribute(CharacterAttributeName.Charisma, new CharacterAttributeScore(9));
+            ICharacterAttribute strAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(12));
+            ICharacterAttribute dexAttribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(14));
+            ICharacterAttribute conAttribute = new CharacterAttribute(CharacterAttributeName.Constitution, new AttributeScore(2));
+            ICharacterAttribute intAttribute = new CharacterAttribute(CharacterAttributeName.Intelligence, new AttributeScore(5));
+            ICharacterAttribute wizAttribute = new CharacterAttribute(CharacterAttributeName.Wisdom, new AttributeScore(7));
+            ICharacterAttribute chrAttribute = new CharacterAttribute(CharacterAttributeName.Charisma, new AttributeScore(9));
 
             //act
-            ICharacterAttributeScore expectedStr = CharacterRace.MountainDwarf.RacialAttributeAdjustment(strAttribute);
-            ICharacterAttributeScore expectedDex = CharacterRace.MountainDwarf.RacialAttributeAdjustment(dexAttribute);
-            ICharacterAttributeScore expectedCon = CharacterRace.MountainDwarf.RacialAttributeAdjustment(conAttribute);
-            ICharacterAttributeScore expectedInt = CharacterRace.MountainDwarf.RacialAttributeAdjustment(intAttribute);
-            ICharacterAttributeScore expectedWiz = CharacterRace.MountainDwarf.RacialAttributeAdjustment(wizAttribute);
-            ICharacterAttributeScore expectedChr = CharacterRace.MountainDwarf.RacialAttributeAdjustment(chrAttribute);
+            IAttributeScore expectedStr = CharacterRace.MountainDwarf.RacialAttributeAdjustment(strAttribute);
+            IAttributeScore expectedDex = CharacterRace.MountainDwarf.RacialAttributeAdjustment(dexAttribute);
+            IAttributeScore expectedCon = CharacterRace.MountainDwarf.RacialAttributeAdjustment(conAttribute);
+            IAttributeScore expectedInt = CharacterRace.MountainDwarf.RacialAttributeAdjustment(intAttribute);
+            IAttributeScore expectedWiz = CharacterRace.MountainDwarf.RacialAttributeAdjustment(wizAttribute);
+            IAttributeScore expectedChr = CharacterRace.MountainDwarf.RacialAttributeAdjustment(chrAttribute);
 
             //assert
-            expectedStr.Should().Be(new CharacterAttributeScore(2));
-            expectedDex.Should().Be(new CharacterAttributeScore(0));
-            expectedCon.Should().Be(new CharacterAttributeScore(2));
-            expectedInt.Should().Be(new CharacterAttributeScore(0));
-            expectedWiz.Should().Be(new CharacterAttributeScore(0));
-            expectedChr.Should().Be(new CharacterAttributeScore(0));
+            expectedStr.Should().Be(new AttributeScore(2));
+            expectedDex.Should().Be(new AttributeScore(0));
+            expectedCon.Should().Be(new AttributeScore(2));
+            expectedInt.Should().Be(new AttributeScore(0));
+            expectedWiz.Should().Be(new AttributeScore(0));
+            expectedChr.Should().Be(new AttributeScore(0));
         }
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnSpeed()

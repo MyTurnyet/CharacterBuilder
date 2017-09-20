@@ -4,6 +4,6 @@ namespace Characters
 {
     public interface ICharacterSheet
     {
-        ICharacterAttribute Attribute(ICharacterAttributeName attributeName);
+        ICharacterAttribute Attribute(IAttributeName attributeName);
     }
 }

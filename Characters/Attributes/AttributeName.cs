@@ -1,13 +1,13 @@
 ﻿namespace Characters.Attributes
 {
-    public class CharacterAttributeName : IAttributeName
+    public class CharacterAttributeName : ICharacterAttributeName
     {
-        public static readonly IAttributeName Strength = new CharacterAttributeName("STR");
-        public static readonly IAttributeName Dexterity = new CharacterAttributeName("DEX");
-        public static readonly IAttributeName Constitution = new CharacterAttributeName("CON");
-        public static readonly IAttributeName Wisdom = new CharacterAttributeName("WIS");
-        public static readonly IAttributeName Intelligence = new CharacterAttributeName("INT");
-        public static readonly IAttributeName Charisma = new CharacterAttributeName("CHR");
+        public static readonly ICharacterAttributeName Strength = new CharacterAttributeName("STR");
+        public static readonly ICharacterAttributeName Dexterity = new CharacterAttributeName("DEX");
+        public static readonly ICharacterAttributeName Constitution = new CharacterAttributeName("CON");
+        public static readonly ICharacterAttributeName Wisdom = new CharacterAttributeName("WIS");
+        public static readonly ICharacterAttributeName Intelligence = new CharacterAttributeName("INT");
+        public static readonly ICharacterAttributeName Charisma = new CharacterAttributeName("CHR");
 
         private readonly string _name;
 

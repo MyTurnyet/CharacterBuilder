@@ -11,8 +11,8 @@ namespace CharacterTests.Attributes
         public void ShouldEquate()
         {
             //assign
-            ICharacterAttributeName nameStr = CharacterAttributeName.Strength;
-            ICharacterAttributeName nameStr2 = CharacterAttributeName.Strength;
+            IAttributeName nameStr = CharacterAttributeName.Strength;
+            IAttributeName nameStr2 = CharacterAttributeName.Strength;
             
             //assert
             nameStr2.Should().Be(nameStr);
@@ -21,8 +21,8 @@ namespace CharacterTests.Attributes
         public void ShouldNotEquate()
         {
             //assign
-            ICharacterAttributeName nameStr = CharacterAttributeName.Strength;
-            ICharacterAttributeName nameStr2 = CharacterAttributeName.Dexterity;
+            IAttributeName nameStr = CharacterAttributeName.Strength;
+            IAttributeName nameStr2 = CharacterAttributeName.Dexterity;
             
             //assert
             nameStr2.Should().NotBe(nameStr);

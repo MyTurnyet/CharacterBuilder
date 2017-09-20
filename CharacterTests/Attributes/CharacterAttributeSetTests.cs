@@ -73,7 +73,7 @@ namespace CharacterTests.Attributes
         public void ShouldMatchName()
         {
             //assign
-            ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new CharacterAttributeScore(18));
+            ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
             //act
             ICharacterAttribute actualAttribute = _characterAttributeSet.MatchesName(CharacterAttributeName.Strength);
             //assert
@@ -84,12 +84,12 @@ namespace CharacterTests.Attributes
         public void ShouldAddAttribute()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new CharacterAttributeScore(18));
+            ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
             //act
             _characterAttributeSet.Strength().Set(expectedAttribute.Score());
             //assert
             _characterAttributeSet.Strength().Score().Should().Be(expectedAttribute.Score());
         }
-        private ICharacterAttribute CreateAttribute(ICharacterAttributeName attributeName) => new CharacterAttribute(attributeName, new CharacterAttributeScore(0));
+        private ICharacterAttribute CreateAttribute(IAttributeName attributeName) => new CharacterAttribute(attributeName, new AttributeScore(0));
     }
 }

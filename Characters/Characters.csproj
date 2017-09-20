@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Attributes\CharacterAttribute.cs" />
     <Compile Include="Attributes\CharacterAttributeName.cs" />
-    <Compile Include="Attributes\CharacterAttributeScore.cs" />
+    <Compile Include="Attributes\AttributeScore.cs" />
     <Compile Include="Attributes\CharacterAttributeSet.cs" />
     <Compile Include="Attributes\ICharacterAttributeSet.cs" />
     <Compile Include="Attributes\Speed.cs" />
@@ -50,8 +50,8 @@
     <Compile Include="Races\CharacterRace.cs" />
     <Compile Include="CharacterSheet.cs" />
     <Compile Include="Attributes\ICharacterAttribute.cs" />
-    <Compile Include="Attributes\ICharacterAttributeName.cs" />
-    <Compile Include="Attributes\ICharacterAttributeScore.cs" />
+    <Compile Include="Attributes\IAttributeName.cs" />
+    <Compile Include="Attributes\IAttributeScore.cs" />
     <Compile Include="Classes\ICharacterClass.cs" />
     <Compile Include="Races\Dwarf.cs" />
     <Compile Include="Races\Elf.cs" />
