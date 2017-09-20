@@ -10,6 +10,7 @@ namespace Characters.Races
         public static readonly CharacterRace WoodElf = new WoodElf();
         public static readonly CharacterRace HighElf = new HighElf();
         public static readonly CharacterRace HillDwarf = new HillDwarf();
+        public static readonly CharacterRace MountainDwarf = new MountainDwarf();
 
 
         internal CharacterRace(string race)

@@ -67,6 +67,7 @@
     <Compile Include="Attributes\CharacterAttributeScoreTests.cs" />
     <Compile Include="Races\HighElfTests.cs" />
     <Compile Include="Races\HillDwarfTests.cs" />
+    <Compile Include="Races\MountainDwarfTests.cs" />
     <Compile Include="Races\WoodElfTests.cs" />
     <Compile Include="Races\HumanTests.cs" />
   </ItemGroup>

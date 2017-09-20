@@ -57,6 +57,7 @@
     <Compile Include="Races\Elf.cs" />
     <Compile Include="Races\HighElf.cs" />
     <Compile Include="Races\HillDwarf.cs" />
+    <Compile Include="Races\MountainDwarf.cs" />
     <Compile Include="Races\WoodElf.cs" />
     <Compile Include="Races\Human.cs" />
     <Compile Include="Races\ICharacterRace.cs" />
