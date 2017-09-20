@@ -46,6 +46,7 @@
     <Compile Include="Attributes\AttributeSet.cs" />
     <Compile Include="Attributes\IAttributeSet.cs" />
     <Compile Include="Physical\ISpeed.cs" />
+    <Compile Include="Physical\Size.cs" />
     <Compile Include="Physical\Speed.cs" />
     <Compile Include="Classes\CharacterClass.cs" />
     <Compile Include="Races\CharacterRace.cs" />
