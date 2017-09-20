@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters", "Characters\Characters.csproj", "{AAE45DE6-2AD0-4B91-8B0D-D35DF2537BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterTests", "CharacterTests\CharacterTests.csproj", "{24CD6BAE-3202-4B49-9948-C8C15BDA6D26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAE45DE6-2AD0-4B91-8B0D-D35DF2537BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE45DE6-2AD0-4B91-8B0D-D35DF2537BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE45DE6-2AD0-4B91-8B0D-D35DF2537BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE45DE6-2AD0-4B91-8B0D-D35DF2537BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24CD6BAE-3202-4B49-9948-C8C15BDA6D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24CD6BAE-3202-4B49-9948-C8C15BDA6D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24CD6BAE-3202-4B49-9948-C8C15BDA6D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24CD6BAE-3202-4B49-9948-C8C15BDA6D26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A514D630-3343-46BD-8031-1F2C78DAE033}
+	EndGlobalSection
+EndGlobal
