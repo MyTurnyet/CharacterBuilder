@@ -1,16 +1,16 @@
 ﻿namespace Characters.Physical
 {
-    public class Size
+    public class Size : ISize
     {
         private readonly string _title;
         private readonly int _value;
 
-        public static Size Tiny = new Size("Tiny",1);
-        public static Size Small = new Size("Small",3);
-        public static Size Medium = new Size("Medium",5);
-        public static Size Large = new Size("Large",7);
-        public static Size Huge = new Size("Huge",11);
-        public static Size Gargantuan = new Size("Gargantuan", 13);
+        public static readonly Size Tiny = new Size("Tiny", 1);
+        public static readonly Size Small = new Size("Small", 3);
+        public static readonly Size Medium = new Size("Medium", 5);
+        public static readonly Size Large = new Size("Large", 7);
+        public static readonly Size Huge = new Size("Huge", 11);
+        public static readonly Size Gargantuan = new Size("Gargantuan", 13);
         private Size(string title, int value)
         {
             _title = title;
@@ -19,12 +19,12 @@
 
         public override bool Equals(object obj)
         {
-            return (Size)obj != null && ((Size)obj)._value == _value;
+            return (Size)obj != null && Equals((ISize)obj);
         }
 
-        protected bool Equals(Size other)
+        private bool Equals(ISize other)
         {
-            return _value == other._value;
+            return _value == ((Size)other)._value;
         }
 
         public override int GetHashCode()
