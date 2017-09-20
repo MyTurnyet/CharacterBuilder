@@ -1,4 +1,4 @@
-﻿namespace Characters.Attributes
+﻿namespace Characters.Physical
 {
     public class Speed : ISpeed
     {

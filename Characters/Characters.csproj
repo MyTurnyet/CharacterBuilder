@@ -45,8 +45,8 @@
     <Compile Include="Attributes\AttributeScore.cs" />
     <Compile Include="Attributes\AttributeSet.cs" />
     <Compile Include="Attributes\IAttributeSet.cs" />
-    <Compile Include="Attributes\ISpeed.cs" />
-    <Compile Include="Attributes\Speed.cs" />
+    <Compile Include="Physical\ISpeed.cs" />
+    <Compile Include="Physical\Speed.cs" />
     <Compile Include="Classes\CharacterClass.cs" />
     <Compile Include="Races\CharacterRace.cs" />
     <Compile Include="CharacterSheet.cs" />
