@@ -1,9 +1,8 @@
-﻿using Characters.Attributes;
-using Characters.Physical;
+﻿using Characters.Physical;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CharacterTests.Attributes
+namespace CharacterTests.Physical
 {
     [TestClass]
     public class SpeedTests
