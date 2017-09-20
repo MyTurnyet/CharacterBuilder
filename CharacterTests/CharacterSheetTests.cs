@@ -11,7 +11,7 @@ namespace CharacterTests
     public class CharacterSheetTests
     {
         private ICharacterSheet _characterSheet;
-        private ICharacterAttributeSet _attributeSet;
+        private IAttributeSet _attributeSet;
         private ICharacterAttribute _strAttribute;
         private ICharacterAttribute _dexAttribute;
         private ICharacterAttribute _conAttribute;
@@ -62,7 +62,7 @@ namespace CharacterTests
             _intAttribute = new CharacterAttribute(CharacterAttributeName.Intelligence, new AttributeScore(14));
             _wizAttribute = new CharacterAttribute(CharacterAttributeName.Wisdom, new AttributeScore(8));
             _chrAttribute = new CharacterAttribute(CharacterAttributeName.Charisma, new AttributeScore(6));
-            _attributeSet = new CharacterAttributeSet();
+            _attributeSet = new AttributeSet();
             _attributeSet.Strength().Set(_strAttribute.Score());
             _attributeSet.Dexterity().Set(_dexAttribute.Score());
             _attributeSet.Constitution().Set(_conAttribute.Score());

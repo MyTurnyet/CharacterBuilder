@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace Characters.Attributes
 {
-    public class CharacterAttributeSet : ICharacterAttributeSet
+    public class AttributeSet : IAttributeSet
     {
-        public CharacterAttributeSet()
+        public AttributeSet()
         {
             _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Strength));
             _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Dexterity));

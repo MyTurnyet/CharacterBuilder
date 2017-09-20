@@ -1,6 +1,6 @@
 ﻿namespace Characters.Attributes
 {
-    public interface ICharacterAttributeSet
+    public interface IAttributeSet
     {
         ICharacterAttribute Dexterity();
         ICharacterAttribute Strength();

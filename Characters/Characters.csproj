@@ -43,8 +43,8 @@
     <Compile Include="Attributes\CharacterAttribute.cs" />
     <Compile Include="Attributes\CharacterAttributeName.cs" />
     <Compile Include="Attributes\AttributeScore.cs" />
-    <Compile Include="Attributes\CharacterAttributeSet.cs" />
-    <Compile Include="Attributes\ICharacterAttributeSet.cs" />
+    <Compile Include="Attributes\AttributeSet.cs" />
+    <Compile Include="Attributes\IAttributeSet.cs" />
     <Compile Include="Attributes\Speed.cs" />
     <Compile Include="Classes\CharacterClass.cs" />
     <Compile Include="Races\CharacterRace.cs" />

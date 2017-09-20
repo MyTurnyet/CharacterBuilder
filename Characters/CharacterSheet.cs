@@ -11,9 +11,9 @@ namespace Characters
         private readonly ICharacterClass _characterClass;
         private readonly ICharacterRace _race;
         private readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>();
-        private readonly ICharacterAttributeSet _attributeSet;
+        private readonly IAttributeSet _attributeSet;
 
-        public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, ICharacterAttributeSet attributeSet)
+        public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, IAttributeSet attributeSet)
         {
             _characterClass = characterClass;
             _race = race;

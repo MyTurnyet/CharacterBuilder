@@ -7,12 +7,12 @@ namespace CharacterTests.Attributes
     [TestClass]
     public class CharacterAttributeSetTests
     {
-        private ICharacterAttributeSet _characterAttributeSet;
+        private IAttributeSet _attributeSet;
 
         [TestInitialize]
         public void Setup()
         {
-            _characterAttributeSet = new CharacterAttributeSet();
+            _attributeSet = new AttributeSet();
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -21,7 +21,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Dexterity);
             //assert
-            _characterAttributeSet.Dexterity().Should().Be(expectedAttribute);
+            _attributeSet.Dexterity().Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -30,7 +30,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Strength);
             //assert
-            _characterAttributeSet.Strength().Should().Be(expectedAttribute);
+            _attributeSet.Strength().Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -39,7 +39,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Constitution);
             //assert
-            _characterAttributeSet.Constitution().Should().Be(expectedAttribute);
+            _attributeSet.Constitution().Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -48,7 +48,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Intelligence);
             //assert
-            _characterAttributeSet.Intellegence().Should().Be(expectedAttribute);
+            _attributeSet.Intellegence().Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -57,7 +57,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Wisdom);
             //assert
-            _characterAttributeSet.Wisdom().Should().Be(expectedAttribute);
+            _attributeSet.Wisdom().Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -66,7 +66,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Charisma);
             //assert
-            _characterAttributeSet.Charisma().Should().Be(expectedAttribute);
+            _attributeSet.Charisma().Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -75,7 +75,7 @@ namespace CharacterTests.Attributes
             //assign
             ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
             //act
-            ICharacterAttribute actualAttribute = _characterAttributeSet.MatchesName(CharacterAttributeName.Strength);
+            ICharacterAttribute actualAttribute = _attributeSet.MatchesName(CharacterAttributeName.Strength);
             //assert
             actualAttribute.Should().Be(expectedAttribute);
         }
@@ -86,9 +86,9 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
             //act
-            _characterAttributeSet.Strength().Set(expectedAttribute.Score());
+            _attributeSet.Strength().Set(expectedAttribute.Score());
             //assert
-            _characterAttributeSet.Strength().Score().Should().Be(expectedAttribute.Score());
+            _attributeSet.Strength().Score().Should().Be(expectedAttribute.Score());
         }
         private ICharacterAttribute CreateAttribute(IAttributeName attributeName) => new CharacterAttribute(attributeName, new AttributeScore(0));
     }
