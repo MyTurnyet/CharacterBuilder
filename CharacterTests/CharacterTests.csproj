@@ -60,6 +60,7 @@
     <Compile Include="Physical\SpeedTests.cs" />
     <Compile Include="CharacterSheetTests.cs" />
     <Compile Include="Physical\SizeTests.cs" />
+    <Compile Include="Physical\HitPointsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CharacterClassTests.cs" />
     <Compile Include="Races\CharacterRaceTests.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Races\MountainDwarfTests.cs" />
     <Compile Include="Races\WoodElfTests.cs" />
     <Compile Include="Races\HumanTests.cs" />
+    <Compile Include="DieTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
