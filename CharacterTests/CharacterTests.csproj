@@ -57,12 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\CharacterAttributeSetTests.cs" />
+    <Compile Include="Classes\FighterTests.cs" />
+    <Compile Include="Classes\WizardTests.cs" />
+    <Compile Include="Dice\HitDieTests.cs" />
     <Compile Include="Physical\SpeedTests.cs" />
     <Compile Include="CharacterSheetTests.cs" />
     <Compile Include="Physical\SizeTests.cs" />
     <Compile Include="Physical\HitPointsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CharacterClassTests.cs" />
+    <Compile Include="Classes\CharacterClassTests.cs" />
     <Compile Include="Races\CharacterRaceTests.cs" />
     <Compile Include="Attributes\CharacterAttributeTests.cs" />
     <Compile Include="Attributes\CharacterAttributeNameTests.cs" />
@@ -72,7 +75,7 @@
     <Compile Include="Races\MountainDwarfTests.cs" />
     <Compile Include="Races\WoodElfTests.cs" />
     <Compile Include="Races\HumanTests.cs" />
-    <Compile Include="DieTests.cs" />
+    <Compile Include="Dice\DieTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

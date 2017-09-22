@@ -2,7 +2,7 @@
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CharacterTests
+namespace CharacterTests.Classes
 {
     [TestClass]
     public class CharacterClassTests

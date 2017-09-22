@@ -1,9 +1,9 @@
-﻿using System;
-using Characters;
+﻿using Characters;
+using Characters.Dice;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CharacterTests
+namespace CharacterTests.Dice
 {
     [TestClass]
     public class DieTests
@@ -12,8 +12,8 @@ namespace CharacterTests
         public void ShouldEquate()
         {
             //arrange
-            Die die1 = new Die(6);
-            Die die2 = new Die(6);
+            Die die1 = Die.d4;
+            Die die2 = Die.d4;
 
             //assert
             die1.Should().Be(die2);
@@ -22,8 +22,8 @@ namespace CharacterTests
         public void ShouldNotEquate()
         {
             //arrange
-            Die die1 = new Die(2);
-            Die die2 = new Die(6);
+            Die die1 = Die.d4;
+            Die die2 = Die.d6;
 
             //assert
             die1.Should().NotBe(die2);
