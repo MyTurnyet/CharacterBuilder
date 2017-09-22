@@ -1,4 +1,6 @@
-﻿namespace Characters.Attributes
+﻿using System;
+
+namespace Characters.Attributes
 {
     public class AttributeScore : IAttributeScore
     {
@@ -49,6 +51,13 @@
         public static AttributeScore operator -(AttributeScore left, int right)
         {
             return new AttributeScore(left._value - right);
+        }
+        public static AttributeScore operator /(AttributeScore left, int right)
+        {
+            // ReSharper disable once PossibleLossOfFraction
+            decimal d = (left._value / right);
+            int score = (int)Math.Round(d,0, MidpointRounding.AwayFromZero);
+            return new AttributeScore(score);
         }
     }
 }

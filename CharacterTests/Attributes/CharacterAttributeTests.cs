@@ -73,5 +73,19 @@ namespace CharacterTests.Attributes
             attribute.Score().Should().Be(expectedScore);
         }
 
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnAttributeBonus()
+        {
+            //arrange
+            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(1));
+            AttributeScore expectedAttributeBonus = new AttributeScore(-5);
+
+            //act
+            AttributeScore actualAttributeBonus =attribute.Bonus();
+
+            //assert
+            actualAttributeBonus.Should().Be(expectedAttributeBonus);
+        }
+
     }
 }

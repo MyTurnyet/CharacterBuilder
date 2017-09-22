@@ -10,5 +10,6 @@ namespace Characters.Attributes
         AttributeScore Score();
         void ApplyRacialBonus(CharacterRace human);
         void Set(AttributeScore expectedScore);
+        AttributeScore Bonus();
     }
 }

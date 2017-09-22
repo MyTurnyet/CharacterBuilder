@@ -1,6 +1,7 @@
 ﻿using Characters;
 using Characters.Attributes;
 using Characters.Classes;
+using Characters.Physical;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -53,6 +54,15 @@ namespace CharacterTests
             _characterSheet.Attribute(CharacterAttributeName.Charisma).Score().Should().Be(_chrAttribute.Score());
         }
 
+        //[TestMethod, TestCategory("Unit")]
+        //public void ShouldReturnStartingHitPoints()
+        //{
+        //    //arrange
+        //    HitPoints expectedHitPoints = new HitPoints(14);
+        //    //act
+
+        //    //assert
+        //}
         #region Helper Methods
         private void SetupAttributes()
         {

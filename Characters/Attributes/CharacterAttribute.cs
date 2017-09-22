@@ -22,9 +22,11 @@ namespace Characters.Attributes
         public AttributeScore Score() => BaseScore() + (AttributeScore)_racialAttributeAdjustment;
         private AttributeScore BaseScore() => (AttributeScore)_value;
         public void ApplyRacialBonus(CharacterRace race) => _racialAttributeAdjustment = race.RacialAttributeAdjustment(this);
-        public void Set(AttributeScore score)
+        public void Set(AttributeScore score) => _value = score;
+        public AttributeScore Bonus()
         {
-            _value = score;
+            AttributeScore score = (Score() - 10) / 2;
+            return score;
         }
     }
 }
