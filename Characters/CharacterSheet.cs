@@ -2,6 +2,7 @@
 using System.Linq;
 using Characters.Attributes;
 using Characters.Classes;
+using Characters.Physical;
 using Characters.Races;
 
 namespace Characters
@@ -32,6 +33,11 @@ namespace Characters
             ICharacterAttribute attribute = _attributeSet.MatchesName(attributeName);
             attribute.ApplyRacialBonus((CharacterRace)_race);
             return attribute;
+        }
+
+        public HitPoints HitPoints()
+        {
+            return new HitPoints(14);
         }
 
         private void RemoveExistingAttribute(ICharacterAttribute attribute)

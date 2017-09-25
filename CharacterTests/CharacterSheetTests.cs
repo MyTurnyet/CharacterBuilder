@@ -1,6 +1,7 @@
 ﻿using Characters;
 using Characters.Attributes;
 using Characters.Classes;
+using Characters.Dice;
 using Characters.Physical;
 using Characters.Races;
 using FluentAssertions;
@@ -54,15 +55,21 @@ namespace CharacterTests
             _characterSheet.Attribute(CharacterAttributeName.Charisma).Score().Should().Be(_chrAttribute.Score());
         }
 
-        //[TestMethod, TestCategory("Unit")]
-        //public void ShouldReturnStartingHitPoints()
-        //{
-        //    //arrange
-        //    HitPoints expectedHitPoints = new HitPoints(14);
-        //    //act
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnStartingHitPoints()
+        {
+            //arrange
+            HitPoints expectedHitPoints = new HitPoints(14);
+            HitDie hitDie = HitDie.d10;
+            AttributeScore constitutionScore = new AttributeScore(18);
+            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
 
-        //    //assert
-        //}
+            //act
+            HitPoints actualHitPoints = _characterSheet.HitPoints();
+
+            //assert
+            actualHitPoints.Should().Be(expectedHitPoints);
+        }
         #region Helper Methods
         private void SetupAttributes()
         {
