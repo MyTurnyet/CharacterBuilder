@@ -52,12 +52,10 @@ namespace Characters.Attributes
         {
             return new AttributeScore(left._value - right);
         }
-        public static AttributeScore operator /(AttributeScore left, int right)
+
+        public AttributeScore Bonus()
         {
-            // ReSharper disable once PossibleLossOfFraction
-            decimal d = (left._value / right);
-            int score = (int)Math.Round(d,0, MidpointRounding.AwayFromZero);
-            return new AttributeScore(score);
+            return new AttributeScore((int)Math.Floor((decimal)(_value - 10) / 2));
         }
     }
 }

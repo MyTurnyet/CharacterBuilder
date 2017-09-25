@@ -25,7 +25,7 @@ namespace Characters.Attributes
         public void Set(AttributeScore score) => _value = score;
         public AttributeScore Bonus()
         {
-            AttributeScore score = (Score() - 10) / 2;
+            AttributeScore score = Score().Bonus();
             return score;
         }
     }
