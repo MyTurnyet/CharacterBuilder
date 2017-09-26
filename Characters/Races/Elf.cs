@@ -9,9 +9,6 @@ namespace Characters.Races
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyDexterityBonus(attribute);
         private AttributeScore ApplyDexterityBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Dexterity) ? new AttributeScore(0) : new AttributeScore(2);
         public override ISpeed Speed() => new Speed(30);
-        public override Size Size()
-        {
-            return Physical.Size.Medium;
-        }
+        public override Size Size() => Physical.Size.Medium;
     }
 }

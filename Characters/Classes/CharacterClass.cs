@@ -16,7 +16,6 @@ namespace Characters.Classes
         protected bool Equals(CharacterClass other) => string.Equals(_className, other._className);
         public override int GetHashCode() => (_className != null ? _className.GetHashCode() : 0);
         public abstract HitDie HitDie();
-
         public static bool operator ==(CharacterClass left, CharacterClass right) => Equals(left, right);
         public static bool operator !=(CharacterClass left, CharacterClass right) => !Equals(left, right);
         

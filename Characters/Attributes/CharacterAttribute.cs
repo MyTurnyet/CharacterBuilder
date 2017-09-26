@@ -24,14 +24,7 @@ namespace Characters.Attributes
         private AttributeScore BaseScore() => (AttributeScore)_value;
         public void ApplyRacialBonus(CharacterRace race) => _racialAttributeAdjustment = race.RacialAttributeAdjustment(this);
         public void Set(AttributeScore score) => _value = score;
-        public AttributeScore Bonus()
-        {
-            return new AttributeScore(Score().Bonus());
-        }
-
-        public HitPoints BonusHitPoints()
-        {
-            return new HitPoints(Score().Bonus());
-        }
+        public AttributeScore Bonus() => new AttributeScore(Score().Bonus());
+        public HitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
     }
 }

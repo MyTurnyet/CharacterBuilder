@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Characters.Attributes;
+﻿using Characters.Attributes;
 using Characters.Classes;
 using Characters.Physical;
 using Characters.Races;
@@ -11,7 +9,6 @@ namespace Characters
     {
         private readonly ICharacterClass _characterClass;
         private readonly ICharacterRace _race;
-        private readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>();
         private readonly IAttributeSet _attributeSet;
 
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, IAttributeSet attributeSet)
@@ -21,30 +18,12 @@ namespace Characters
             _attributeSet = attributeSet;
             
         }
-
-        public void AddAttribute(ICharacterAttribute attribute)
-        {
-            RemoveExistingAttribute(attribute);
-            _attributes.Add(attribute);
-
-        }
         public ICharacterAttribute Attribute(IAttributeName attributeName)
         {
             ICharacterAttribute attribute = _attributeSet.MatchesName(attributeName);
             attribute.ApplyRacialBonus((CharacterRace)_race);
             return attribute;
         }
-
-        public HitPoints HitPoints()
-        {
-            return _characterClass.HitDie().MaxHitPoints() + _attributeSet.Constitution().BonusHitPoints();
-        }
-
-        private void RemoveExistingAttribute(ICharacterAttribute attribute)
-        {
-            if (!_attributes.Any(attr => attr.Equals(attribute))) return;
-            _attributes.Remove(_attributes.First(attr => attr.Equals(attribute)));
-        }
-
+        public HitPoints HitPoints() => _characterClass.HitDie().MaxHitPoints() + _attributeSet.Constitution().BonusHitPoints();
     }
 }

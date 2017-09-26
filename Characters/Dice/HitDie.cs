@@ -8,13 +8,7 @@ namespace Characters.Dice
         public new static readonly HitDie d10 = new HitDie(10);
         // ReSharper restore InconsistentNaming
 
-        private HitDie(int numberOfSides) : base(numberOfSides)
-        {
-        }
-
-        public HitPoints MaxHitPoints()
-        {
-            return new HitPoints(_numberOfSides);
-        }
+        private HitDie(int numberOfSides) : base(numberOfSides){}
+        public HitPoints MaxHitPoints() => new HitPoints(_numberOfSides);
     }
 }
