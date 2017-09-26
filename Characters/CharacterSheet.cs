@@ -37,7 +37,7 @@ namespace Characters
 
         public HitPoints HitPoints()
         {
-            return new HitPoints(14);
+            return _characterClass.HitDie().MaxHitPoints() + _attributeSet.Constitution().BonusHitPoints();
         }
 
         private void RemoveExistingAttribute(ICharacterAttribute attribute)

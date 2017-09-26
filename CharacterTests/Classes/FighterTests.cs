@@ -1,6 +1,4 @@
-﻿using System;
-using Characters;
-using Characters.Classes;
+﻿using Characters.Classes;
 using Characters.Dice;
 using Characters.Physical;
 using FluentAssertions;

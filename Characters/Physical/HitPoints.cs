@@ -1,4 +1,5 @@
-﻿namespace Characters.Physical
+﻿
+namespace Characters.Physical
 {
     public class HitPoints
     {

@@ -1,4 +1,5 @@
-﻿using Characters.Races;
+﻿using Characters.Physical;
+using Characters.Races;
 
 namespace Characters.Attributes
 {
@@ -25,8 +26,12 @@ namespace Characters.Attributes
         public void Set(AttributeScore score) => _value = score;
         public AttributeScore Bonus()
         {
-            AttributeScore score = Score().Bonus();
-            return score;
+            return new AttributeScore(Score().Bonus());
+        }
+
+        public HitPoints BonusHitPoints()
+        {
+            return new HitPoints(Score().Bonus());
         }
     }
 }

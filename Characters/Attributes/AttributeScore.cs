@@ -53,9 +53,9 @@ namespace Characters.Attributes
             return new AttributeScore(left._value - right);
         }
 
-        public AttributeScore Bonus()
+        public int Bonus()
         {
-            return new AttributeScore((int)Math.Floor((decimal)(_value - 10) / 2));
+            return (int)Math.Floor((decimal)(_value - 10) / 2);
         }
     }
 }

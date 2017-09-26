@@ -1,5 +1,4 @@
-﻿using Characters;
-using Characters.Dice;
+﻿using Characters.Dice;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

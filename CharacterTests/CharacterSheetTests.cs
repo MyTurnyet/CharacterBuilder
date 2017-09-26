@@ -1,7 +1,6 @@
 ﻿using Characters;
 using Characters.Attributes;
 using Characters.Classes;
-using Characters.Dice;
 using Characters.Physical;
 using Characters.Races;
 using FluentAssertions;
@@ -26,6 +25,7 @@ namespace CharacterTests
         {
             SetupAttributes();
         }
+
         [TestMethod, TestCategory("Unit")]
         public void ShouldEquateAttributes()
         {
@@ -59,9 +59,7 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPoints()
         {
             //arrange
-            HitPoints expectedHitPoints = new HitPoints(14);
-            HitDie hitDie = HitDie.d10;
-            AttributeScore constitutionScore = new AttributeScore(18);
+            HitPoints expectedHitPoints = new HitPoints(11);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
 
             //act
@@ -70,6 +68,21 @@ namespace CharacterTests
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
         }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnStartingHitPointsForWizard()
+        {
+            //arrange
+            HitPoints expectedHitPoints = new HitPoints(7);
+            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.WoodElf, _attributeSet);
+
+            //act
+            HitPoints actualHitPoints = _characterSheet.HitPoints();
+
+            //assert
+            actualHitPoints.Should().Be(expectedHitPoints);
+        }
+
         #region Helper Methods
         private void SetupAttributes()
         {

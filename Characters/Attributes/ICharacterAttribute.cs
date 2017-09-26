@@ -1,4 +1,5 @@
-﻿using Characters.Races;
+﻿using Characters.Physical;
+using Characters.Races;
 
 namespace Characters.Attributes
 {
@@ -11,5 +12,6 @@ namespace Characters.Attributes
         void ApplyRacialBonus(CharacterRace human);
         void Set(AttributeScore expectedScore);
         AttributeScore Bonus();
+        HitPoints BonusHitPoints();
     }
 }
