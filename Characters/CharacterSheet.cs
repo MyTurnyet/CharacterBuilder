@@ -24,6 +24,6 @@ namespace Characters
             attribute.ApplyRacialBonus((CharacterRace)_race);
             return attribute;
         }
-        public HitPoints HitPoints() => _characterClass.HitDie().MaxHitPoints() + _attributeSet.Constitution().BonusHitPoints();
+        public HitPoints HitPoints() => _characterClass.HitDie().MaxHitPoints() + _attributeSet.Constitution().BonusHitPoints() + _race.BonusHitPoints();
     }
 }

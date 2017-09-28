@@ -9,5 +9,6 @@ namespace Characters.Races
         int GetHashCode();
         IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
         ISpeed Speed();
+        HitPoints BonusHitPoints();
     }
 }

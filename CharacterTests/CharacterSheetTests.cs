@@ -56,11 +56,24 @@ namespace CharacterTests
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnStartingHitPoints()
+        public void ShouldReturnStartingHitPointsForHillDwarfFighter()
+        {
+            //arrange
+            HitPoints expectedHitPoints = new HitPoints(12);
+            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf, _attributeSet);
+
+            //act
+            HitPoints actualHitPoints = _characterSheet.HitPoints();
+
+            //assert
+            actualHitPoints.Should().Be(expectedHitPoints);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnStartingHitPointsForMountainDwarfFighter()
         {
             //arrange
             HitPoints expectedHitPoints = new HitPoints(11);
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
+            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.MountainDwarf, _attributeSet);
 
             //act
             HitPoints actualHitPoints = _characterSheet.HitPoints();
@@ -70,7 +83,7 @@ namespace CharacterTests
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnStartingHitPointsForWizard()
+        public void ShouldReturnStartingHitPointsForWoodElfWizard()
         {
             //arrange
             HitPoints expectedHitPoints = new HitPoints(7);
@@ -83,6 +96,19 @@ namespace CharacterTests
             actualHitPoints.Should().Be(expectedHitPoints);
         }
 
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnStartingHitPointsForWoodElfFighter()
+        {
+            //arrange
+            HitPoints expectedHitPoints = new HitPoints(11);
+            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
+
+            //act
+            HitPoints actualHitPoints = _characterSheet.HitPoints();
+
+            //assert
+            actualHitPoints.Should().Be(expectedHitPoints);
+        }
         #region Helper Methods
         private void SetupAttributes()
         {
