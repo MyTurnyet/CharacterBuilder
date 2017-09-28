@@ -52,6 +52,7 @@
     <Compile Include="Physical\HitPoints.cs" />
     <Compile Include="Physical\ISize.cs" />
     <Compile Include="Physical\ISpeed.cs" />
+    <Compile Include="Physical\Proficiency.cs" />
     <Compile Include="Physical\Size.cs" />
     <Compile Include="Physical\Speed.cs" />
     <Compile Include="Classes\CharacterClass.cs" />

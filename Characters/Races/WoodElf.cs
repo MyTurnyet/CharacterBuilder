@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Physical;
 
 namespace Characters.Races
@@ -11,5 +12,9 @@ namespace Characters.Races
         private AttributeScore ApplyWisdomBonus(ICharacterAttribute attribute) => attribute.MatchesName(CharacterAttributeName.Wisdom) ? new AttributeScore(1) : new AttributeScore(0);
         public override ISpeed Speed() => (Speed)base.Speed() + _fleetFootBonus;
         public override HitPoints BonusHitPoints() => new HitPoints(0);
+        public override List<Proficiency> Proficiencies()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

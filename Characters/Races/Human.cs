@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Physical;
 
 namespace Characters.Races
@@ -10,5 +11,9 @@ namespace Characters.Races
         public override ISpeed Speed() => new Speed(30);
         public override HitPoints BonusHitPoints() => new HitPoints(0);
         public override Size Size() => Physical.Size.Medium;
+        public override List<Proficiency> Proficiencies()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

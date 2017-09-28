@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Physical;
 
 namespace Characters.Races

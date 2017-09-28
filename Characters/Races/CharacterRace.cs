@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Physical;
 
 namespace Characters.Races
@@ -27,5 +28,6 @@ namespace Characters.Races
         public static bool operator ==(CharacterRace left, CharacterRace right) => Equals(left, right);
         public static bool operator !=(CharacterRace left, CharacterRace right) => !Equals(left, right);
         public abstract Size Size();
+        public abstract List<Proficiency> Proficiencies();
     }
 }

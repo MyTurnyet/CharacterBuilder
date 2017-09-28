@@ -1,4 +1,6 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Characters.Attributes;
 using Characters.Physical;
 using Characters.Races;
 using FluentAssertions;
@@ -46,6 +48,28 @@ namespace CharacterTests.Races
             ISpeed actualsSpeed = CharacterRace.HillDwarf.Speed();
             //assert
             actualsSpeed.Should().Be(expectedSpeed);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnProficiencies()
+        {
+            //arrange
+            List<Proficiency> expectedProf = new List<Proficiency>
+            {
+                Proficiency.Battleaxe,
+                Proficiency.Handaxe,
+                Proficiency.ThrowingHammer,
+                Proficiency.Warhammer,
+                Proficiency.BrewersSupplies,
+                Proficiency.MasonsTools,
+                Proficiency.SmithsTools,
+                Proficiency.LightArmor,
+                Proficiency.MediumArmor
+            };
+            //act
+            List<Proficiency> actualProfs = CharacterRace.MountainDwarf.Proficiencies();
+
+            //assert
+            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
     }
 }
