@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Dice;
 using Characters.Physical;
 
@@ -10,5 +11,6 @@ namespace Characters.Classes
         int GetHashCode();
         HitDie HitDie();
         List<Proficiency> Proficiencies();
+        List<SavingThrowAttribute> SavingThrows();
     }
 }

@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\CharacterAttributeSetTests.cs" />
+    <Compile Include="Attributes\SavingThrowAttributesTests.cs" />
     <Compile Include="Classes\FighterTests.cs" />
     <Compile Include="Classes\WizardTests.cs" />
     <Compile Include="Dice\HitDieTests.cs" />

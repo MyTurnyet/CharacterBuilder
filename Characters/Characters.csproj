@@ -45,6 +45,7 @@
     <Compile Include="Attributes\AttributeScore.cs" />
     <Compile Include="Attributes\AttributeSet.cs" />
     <Compile Include="Attributes\IAttributeSet.cs" />
+    <Compile Include="Attributes\SavingThrowAttribute.cs" />
     <Compile Include="Classes\Fighter.cs" />
     <Compile Include="Classes\Wizard.cs" />
     <Compile Include="Dice\Die.cs" />

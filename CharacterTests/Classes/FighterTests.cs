@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Characters.Attributes;
 using Characters.Classes;
 using Characters.Dice;
 using Characters.Physical;
@@ -53,5 +54,21 @@ namespace CharacterTests.Classes
             //assert
             actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSavingThrows()
+        {
+            //assign
+            List<SavingThrowAttribute> expectedThrowAttributes = new List<SavingThrowAttribute>
+            {
+                SavingThrowAttribute.Strength,
+                SavingThrowAttribute.Constitution
+            };
+            //act
+            List<SavingThrowAttribute> savingThrows = CharacterClass.Fighter.SavingThrows();
+            //assert
+            savingThrows.All(i => expectedThrowAttributes.Contains(i)).Should().BeTrue();
+        }
+
     }
 }

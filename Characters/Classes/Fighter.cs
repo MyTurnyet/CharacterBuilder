@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Dice;
 using Characters.Physical;
 
@@ -14,7 +15,8 @@ namespace Characters.Classes
             Proficiency.AllArmor,
             Proficiency.AllShields
         };
-
+        public override List<SavingThrowAttribute> SavingThrows() => new List<SavingThrowAttribute>
+        {SavingThrowAttribute.Strength,SavingThrowAttribute.Constitution};
         public HitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }
 }

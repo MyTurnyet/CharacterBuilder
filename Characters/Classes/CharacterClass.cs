@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Dice;
 using Characters.Physical;
 
@@ -19,6 +20,7 @@ namespace Characters.Classes
         public override int GetHashCode() => (_className != null ? _className.GetHashCode() : 0);
         public abstract HitDie HitDie();
         public abstract List<Proficiency> Proficiencies();
+        public abstract List<SavingThrowAttribute> SavingThrows();
         public static bool operator ==(CharacterClass left, CharacterClass right) => Equals(left, right);
         public static bool operator !=(CharacterClass left, CharacterClass right) => !Equals(left, right);
         
