@@ -11,6 +11,10 @@ namespace Characters.Physical
         private readonly string _name;
 
         //Weapons
+        public static Proficiency Longbow = new Proficiency("Longbow");
+        public static Proficiency Shortbow = new Proficiency("Longbow");
+        public static Proficiency Longsword = new Proficiency("Longbow");
+        public static Proficiency Shortsword = new Proficiency("Longbow");
         public static Proficiency Battleaxe = new Proficiency("Battleaxe");
         public static Proficiency Handaxe = new Proficiency("Handaxe");
         public static Proficiency ThrowingHammer = new Proficiency("Throwing Hammer");

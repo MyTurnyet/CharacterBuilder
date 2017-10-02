@@ -1,4 +1,7 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Characters.Attributes;
+using Characters.Physical;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -34,6 +37,23 @@ namespace CharacterTests.Races
             expectedInt.Should().Be(new AttributeScore(1));
             expectedWiz.Should().Be(new AttributeScore(0));
             expectedChr.Should().Be(new AttributeScore(0));
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnProficiencies()
+        {
+            //arrange
+            List<Proficiency> expectedProf = new List<Proficiency>
+            {
+                Proficiency.Longbow,
+                Proficiency.Longsword,
+                Proficiency.Shortbow,
+                Proficiency.Shortsword
+            };
+            //act
+            List<Proficiency> actualProfs = CharacterRace.HighElf.Proficiencies();
+
+            //assert
+            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
     }
 }

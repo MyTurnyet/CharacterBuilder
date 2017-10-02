@@ -1,4 +1,6 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Characters.Attributes;
 using Characters.Physical;
 using Characters.Races;
 using FluentAssertions;
@@ -47,6 +49,23 @@ namespace CharacterTests.Races
             ISpeed actualsSpeed = CharacterRace.WoodElf.Speed();
             //assert
             actualsSpeed.Should().Be(expectedSpeed);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnProficiencies()
+        {
+            //arrange
+            List<Proficiency> expectedProf = new List<Proficiency>
+            {
+                Proficiency.Longbow,
+                Proficiency.Longsword,
+                Proficiency.Shortbow,
+                Proficiency.Shortsword
+            };
+            //act
+            List<Proficiency> actualProfs = CharacterRace.WoodElf.Proficiencies();
+
+            //assert
+            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
     }
 }
