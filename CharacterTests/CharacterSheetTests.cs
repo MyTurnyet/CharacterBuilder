@@ -1,4 +1,6 @@
-﻿using Characters;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Characters;
 using Characters.Attributes;
 using Characters.Classes;
 using Characters.Physical;
@@ -109,6 +111,33 @@ namespace CharacterTests
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
         }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldShouldReturnProficienciesForDwarfFighter()
+        {
+            //assign
+            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf, _attributeSet);
+            List<Proficiency> expectedProficiencies = new List<Proficiency>
+            {
+                Proficiency.Battleaxe,
+                Proficiency.Handaxe,
+                Proficiency.ThrowingHammer,
+                Proficiency.Warhammer,
+                Proficiency.BrewersSupplies,
+                Proficiency.MasonsTools,
+                Proficiency.SmithsTools,
+                Proficiency.SimpleWeapons,
+                Proficiency.MartialWeapons,
+                Proficiency.AllArmor,
+                Proficiency.AllShields
+            };
+        
+            //act
+            List<Proficiency> actualProficiencies = _characterSheet.Proficiencies();
+            //assert
+            actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
+        }
+
         #region Helper Methods
         private void SetupAttributes()
         {

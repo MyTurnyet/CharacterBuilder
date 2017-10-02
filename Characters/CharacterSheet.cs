@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Classes;
 using Characters.Physical;
 using Characters.Races;
@@ -25,5 +26,12 @@ namespace Characters
             return attribute;
         }
         public HitPoints HitPoints() => _characterClass.HitDie().MaxHitPoints() + _attributeSet.Constitution().BonusHitPoints() + _race.BonusHitPoints();
+        public List<Proficiency> Proficiencies()
+        {
+            List<Proficiency> proficiencies = new List<Proficiency>();
+            proficiencies.AddRange(_characterClass.Proficiencies());
+            proficiencies.AddRange(_race.Proficiencies());
+            return proficiencies;
+        }
     }
 }

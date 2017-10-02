@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using Characters.Attributes;
 using Characters.Physical;
 
 namespace Characters.Races
@@ -10,5 +11,6 @@ namespace Characters.Races
         IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
         ISpeed Speed();
         HitPoints BonusHitPoints();
+        List<Proficiency> Proficiencies();
     }
 }
