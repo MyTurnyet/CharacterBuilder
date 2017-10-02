@@ -1,6 +1,9 @@
-﻿using Characters.Classes;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Characters.Classes;
 using Characters.Dice;
 using Characters.Physical;
+using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -32,6 +35,23 @@ namespace CharacterTests.Classes
             HitPoints actualHitPoints = fighter.BaseHitPoints();
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnProficiencies()
+        {
+            //arrange
+            List<Proficiency> expectedProf = new List<Proficiency>
+            {
+                Proficiency.SimpleWeapons,
+                Proficiency.MartialWeapons,
+                Proficiency.AllArmor,
+                Proficiency.AllShields
+            };
+            //act
+            List<Proficiency> actualProfs = CharacterClass.Fighter.Proficiencies();
+
+            //assert
+            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
     }
 }
