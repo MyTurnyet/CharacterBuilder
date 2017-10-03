@@ -21,6 +21,7 @@ namespace Characters.Classes
         public abstract HitDie HitDie();
         public abstract List<Proficiency> Proficiencies();
         public abstract List<SavingThrowAttribute> SavingThrows();
+        public abstract List<Skill> Skills();
         public static bool operator ==(CharacterClass left, CharacterClass right) => Equals(left, right);
         public static bool operator !=(CharacterClass left, CharacterClass right) => !Equals(left, right);
         

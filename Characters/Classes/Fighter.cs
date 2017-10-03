@@ -5,9 +5,9 @@ using Characters.Physical;
 
 namespace Characters.Classes
 {
-    public class Fighter:CharacterClass
+    public class Fighter : CharacterClass
     {
-        public Fighter() : base("Fighter"){}
+        public Fighter() : base("Fighter") { }
         public override HitDie HitDie() => Dice.HitDie.d10;
         public override List<Proficiency> Proficiencies() => new List<Proficiency>{
             Proficiency.SimpleWeapons,
@@ -17,6 +17,9 @@ namespace Characters.Classes
         };
         public override List<SavingThrowAttribute> SavingThrows() => new List<SavingThrowAttribute>
         {SavingThrowAttribute.Strength,SavingThrowAttribute.Constitution};
+        public override List<Skill> Skills() => new List<Skill>
+            {Skill.Acrobatics,Skill.AnimalHandling,Skill.Athletics,Skill.History,
+                Skill.Insight,Skill.Intimidation,Skill.Perception,Skill.Survival};
         public HitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }
 }

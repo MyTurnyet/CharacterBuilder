@@ -56,7 +56,24 @@ namespace CharacterTests.Classes
             //assert
             savingThrows.All(i => expectedThrowAttributes.Contains(i)).Should().BeTrue();
         }
-
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSkillList()
+        {
+            //assign
+            List<Skill> expectedSkills = new List<Skill>
+            {
+                Skill.Arcana,
+                Skill.History,
+                Skill.Insight,
+                Skill.Investigation,
+                Skill.Medicine,
+                Skill.Religion
+            };
+            //act
+            List<Skill> actualSkills = CharacterClass.Wizard.Skills();
+            //assert
+            actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
+        }
 
     }
 }

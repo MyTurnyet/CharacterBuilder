@@ -55,6 +55,7 @@
     <Compile Include="Physical\ISpeed.cs" />
     <Compile Include="Physical\Proficiency.cs" />
     <Compile Include="Physical\Size.cs" />
+    <Compile Include="Physical\Skill.cs" />
     <Compile Include="Physical\Speed.cs" />
     <Compile Include="Classes\CharacterClass.cs" />
     <Compile Include="Races\CharacterRace.cs" />

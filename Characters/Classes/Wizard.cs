@@ -7,7 +7,7 @@ namespace Characters.Classes
 {
     public class Wizard : CharacterClass
     {
-        public Wizard() : base("Wizard"){}
+        public Wizard() : base("Wizard") { }
         public override HitDie HitDie() => Dice.HitDie.d6;
         public override List<Proficiency> Proficiencies() => new List<Proficiency>
         {
@@ -18,5 +18,8 @@ namespace Characters.Classes
             Proficiency.LightCrossbow,
         };
         public override List<SavingThrowAttribute> SavingThrows() => new List<SavingThrowAttribute> { SavingThrowAttribute.Intellegence, SavingThrowAttribute.Wisdom };
+        public override List<Skill> Skills() => new List<Skill>
+            {Skill.Arcana,Skill.History,Skill.Insight,
+                Skill.Investigation,Skill.Medicine,Skill.Religion};
     }
 }

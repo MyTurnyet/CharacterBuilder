@@ -12,5 +12,6 @@ namespace Characters.Classes
         HitDie HitDie();
         List<Proficiency> Proficiencies();
         List<SavingThrowAttribute> SavingThrows();
+        List<Skill> Skills();
     }
 }
