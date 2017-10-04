@@ -14,7 +14,7 @@ namespace CharacterTests.Dice
             //arrange
             HitPoints expectedHitPoints = new HitPoints(10);
             //act
-            HitPoints actualHitPoints = HitDie.d10.MaxHitPoints();
+            HitPoints actualHitPoints = HitDie.Fighter.MaxHitPoints();
 
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);

@@ -18,9 +18,9 @@ namespace CharacterTests.Classes
         {
             //arrange
             Fighter fighter = new Fighter();
-            Die expecteDie = Die.d10;
+            IDie expecteDie = Die.d10;
             //act
-            Die hitDie = fighter.HitDie();
+            IHitDie hitDie = fighter.HitDie();
             //assert
             hitDie.Should().Be(expecteDie);
         }

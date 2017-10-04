@@ -137,6 +137,32 @@ namespace CharacterTests
             //assert
             actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldShouldReturnProficienciesForDwarfWizard()
+        {
+            //assign
+            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf, _attributeSet);
+            List<Proficiency> expectedProficiencies = new List<Proficiency>
+            {
+                Proficiency.Battleaxe,
+                Proficiency.Handaxe,
+                Proficiency.ThrowingHammer,
+                Proficiency.Warhammer,
+                Proficiency.BrewersSupplies,
+                Proficiency.MasonsTools,
+                Proficiency.SmithsTools,
+                Proficiency.Dagger,
+                Proficiency.Darts,
+                Proficiency.Sling,
+                Proficiency.Quarterstaff,
+                Proficiency.LightCrossbow,
+            };
+        
+            //act
+            List<Proficiency> actualProficiencies = _characterSheet.Proficiencies();
+            //assert
+            actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
+        }
 
         #region Helper Methods
         private void SetupAttributes()

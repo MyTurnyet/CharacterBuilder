@@ -1,6 +1,6 @@
 ﻿namespace Characters.Dice
 {
-    public class Die
+    public class Die : IDie
     {
         // ReSharper disable InconsistentNaming
         protected readonly int _numberOfSides;

@@ -1,14 +1,12 @@
 ﻿using Characters.Physical;
 namespace Characters.Dice
 {
-    public class HitDie:Die
+    public class HitDie : Die, IHitDie
     {
-        // ReSharper disable InconsistentNaming
-        public new static readonly HitDie d6 = new HitDie(6);
-        public new static readonly HitDie d10 = new HitDie(10);
-        // ReSharper restore InconsistentNaming
+        public static readonly WizardHitDie Wizard = new WizardHitDie();
+        public static readonly FigtherHitDie Fighter = new FigtherHitDie();
 
-        private HitDie(int numberOfSides) : base(numberOfSides){}
+        protected HitDie(int numberOfSides) : base(numberOfSides) { }
         public HitPoints MaxHitPoints() => new HitPoints(_numberOfSides);
     }
 }

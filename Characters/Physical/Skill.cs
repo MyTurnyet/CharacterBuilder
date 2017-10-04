@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Characters.Physical
 {
-    public class Skill
+    public class Skill : ISkill
     {
         private readonly string _skillName;
         public static readonly Skill Acrobatics = new Skill("Acrobatics");

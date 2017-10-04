@@ -18,7 +18,7 @@ namespace Characters.Classes
         public override bool Equals(object obj) => (CharacterClass)obj != null && ((CharacterClass)obj)._className == _className;
         protected bool Equals(CharacterClass other) => string.Equals(_className, other._className);
         public override int GetHashCode() => (_className != null ? _className.GetHashCode() : 0);
-        public abstract HitDie HitDie();
+        public abstract IHitDie HitDie();
         public abstract List<Proficiency> Proficiencies();
         public abstract List<SavingThrowAttribute> SavingThrows();
         public abstract List<Skill> Skills();

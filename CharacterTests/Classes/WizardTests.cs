@@ -17,9 +17,9 @@ namespace CharacterTests.Classes
         {
             //arrange
             Wizard wizard = new Wizard();
-            Die expecteDie = Die.d6;
+            IDie expecteDie = Die.d6;
             //act
-            Die hitDie = wizard.HitDie();
+            IHitDie hitDie = wizard.HitDie();
             //assert
             hitDie.Should().Be(expecteDie);
         }

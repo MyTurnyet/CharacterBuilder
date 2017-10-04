@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Characters.Physical
 {
-    public class Proficiency
+    public class Proficiency : IProficiency
     {
         private readonly string _name;
 

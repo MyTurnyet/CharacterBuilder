@@ -1,7 +1,7 @@
 ﻿
 namespace Characters.Physical
 {
-    public class HitPoints
+    public class HitPoints : IHitPoints
     {
         private readonly int _hpValue;
 

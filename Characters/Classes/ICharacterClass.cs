@@ -9,7 +9,7 @@ namespace Characters.Classes
     {
         bool Equals(object obj);
         int GetHashCode();
-        HitDie HitDie();
+        IHitDie HitDie();
         List<Proficiency> Proficiencies();
         List<SavingThrowAttribute> SavingThrows();
         List<Skill> Skills();

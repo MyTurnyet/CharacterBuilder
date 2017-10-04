@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Characters.Attributes
 {
-    public class SavingThrowAttribute
+    public class SavingThrowAttribute : ISavingThrowAttribute
     {
         private readonly IAttributeName _attributeName;
 

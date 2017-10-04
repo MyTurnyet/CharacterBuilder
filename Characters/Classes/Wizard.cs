@@ -8,7 +8,7 @@ namespace Characters.Classes
     public class Wizard : CharacterClass
     {
         public Wizard() : base("Wizard") { }
-        public override HitDie HitDie() => Dice.HitDie.d6;
+        public override IHitDie HitDie() => Dice.HitDie.Wizard;
         public override List<Proficiency> Proficiencies() => new List<Proficiency>
         {
             Proficiency.Dagger,
