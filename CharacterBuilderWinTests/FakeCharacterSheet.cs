@@ -1,0 +1,30 @@
+﻿using System.Collections.Generic;
+using Characters;
+using Characters.Attributes;
+using Characters.Physical;
+
+namespace CharacterBuilderWinTests
+{
+    internal class FakeCharacterSheet:ICharacterSheet
+    {
+        public FakeCharacterSheet(int strength, int dexterity, int constitution, int intellegence, int wisdom, int charisma)
+        {
+            
+        }
+
+        public ICharacterAttribute Attribute(IAttributeName attributeName)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public HitPoints HitPoints()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public List<Proficiency> Proficiencies()
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+}

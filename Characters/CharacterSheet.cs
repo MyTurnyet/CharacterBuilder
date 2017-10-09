@@ -17,8 +17,11 @@ namespace Characters
             _characterClass = characterClass;
             _race = race;
             _attributeSet = attributeSet;
-            
+
         }
+
+        public CharacterSheet() : this(new Fighter(), new Human(), new AttributeSet()) { }
+
         public ICharacterAttribute Attribute(IAttributeName attributeName)
         {
             ICharacterAttribute attribute = _attributeSet.MatchesName(attributeName);
