@@ -5,9 +5,9 @@ namespace CharacterBuilderWin
 {
     public partial class FrmMain : Form
     {
-        private readonly CharacterBuilderFacilitator _facilitator;
+        private readonly ICharacterBuilderFacilitator _facilitator;
 
-        public FrmMain(CharacterBuilderFacilitator facilitator)
+        public FrmMain(ICharacterBuilderFacilitator facilitator)
         {
             _facilitator = facilitator;
         }
@@ -17,10 +17,11 @@ namespace CharacterBuilderWin
             InitializeComponent();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        public void UpdateOutputText()
         {
-            Application.Exit();
+            
         }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) => Application.Exit();
 
         private void numericUpDown6_ValueChanged(object sender, EventArgs e)
         {

@@ -8,7 +8,6 @@ namespace Characters.Classes
     public interface ICharacterClass
     {
         bool Equals(object obj);
-        int GetHashCode();
         IHitDie HitDie();
         List<Proficiency> Proficiencies();
         List<SavingThrowAttribute> SavingThrows();

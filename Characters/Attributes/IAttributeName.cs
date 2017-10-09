@@ -3,6 +3,5 @@
     public interface IAttributeName
     {
         bool Equals(object obj);
-        int GetHashCode();
     }
 }

@@ -6,7 +6,7 @@ namespace Characters.Races
 {
     public class MountainDwarf : Dwarf
     {
-        public MountainDwarf():base("Mountain Dwarf"){}
+        public MountainDwarf():base(new TextOf("Mountain Dwarf")){}
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (AttributeScore)base.RacialAttributeAdjustment(attribute) + ApplyStrengthBonus(attribute);
         public override HitPoints BonusHitPoints() => new HitPoints(0);
         public override List<Proficiency> Proficiencies() => new List<Proficiency>(base.Proficiencies()) { Proficiency.LightArmor, Proficiency.MediumArmor };

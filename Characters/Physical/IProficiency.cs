@@ -3,6 +3,5 @@
     public interface IProficiency
     {
         bool Equals(object obj);
-        int GetHashCode();
     }
 }

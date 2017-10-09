@@ -7,6 +7,8 @@ namespace CharacterBuilderWinTests
 {
     internal class FakeCharacterSheet:ICharacterSheet
     {
+        public FakeCharacterSheet():this(10,10,10,10,10,10){}
+
         public FakeCharacterSheet(int strength, int dexterity, int constitution, int intellegence, int wisdom, int charisma)
         {
             

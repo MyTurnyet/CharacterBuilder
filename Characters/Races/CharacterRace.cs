@@ -4,9 +4,10 @@ using Characters.Physical;
 
 namespace Characters.Races
 {
-   public abstract class CharacterRace : ICharacterRace
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
+    public abstract class CharacterRace : ICharacterRace
     {
-        private readonly string _race;
+        private readonly TextOf _race;
 
         public static readonly CharacterRace Human = new Human();
         public static readonly CharacterRace WoodElf = new WoodElf();
@@ -15,7 +16,7 @@ namespace Characters.Races
         public static readonly CharacterRace MountainDwarf = new MountainDwarf();
 
 
-        internal CharacterRace(string race)
+        internal CharacterRace(TextOf race)
         {
             _race = race;
         }
@@ -28,4 +29,5 @@ namespace Characters.Races
         public abstract Size Size();
         public abstract List<Proficiency> Proficiencies();
     }
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

@@ -1,5 +1,6 @@
 ﻿namespace Characters.Physical
 {
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public class Size : ISize
     {
         private readonly int _value;
@@ -20,4 +21,5 @@
         public static bool operator >(Size left, Size right) => left._value > right._value;
         public static bool operator <(Size left, Size right) => left._value < right._value;
     }
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

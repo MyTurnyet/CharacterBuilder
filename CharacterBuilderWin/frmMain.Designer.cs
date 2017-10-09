@@ -266,6 +266,7 @@
             this.tbOutput.Name = "tbOutput";
             this.tbOutput.Size = new System.Drawing.Size(759, 428);
             this.tbOutput.TabIndex = 0;
+            this.tbOutput.Text = "test";
             // 
             // FrmMain
             // 
@@ -316,7 +317,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbOutput;
+        public System.Windows.Forms.TextBox tbOutput;
     }
 }
 

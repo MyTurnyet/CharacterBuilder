@@ -7,7 +7,7 @@ using Characters;
 
 namespace CharacterBuilderWin
 {
-    public class CharacterBuilderFacilitator
+    public class CharacterBuilderFacilitator : ICharacterBuilderFacilitator
     {
         private readonly ICharacterSheet _characterSheet;
 
@@ -18,6 +18,9 @@ namespace CharacterBuilderWin
 
         public CharacterBuilderFacilitator():this(new CharacterSheet()){}
 
-        public ICharacterSheet CharacterSheet() => _characterSheet;
+        public TextOf CharacterSheetText()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
