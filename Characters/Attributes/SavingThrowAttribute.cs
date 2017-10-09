@@ -18,7 +18,5 @@
         public override bool Equals(object obj) => Equals((SavingThrowAttribute)obj);
         private bool Equals(SavingThrowAttribute other) => Equals(_attributeName, other._attributeName);
         public override int GetHashCode() => (_attributeName != null ? _attributeName.GetHashCode() : 0);
-        public static bool operator ==(SavingThrowAttribute left, SavingThrowAttribute right) => Equals(left, right);
-        public static bool operator !=(SavingThrowAttribute left, SavingThrowAttribute right) => !Equals(left, right);
     }
 }

@@ -16,9 +16,6 @@ namespace Characters.Attributes
         }
         public override bool Equals(object obj) => (CharacterAttribute)obj != null && ((CharacterAttribute)obj)._name == _name;
         public override int GetHashCode() => _name.GetHashCode();
-        protected bool Equals(CharacterAttribute other) => _name.Equals(other._name);
-        public static bool operator ==(CharacterAttribute left, CharacterAttribute right) => Equals(left, right);
-        public static bool operator !=(CharacterAttribute left, CharacterAttribute right) => !Equals(left, right);
         public bool MatchesName(IAttributeName attributeName) => attributeName.Equals(_name);
         public AttributeScore Score() => BaseScore() + (AttributeScore)_racialAttributeAdjustment;
         private AttributeScore BaseScore() => (AttributeScore)_value;

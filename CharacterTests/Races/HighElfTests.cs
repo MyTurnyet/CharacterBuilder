@@ -39,6 +39,21 @@ namespace CharacterTests.Races
             expectedChr.Should().Be(new AttributeScore(0));
         }
         [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSize()
+        {
+            //arrange
+            ISize actualsSize = CharacterRace.HighElf.Size();
+
+            //assert
+            actualsSize.Should().Be(Size.Medium);
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnHitPointBonus()
+        {
+            CharacterRace.HighElf.BonusHitPoints().Should().Be(new HitPoints(0));
+        }
+        [TestMethod, TestCategory("Unit")]
         public void ShouldReturnProficiencies()
         {
             //arrange

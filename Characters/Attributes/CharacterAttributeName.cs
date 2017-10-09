@@ -17,8 +17,5 @@
         }
         public override bool Equals(object obj) => (CharacterAttributeName)obj != null && ((CharacterAttributeName)obj)._name == _name;
         public override int GetHashCode() => _name.GetHashCode();
-        protected bool Equals(CharacterAttributeName other) => string.Equals(_name, other._name);
-        public static bool operator ==(CharacterAttributeName left, CharacterAttributeName right) => Equals(left, right);
-        public static bool operator !=(CharacterAttributeName left, CharacterAttributeName right) => !Equals(left, right);
     }
 }

@@ -40,18 +40,5 @@ namespace CharacterTests.Physical
             //assert
             actualSpeed.Should().Be(expectedSpeed);
         }
-        [TestMethod, TestCategory("Unit")]
-        public void ShouldSubtract()
-        {
-            //arrange
-            Speed expectedSpeed = new Speed(2);
-            Speed firstSpeed = new Speed(10);
-            Speed secondSpeed = new Speed(12);
-
-            //act
-            Speed actualSpeed = secondSpeed - firstSpeed;
-            //assert
-            actualSpeed.Should().Be(expectedSpeed);
-        }
     }
 }

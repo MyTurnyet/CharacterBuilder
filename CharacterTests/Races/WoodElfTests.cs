@@ -40,6 +40,15 @@ namespace CharacterTests.Races
         }
 
         [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSize()
+        {
+            //arrange
+            ISize actualsSize = CharacterRace.WoodElf.Size();
+
+            //assert
+            actualsSize.Should().Be(Size.Medium);
+        }
+        [TestMethod, TestCategory("Unit")]
         public void ShouldReturnSpeed()
         {
             //arrange

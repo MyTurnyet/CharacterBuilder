@@ -19,14 +19,12 @@ namespace Characters.Races
         {
             _race = race;
         }
-        public override bool Equals(object obj) => (CharacterRace)obj != null && ((CharacterRace)obj)._race == _race;
-        protected bool Equals(CharacterRace other) => string.Equals(_race, other._race);
-        public override int GetHashCode() => (_race != null ? _race.GetHashCode() : 0);
+
+        public override bool Equals(object obj) => (CharacterRace) obj != null && Equals((CharacterRace) obj);
+        private bool Equals(CharacterRace other) => string.Equals(_race, other._race);
         public abstract IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
         public abstract ISpeed Speed();
         public abstract HitPoints BonusHitPoints();
-        public static bool operator ==(CharacterRace left, CharacterRace right) => Equals(left, right);
-        public static bool operator !=(CharacterRace left, CharacterRace right) => !Equals(left, right);
         public abstract Size Size();
         public abstract List<Proficiency> Proficiencies();
     }

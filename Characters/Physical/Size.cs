@@ -17,9 +17,6 @@
 
         public override bool Equals(object obj) => (Size)obj != null && Equals((ISize)obj);
         private bool Equals(ISize other) => _value == ((Size)other)._value;
-        public override int GetHashCode() => _value;
-        public static bool operator ==(Size left, Size right) => Equals(left, right);
-        public static bool operator !=(Size left, Size right) => !Equals(left, right);
         public static bool operator >(Size left, Size right) => left._value > right._value;
         public static bool operator <(Size left, Size right) => left._value < right._value;
     }

@@ -1,4 +1,6 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Characters.Attributes;
 using Characters.Physical;
 using Characters.Races;
 using FluentAssertions;
@@ -45,6 +47,32 @@ namespace CharacterTests.Races
 
             //assert
             CharacterRace.Human.Speed().Should().Be(expectedSpeed);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSize()
+        {
+            //arrange
+            ISize actualsSize = CharacterRace.Human.Size();
+
+            //assert
+            actualsSize.Should().Be(Size.Medium);
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnHitPointBonus()
+        {
+            CharacterRace.Human.BonusHitPoints().Should().Be(new HitPoints(0));
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnProficiencies()
+        {
+            //arrange
+            List<Proficiency> expectedProf = new List<Proficiency>();
+            //act
+            List<Proficiency> actualProfs = CharacterRace.Human.Proficiencies();
+
+            //assert
+            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Characters.Races
         public override Size Size() => Physical.Size.Medium;
         public override List<Proficiency> Proficiencies()
         {
-            throw new System.NotImplementedException();
+            return new List<Proficiency>();
         }
     }
 }

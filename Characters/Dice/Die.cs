@@ -17,11 +17,7 @@
         {
             _numberOfSides = numberOfSides;
         }
-
         public override bool Equals(object obj) => Equals((Die)obj);
         private bool Equals(Die other) => _numberOfSides == other._numberOfSides;
-        public override int GetHashCode() => _numberOfSides;
-        public static bool operator ==(Die left, Die right) => Equals(left, right);
-        public static bool operator !=(Die left, Die right) => !Equals(left, right);
     }
 }

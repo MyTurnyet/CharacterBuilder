@@ -22,34 +22,8 @@
         public static readonly Skill Stealth = new Skill("Stealth");
         public static readonly Skill Survival = new Skill("Survival");
 
-        private Skill(string skillName)
-        {
-            _skillName = skillName;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return Equals((Skill)obj);
-        }
-
-        private bool Equals(Skill other)
-        {
-            return string.Equals(_skillName, other._skillName);
-        }
-
-        public override int GetHashCode()
-        {
-            return (_skillName != null ? _skillName.GetHashCode() : 0);
-        }
-
-        public static bool operator ==(Skill left, Skill right)
-        {
-            return Equals(left, right);
-        }
-
-        public static bool operator !=(Skill left, Skill right)
-        {
-            return !Equals(left, right);
-        }
+        private Skill(string skillName) => _skillName = skillName;
+        public override bool Equals(object obj) => Equals((Skill)obj);
+        private bool Equals(Skill other) => string.Equals(_skillName, other._skillName);
     }
 }
