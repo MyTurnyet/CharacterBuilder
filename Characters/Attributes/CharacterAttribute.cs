@@ -14,8 +14,9 @@ namespace Characters.Attributes
             _name = name;
             _value = value;
         }
+#pragma warning disable 659
         public override bool Equals(object obj) => (CharacterAttribute)obj != null && ((CharacterAttribute)obj)._name == _name;
-        public override int GetHashCode() => _name.GetHashCode();
+#pragma warning restore 659
         public bool MatchesName(IAttributeName attributeName) => attributeName.Equals(_name);
         public AttributeScore Score() => BaseScore() + (AttributeScore)_racialAttributeAdjustment;
         private AttributeScore BaseScore() => (AttributeScore)_value;

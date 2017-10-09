@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Characters.Attributes;
 using Characters.Physical;
 using Characters.Races;
@@ -67,12 +66,11 @@ namespace CharacterTests.Races
         public void ShouldReturnProficiencies()
         {
             //arrange
-            List<Proficiency> expectedProf = new List<Proficiency>();
             //act
             List<Proficiency> actualProfs = CharacterRace.Human.Proficiencies();
 
             //assert
-            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
+            actualProfs.Count.Should().Be(0);
         }
     }
 }

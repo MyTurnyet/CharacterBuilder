@@ -15,7 +15,8 @@
         {
             _name = name;
         }
+#pragma warning disable 659
         public override bool Equals(object obj) => (CharacterAttributeName)obj != null && ((CharacterAttributeName)obj)._name == _name;
-        public override int GetHashCode() => _name.GetHashCode();
+#pragma warning restore 659
     }
 }

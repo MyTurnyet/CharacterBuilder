@@ -39,8 +39,9 @@
         {
             _name = name;
         }
+#pragma warning disable 659
         public override bool Equals(object obj) => Equals((Proficiency)obj);
+#pragma warning restore 659
         private bool Equals(Proficiency other) => string.Equals(_name, other._name);
-        public override int GetHashCode() => (_name != null ? _name.GetHashCode() : 0);
     }
 }

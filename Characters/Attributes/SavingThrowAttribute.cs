@@ -15,8 +15,9 @@
         {
             _attributeName = attributeName;
         }
+#pragma warning disable 659
         public override bool Equals(object obj) => Equals((SavingThrowAttribute)obj);
+#pragma warning restore 659
         private bool Equals(SavingThrowAttribute other) => Equals(_attributeName, other._attributeName);
-        public override int GetHashCode() => (_attributeName != null ? _attributeName.GetHashCode() : 0);
     }
 }

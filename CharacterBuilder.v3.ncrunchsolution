@@ -1,6 +1,14 @@
 ﻿<SolutionConfiguration>
   <Settings>
     <AllowParallelTestExecution>False</AllowParallelTestExecution>
+    <MetricsExclusionList>
+      <Value>Attributes\IAttributeName.cs:Characters\Characters.csproj</Value>
+      <Value>Attributes\IAttributeScore.cs:Characters\Characters.csproj</Value>
+      <Value>Attributes\IAttributeSet.cs:Characters\Characters.csproj</Value>
+      <Value>Attributes\ICharacterAttribute.cs:Characters\Characters.csproj</Value>
+      <Value>Attributes\ISavingThrowAttribute.cs:Characters\Characters.csproj</Value>
+      <Value>Classes\ICharacterClass.cs:Characters\Characters.csproj</Value>
+    </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
 </SolutionConfiguration>

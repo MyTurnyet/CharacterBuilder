@@ -17,7 +17,9 @@
         {
             _numberOfSides = numberOfSides;
         }
+#pragma warning disable 659
         public override bool Equals(object obj) => Equals((Die)obj);
+#pragma warning restore 659
         private bool Equals(Die other) => _numberOfSides == other._numberOfSides;
     }
 }
