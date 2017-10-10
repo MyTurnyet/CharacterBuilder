@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Text;
 using CharacterBuilderWin;
+using CharacterBuilderWinTests.Fakes;
 using Characters;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,13 +15,13 @@ namespace CharacterBuilderWinTests
         //public void ShouldReturnCharacterSheet()
         //{
         //    //arrange
-        //    ICharacterSheet fakeHumanFighterCharacterSheet = new FakeCharacterSheet(10,10,10,10,10,10);
+        //    ICharacterSheet fakeHumanFighterCharacterSheet = new FakeCharacterSheet(10, 10, 10, 10, 10, 10);
         //    CharacterBuilderFacilitator characterBuilderFacilitator = new CharacterBuilderFacilitator(fakeHumanFighterCharacterSheet);
-
+        //    StringBuilder sb = new StringBuilder("Strength: 10");
         //    //act
-        //    TextOf actualSheet = characterBuilderFacilitator.CharacterSheetText();
+        //    StringBuilder actualSheet = characterBuilderFacilitator.CharacterSheetText();
         //    //assert
-        //    actualSheet.Should().Be(fakeHumanFighterCharacterSheet);
+        //    actualSheet.Should().Be(fakeHumanFighterCharacterSheet.StatsList());
         //}
 
     }

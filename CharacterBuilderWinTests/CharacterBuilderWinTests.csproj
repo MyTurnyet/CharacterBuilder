@@ -59,12 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterBuilderFacilitatorTests.cs" />
-    <Compile Include="FakeCharacterSheet.cs" />
+    <Compile Include="Fakes\FakeCharacterSheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmMainTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Fakes Include="Fakes\Characters.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,10 @@
-﻿using Characters;
+﻿using System.Text;
+using Characters;
 
 namespace CharacterBuilderWin
 {
     public interface ICharacterBuilderFacilitator
     {
-        TextOf CharacterSheetText();
+        StringBuilder CharacterSheetText();
     }
 }

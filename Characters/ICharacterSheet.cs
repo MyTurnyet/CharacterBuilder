@@ -9,5 +9,6 @@ namespace Characters
         ICharacterAttribute Attribute(IAttributeName attributeName);
         HitPoints HitPoints();
         List<Proficiency> Proficiencies();
+        TextOf StatsList();
     }
 }

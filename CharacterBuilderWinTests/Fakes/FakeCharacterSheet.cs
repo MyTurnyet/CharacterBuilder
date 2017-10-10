@@ -3,7 +3,7 @@ using Characters;
 using Characters.Attributes;
 using Characters.Physical;
 
-namespace CharacterBuilderWinTests
+namespace CharacterBuilderWinTests.Fakes
 {
     internal class FakeCharacterSheet:ICharacterSheet
     {
@@ -25,6 +25,11 @@ namespace CharacterBuilderWinTests
         }
 
         public List<Proficiency> Proficiencies()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public TextOf StatsList()
         {
             throw new System.NotImplementedException();
         }

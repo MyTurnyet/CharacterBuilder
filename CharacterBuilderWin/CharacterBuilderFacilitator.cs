@@ -18,9 +18,12 @@ namespace CharacterBuilderWin
 
         public CharacterBuilderFacilitator():this(new CharacterSheet()){}
 
-        public TextOf CharacterSheetText()
+        public StringBuilder CharacterSheetText()
         {
-            throw new NotImplementedException();
+            TextOf stats =  _characterSheet.StatsList();
+            StringBuilder stringBuilder = new StringBuilder();
+            stats.AddToStringBuilder(stringBuilder);
+            return stringBuilder;
         }
     }
 }
