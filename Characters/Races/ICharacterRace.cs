@@ -12,5 +12,6 @@ namespace Characters.Races
         ISpeed Speed();
         HitPoints BonusHitPoints();
         List<Proficiency> Proficiencies();
+        TextOf Name();
     }
 }

@@ -28,6 +28,10 @@ namespace Characters.Races
         public abstract HitPoints BonusHitPoints();
         public abstract Size Size();
         public abstract List<Proficiency> Proficiencies();
+        public TextOf Name()
+        {
+            return _race;
+        }
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

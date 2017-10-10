@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using Characters;
+using Characters.Attributes;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -81,11 +82,10 @@ namespace CharacterTests.Attributes
             AttributeScore expectedAttributeBonus = new AttributeScore(-5);
 
             //act
-            AttributeScore actualAttributeBonus =attribute.Bonus();
+            AttributeScore actualAttributeBonus = attribute.Bonus();
 
             //assert
             actualAttributeBonus.Should().Be(expectedAttributeBonus);
         }
-
     }
 }

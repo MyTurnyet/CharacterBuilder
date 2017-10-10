@@ -1,4 +1,5 @@
-﻿using Characters.Classes;
+﻿using Characters;
+using Characters.Classes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -26,6 +27,17 @@ namespace CharacterTests.Classes
 
             //assert
             classWizard.Should().NotBe(classFighter);
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnName()
+        {
+            //arrange
+            ICharacterClass classFighter = CharacterClass.Fighter;
+            //act
+            TextOf actualName = classFighter.Name();
+            //assert
+            actualName.Should().Be(new TextOf("Fighter"));
         }
 
 

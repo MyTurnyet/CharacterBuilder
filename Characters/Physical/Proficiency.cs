@@ -43,6 +43,7 @@
         }
         public override bool Equals(object obj) => Equals((Proficiency)obj);
         private bool Equals(Proficiency other) => string.Equals(_name, other._name);
+        public TextOf Name() => _name;
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

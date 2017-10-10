@@ -22,6 +22,7 @@ namespace Characters.Classes
         public abstract List<Proficiency> Proficiencies();
         public abstract List<SavingThrowAttribute> SavingThrows();
         public abstract List<Skill> Skills();
+        public TextOf Name() => _className;
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

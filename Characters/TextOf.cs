@@ -20,6 +20,11 @@ namespace Characters
         public override bool Equals(object obj) => Equals((TextOf)obj);
 
         private bool Equals(TextOf other) => other._text == _text;
+
+        public void AddToStringBuilder(StringBuilder stringBuilder)
+        {
+            stringBuilder.Append(_text);
+        }
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

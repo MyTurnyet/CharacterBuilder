@@ -3,5 +3,6 @@
     public interface IAttributeName
     {
         bool Equals(object obj);
+        TextOf Name();
     }
 }

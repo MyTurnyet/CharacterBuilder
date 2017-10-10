@@ -3,5 +3,6 @@
     public interface ISkill
     {
         bool Equals(object obj);
+        TextOf Name();
     }
 }

@@ -18,7 +18,7 @@
         }
 
         public override bool Equals(object obj) => (CharacterAttributeName)obj != null && ((CharacterAttributeName)obj)._name == _name;
-
+        public TextOf Name() => _name;
     }
 #pragma warning restore 659
 }

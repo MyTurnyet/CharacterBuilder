@@ -1,4 +1,5 @@
-﻿using Characters.Physical;
+﻿using Characters;
+using Characters.Physical;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,5 +29,8 @@ namespace CharacterTests.Physical
             (Size.Medium > Size.Small).Should().BeTrue();
             (Size.Small > Size.Tiny).Should().BeTrue();
         }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnName() => Size.Medium.Name().Should().Be(new TextOf("Medium"));
     }
 }

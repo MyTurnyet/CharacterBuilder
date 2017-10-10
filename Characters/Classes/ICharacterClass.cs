@@ -12,5 +12,6 @@ namespace Characters.Classes
         List<Proficiency> Proficiencies();
         List<SavingThrowAttribute> SavingThrows();
         List<Skill> Skills();
+        TextOf Name();
     }
 }

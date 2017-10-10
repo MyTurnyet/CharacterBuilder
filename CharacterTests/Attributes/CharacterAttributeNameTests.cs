@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using Characters;
+using Characters.Attributes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -27,5 +28,15 @@ namespace CharacterTests.Attributes
             //assert
             nameStr2.Should().NotBe(nameStr);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnNameObject()
+        {
+            //assign
+            IAttributeName nameStr = CharacterAttributeName.Strength;
+
+            //assert
+            nameStr.Name().Should().NotBe(new TextOf("Strength"));
+        }
+        
     }
 }

@@ -26,6 +26,7 @@
         private Skill(TextOf skillName) => _skillName = skillName;
         public override bool Equals(object obj) => Equals((Skill)obj);
         private bool Equals(Skill other) => string.Equals(_skillName, other._skillName);
+        public TextOf Name() => _skillName;
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

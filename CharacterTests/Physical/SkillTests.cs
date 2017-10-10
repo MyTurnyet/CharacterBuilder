@@ -1,4 +1,5 @@
-﻿using Characters.Physical;
+﻿using Characters;
+using Characters.Physical;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -27,6 +28,16 @@ namespace CharacterTests.Physical
             //assert
             actualSkill.Should().NotBe(expectedSkill);
         }
-
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnName()
+        {
+            //assign
+            Skill actualSkill = Skill.Deception;
+            //act
+            TextOf name = actualSkill.Name();
+            //assert
+            name.Should().Be(new TextOf("Deception"));
+        }
+        
     }
 }

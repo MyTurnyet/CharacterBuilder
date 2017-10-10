@@ -1,4 +1,5 @@
-﻿using Characters.Races;
+﻿using Characters;
+using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -27,6 +28,16 @@ namespace CharacterTests.Races
 
             //assert
             race2.Should().NotBe(race);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnName()
+        {
+            //assign
+            ICharacterRace race = CharacterRace.Human;
+         
+            //assert
+            TextOf name = race.Name();
+            name.Should().Be(new TextOf("Human"));
         }
     }
 }
