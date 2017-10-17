@@ -3,7 +3,9 @@ using Characters.Races;
 
 namespace Characters.Attributes
 {
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public class CharacterAttribute : ICharacterAttribute
+
     {
         private readonly IAttributeName _name;
         private IAttributeScore _value;
@@ -14,9 +16,7 @@ namespace Characters.Attributes
             _name = name;
             _value = value;
         }
-#pragma warning disable 659
         public override bool Equals(object obj) => (CharacterAttribute)obj != null && ((CharacterAttribute)obj)._name == _name;
-#pragma warning restore 659
         public bool MatchesName(IAttributeName attributeName) => attributeName.Equals(_name);
         public AttributeScore Score() => BaseScore() + (AttributeScore)_racialAttributeAdjustment;
         private AttributeScore BaseScore() => (AttributeScore)_value;
@@ -25,4 +25,5 @@ namespace Characters.Attributes
         public AttributeScore Bonus() => new AttributeScore(Score().Bonus());
         public HitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
     }
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

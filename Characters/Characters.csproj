@@ -44,9 +44,15 @@
     <Compile Include="Attributes\CharacterAttributeName.cs" />
     <Compile Include="Attributes\AttributeScore.cs" />
     <Compile Include="Attributes\AttributeSet.cs" />
+    <Compile Include="Attributes\CharismaAttribute.cs" />
+    <Compile Include="Attributes\ConstitutionAttribute.cs" />
+    <Compile Include="Attributes\DexterityAttribute.cs" />
     <Compile Include="Attributes\IAttributeSet.cs" />
     <Compile Include="Attributes\ISavingThrowAttribute.cs" />
     <Compile Include="Attributes\SavingThrowAttribute.cs" />
+    <Compile Include="Attributes\IntellegenceAttribute.cs" />
+    <Compile Include="Attributes\StrengthAttribute.cs" />
+    <Compile Include="Attributes\WisdomAttribute.cs" />
     <Compile Include="Classes\Fighter.cs" />
     <Compile Include="Classes\Wizard.cs" />
     <Compile Include="Dice\Die.cs" />

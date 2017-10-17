@@ -11,10 +11,8 @@ namespace Characters.Attributes
         {
             _value = value;
         }
-
-
+        
         public override bool Equals(object obj) => (AttributeScore)obj != null && Equals((AttributeScore)obj);
-
         private bool Equals(AttributeScore other) => _value == other._value;
         public static AttributeScore operator +(AttributeScore left, AttributeScore right) => new AttributeScore(left._value + right._value);
         public static AttributeScore operator -(AttributeScore left, AttributeScore right) => new AttributeScore(left._value - right._value);

@@ -7,12 +7,12 @@ namespace Characters.Attributes
     {
         public AttributeSet()
         {
-            _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Strength));
-            _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Dexterity));
-            _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Constitution));
-            _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Intelligence));
-            _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Wisdom));
-            _attributes.Add(CharacterDefaultAttribute(CharacterAttributeName.Charisma));
+            _attributes.Add(new StrengthAttribute());
+            _attributes.Add(new DexterityAttribute());
+            _attributes.Add(new ConstitutionAttribute());
+            _attributes.Add(new IntellegenceAttribute());
+            _attributes.Add(new WisdomAttribute());
+            _attributes.Add(new CharismaAttribute());
 
         }
         private readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>();
@@ -24,7 +24,6 @@ namespace Characters.Attributes
         public ICharacterAttribute Charisma() => GetAttributeFromName(CharacterAttributeName.Charisma);
         public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
         private ICharacterAttribute GetAttributeFromName(IAttributeName name) => _attributes.First(arrib => arrib.MatchesName(name));
-        private ICharacterAttribute CharacterDefaultAttribute(IAttributeName attributeName) => new CharacterAttribute(attributeName, new AttributeScore(0));
 
     }
 }

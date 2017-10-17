@@ -8,7 +8,7 @@ namespace Characters.Attributes
         bool Equals(object obj);
         bool MatchesName(IAttributeName attributeName);
         AttributeScore Score();
-        void ApplyRacialBonus(CharacterRace human);
+        void ApplyRacialBonus(CharacterRace race);
         void Set(AttributeScore expectedScore);
         AttributeScore Bonus();
         HitPoints BonusHitPoints();
