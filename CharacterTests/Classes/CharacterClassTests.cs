@@ -35,7 +35,7 @@ namespace CharacterTests.Classes
             //arrange
             ICharacterClass classFighter = CharacterClass.Fighter;
             //act
-            TextOf actualName = classFighter.Name();
+            ITextOf actualName = classFighter.Name();
             //assert
             actualName.Should().Be(new TextOf("Fighter"));
         }

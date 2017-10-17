@@ -61,6 +61,7 @@
     <Compile Include="Dice\IDie.cs" />
     <Compile Include="Dice\IHitDie.cs" />
     <Compile Include="Dice\WizardHitDie.cs" />
+    <Compile Include="ITextOf.cs" />
     <Compile Include="Physical\HitPoints.cs" />
     <Compile Include="Physical\IHitPoints.cs" />
     <Compile Include="Physical\IProficiency.cs" />

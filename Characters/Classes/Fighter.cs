@@ -9,15 +9,15 @@ namespace Characters.Classes
     {
         public Fighter() : base(new TextOf("Fighter")) { }
         public override IHitDie HitDie() => Dice.HitDie.Fighter;
-        public override List<Proficiency> Proficiencies() => new List<Proficiency>{
+        public override List<IProficiency> Proficiencies() => new List<IProficiency>{
             Proficiency.SimpleWeapons,
             Proficiency.MartialWeapons,
             Proficiency.AllArmor,
             Proficiency.AllShields
         };
-        public override List<SavingThrowAttribute> SavingThrows() => new List<SavingThrowAttribute>
+        public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute>
         {SavingThrowAttribute.Strength,SavingThrowAttribute.Constitution};
-        public override List<Skill> Skills() => new List<Skill>
+        public override List<ISkill> Skills() => new List<ISkill>
             {Skill.Acrobatics,Skill.AnimalHandling,Skill.Athletics,Skill.History,
                 Skill.Insight,Skill.Intimidation,Skill.Perception,Skill.Survival};
         public HitPoints BaseHitPoints() => HitDie().MaxHitPoints();

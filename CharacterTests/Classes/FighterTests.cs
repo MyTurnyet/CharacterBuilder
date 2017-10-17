@@ -48,7 +48,7 @@ namespace CharacterTests.Classes
                 Proficiency.AllShields
             };
             //act
-            List<Proficiency> actualProfs = CharacterClass.Fighter.Proficiencies();
+            List<IProficiency> actualProfs = CharacterClass.Fighter.Proficiencies();
 
             //assert
             actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
@@ -64,7 +64,7 @@ namespace CharacterTests.Classes
                 SavingThrowAttribute.Constitution
             };
             //act
-            List<SavingThrowAttribute> savingThrows = CharacterClass.Fighter.SavingThrows();
+            List<ISavingThrowAttribute> savingThrows = CharacterClass.Fighter.SavingThrows();
             //assert
             savingThrows.All(i => expectedThrowAttributes.Contains(i)).Should().BeTrue();
         }
@@ -73,7 +73,7 @@ namespace CharacterTests.Classes
         public void ShouldReturnSkillList()
         {
             //assign
-            List<Skill> expectedSkills = new List<Skill>
+            List<ISkill> expectedSkills = new List<ISkill>
             {
                 Skill.Acrobatics,
                 Skill.AnimalHandling,
@@ -85,7 +85,7 @@ namespace CharacterTests.Classes
                 Skill.Survival
             };
             //act
-            List<Skill> actualSkills = CharacterClass.Fighter.Skills();
+            List<ISkill> actualSkills = CharacterClass.Fighter.Skills();
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }

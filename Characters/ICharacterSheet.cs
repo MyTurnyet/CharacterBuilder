@@ -7,8 +7,8 @@ namespace Characters
     public interface ICharacterSheet
     {
         ICharacterAttribute Attribute(IAttributeName attributeName);
-        HitPoints HitPoints();
-        List<Proficiency> Proficiencies();
-        TextOf StatsList();
+        IHitPoints HitPoints();
+        List<IProficiency> Proficiencies();
+        ITextOf StatsList();
     }
 }

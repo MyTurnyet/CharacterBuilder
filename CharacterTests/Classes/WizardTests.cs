@@ -36,7 +36,7 @@ namespace CharacterTests.Classes
                 Proficiency.LightCrossbow,
             };
             //act
-            List<Proficiency> actualProfs = CharacterClass.Wizard.Proficiencies();
+            List<IProficiency> actualProfs = CharacterClass.Wizard.Proficiencies();
 
             //assert
             actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
@@ -46,13 +46,13 @@ namespace CharacterTests.Classes
         public void ShouldReturnSavingThrows()
         {
             //assign
-            List<SavingThrowAttribute> expectedThrowAttributes = new List<SavingThrowAttribute>
+            List<ISavingThrowAttribute> expectedThrowAttributes = new List<ISavingThrowAttribute>
             {
                 SavingThrowAttribute.Intellegence,
                 SavingThrowAttribute.Wisdom
             };
             //act
-            List<SavingThrowAttribute> savingThrows = CharacterClass.Wizard.SavingThrows();
+            List<ISavingThrowAttribute> savingThrows = CharacterClass.Wizard.SavingThrows();
             //assert
             savingThrows.All(i => expectedThrowAttributes.Contains(i)).Should().BeTrue();
         }
@@ -60,7 +60,7 @@ namespace CharacterTests.Classes
         public void ShouldReturnSkillList()
         {
             //assign
-            List<Skill> expectedSkills = new List<Skill>
+            List<ISkill> expectedSkills = new List<ISkill>
             {
                 Skill.Arcana,
                 Skill.History,
@@ -70,7 +70,7 @@ namespace CharacterTests.Classes
                 Skill.Religion
             };
             //act
-            List<Skill> actualSkills = CharacterClass.Wizard.Skills();
+            List<ISkill> actualSkills = CharacterClass.Wizard.Skills();
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }

@@ -9,7 +9,7 @@ namespace Characters.Classes
     {
         public Wizard() : base(new TextOf("Wizard")) { }
         public override IHitDie HitDie() => Dice.HitDie.Wizard;
-        public override List<Proficiency> Proficiencies() => new List<Proficiency>
+        public override List<IProficiency> Proficiencies() => new List<IProficiency>
         {
             Proficiency.Dagger,
             Proficiency.Darts,
@@ -17,8 +17,8 @@ namespace Characters.Classes
             Proficiency.Quarterstaff,
             Proficiency.LightCrossbow,
         };
-        public override List<SavingThrowAttribute> SavingThrows() => new List<SavingThrowAttribute> { SavingThrowAttribute.Intellegence, SavingThrowAttribute.Wisdom };
-        public override List<Skill> Skills() => new List<Skill>
+        public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute> { SavingThrowAttribute.Intellegence, SavingThrowAttribute.Wisdom };
+        public override List<ISkill> Skills() => new List<ISkill>
             {Skill.Arcana,Skill.History,Skill.Insight,
                 Skill.Investigation,Skill.Medicine,Skill.Religion};
     }

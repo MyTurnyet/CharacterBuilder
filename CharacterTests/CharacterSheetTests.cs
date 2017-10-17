@@ -61,11 +61,11 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForHillDwarfFighter()
         {
             //arrange
-            HitPoints expectedHitPoints = new HitPoints(12);
+            IHitPoints expectedHitPoints = new HitPoints(12);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf, _attributeSet);
 
             //act
-            HitPoints actualHitPoints = _characterSheet.HitPoints();
+            IHitPoints actualHitPoints = _characterSheet.HitPoints();
 
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
@@ -74,11 +74,11 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForMountainDwarfFighter()
         {
             //arrange
-            HitPoints expectedHitPoints = new HitPoints(11);
+            IHitPoints expectedHitPoints = new HitPoints(11);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.MountainDwarf, _attributeSet);
 
             //act
-            HitPoints actualHitPoints = _characterSheet.HitPoints();
+            IHitPoints actualHitPoints = _characterSheet.HitPoints();
 
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
@@ -88,11 +88,11 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForWoodElfWizard()
         {
             //arrange
-            HitPoints expectedHitPoints = new HitPoints(7);
+            IHitPoints expectedHitPoints = new HitPoints(7);
             _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.WoodElf, _attributeSet);
 
             //act
-            HitPoints actualHitPoints = _characterSheet.HitPoints();
+            IHitPoints actualHitPoints = _characterSheet.HitPoints();
 
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
@@ -102,11 +102,11 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForWoodElfFighter()
         {
             //arrange
-            HitPoints expectedHitPoints = new HitPoints(11);
+            IHitPoints expectedHitPoints = new HitPoints(11);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
 
             //act
-            HitPoints actualHitPoints = _characterSheet.HitPoints();
+            IHitPoints actualHitPoints = _characterSheet.HitPoints();
 
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
@@ -117,7 +117,7 @@ namespace CharacterTests
         {
             //assign
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf, _attributeSet);
-            List<Proficiency> expectedProficiencies = new List<Proficiency>
+            List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 Proficiency.Battleaxe,
                 Proficiency.Handaxe,
@@ -133,7 +133,7 @@ namespace CharacterTests
             };
         
             //act
-            List<Proficiency> actualProficiencies = _characterSheet.Proficiencies();
+            List<IProficiency> actualProficiencies = _characterSheet.Proficiencies();
             //assert
             actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
@@ -142,7 +142,7 @@ namespace CharacterTests
         {
             //assign
             _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf, _attributeSet);
-            List<Proficiency> expectedProficiencies = new List<Proficiency>
+            List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 Proficiency.Battleaxe,
                 Proficiency.Handaxe,
@@ -159,7 +159,7 @@ namespace CharacterTests
             };
         
             //act
-            List<Proficiency> actualProficiencies = _characterSheet.Proficiencies();
+            List<IProficiency> actualProficiencies = _characterSheet.Proficiencies();
             //assert
             actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
