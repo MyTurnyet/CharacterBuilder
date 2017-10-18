@@ -1,5 +1,4 @@
-﻿using Characters;
-using Characters.Attributes;
+﻿using Characters.Attributes;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -13,8 +12,8 @@ namespace CharacterTests.Attributes
         public void ShouldNotEquateName()
         {
             //assign
-            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
-            ICharacterAttribute attribute2 = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(18));
+            ICharacterAttribute attribute = new StrengthAttribute(new AttributeScore(18));
+            ICharacterAttribute attribute2 = new DexterityAttribute( new AttributeScore(18));
 
             //assert
             attribute2.Should().NotBe(attribute);
@@ -24,8 +23,8 @@ namespace CharacterTests.Attributes
         public void ShouldEquateName()
         {
             //assign
-            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
-            ICharacterAttribute attribute2 = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(5));
+            ICharacterAttribute attribute = new StrengthAttribute(new AttributeScore(18));
+            ICharacterAttribute attribute2 = new StrengthAttribute(new AttributeScore(5));
 
             //assert
             attribute2.Should().Be(attribute);
@@ -34,7 +33,7 @@ namespace CharacterTests.Attributes
         public void ShouldMatchName()
         {
             //assign
-            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
+            ICharacterAttribute attribute = new StrengthAttribute(new AttributeScore(18));
             //act
             bool matchesName = attribute.MatchesName(CharacterAttributeName.Strength);
             //assert
@@ -44,7 +43,7 @@ namespace CharacterTests.Attributes
         public void ShouldNotMatchName()
         {
             //assign
-            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
+            ICharacterAttribute attribute = new StrengthAttribute(new AttributeScore(18));
             //act
             bool matchesName = attribute.MatchesName(CharacterAttributeName.Dexterity);
             //assert
@@ -55,7 +54,7 @@ namespace CharacterTests.Attributes
         public void ShouldApplyRacialAttributeBonus()
         {
             //arrange
-            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
+            ICharacterAttribute attribute = new DexterityAttribute(new AttributeScore(10));
             //act
             attribute.ApplyRacialBonus(CharacterRace.Human);
             //assert
@@ -66,7 +65,7 @@ namespace CharacterTests.Attributes
         public void ShouldSetScore()
         {
             //arrange
-            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
+            ICharacterAttribute attribute = new DexterityAttribute(new AttributeScore(10));
             IAttributeScore expectedScore = new AttributeScore(14);
             //act
             attribute.Set(expectedScore);
@@ -78,14 +77,28 @@ namespace CharacterTests.Attributes
         public void ShouldReturnAttributeBonus()
         {
             //arrange
-            ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(1));
-            AttributeScore expectedAttributeBonus = new AttributeScore(-5);
+            ICharacterAttribute attribute = new DexterityAttribute(new AttributeScore(1));
+            IAttributeScore expectedAttributeBonus = new AttributeScore(-5);
 
             //act
             IAttributeScore actualAttributeBonus = attribute.Bonus();
 
             //assert
             actualAttributeBonus.Should().Be(expectedAttributeBonus);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnRacialAttributeBonus()
+        {
+            //arrange
+            ICharacterAttribute attribute = new DexterityAttribute( new AttributeScore(10));
+            ICharacterRace race = new Human();
+            IAttributeScore expectedAttributeScore = new AttributeScore(11);
+
+            //act
+            attribute.ApplyRacialBonus(race);
+
+            //assert
+            expectedAttributeScore.Should().Be(attribute.Score());
         }
     }
 }
