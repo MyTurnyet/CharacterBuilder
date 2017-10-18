@@ -7,16 +7,16 @@ namespace Characters.Races
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public abstract class CharacterRace : ICharacterRace
     {
-        private readonly TextOf _race;
+        private readonly ITextOf _race;
 
-        public static readonly CharacterRace Human = new Human();
-        public static readonly CharacterRace WoodElf = new WoodElf();
-        public static readonly CharacterRace HighElf = new HighElf();
-        public static readonly CharacterRace HillDwarf = new HillDwarf();
-        public static readonly CharacterRace MountainDwarf = new MountainDwarf();
+        public static readonly ICharacterRace Human = new Human();
+        public static readonly ICharacterRace WoodElf = new WoodElf();
+        public static readonly ICharacterRace HighElf = new HighElf();
+        public static readonly ICharacterRace HillDwarf = new HillDwarf();
+        public static readonly ICharacterRace MountainDwarf = new MountainDwarf();
 
 
-        internal CharacterRace(TextOf race)
+        internal CharacterRace(ITextOf race)
         {
             _race = race;
         }
@@ -25,10 +25,10 @@ namespace Characters.Races
         private bool Equals(CharacterRace other) => string.Equals(_race, other._race);
         public abstract IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
         public abstract ISpeed Speed();
-        public abstract HitPoints BonusHitPoints();
-        public abstract Size Size();
-        public abstract List<Proficiency> Proficiencies();
-        public TextOf Name()
+        public abstract IHitPoints BonusHitPoints();
+        public abstract ISize Size();
+        public abstract List<IProficiency> Proficiencies();
+        public ITextOf Name()
         {
             return _race;
         }

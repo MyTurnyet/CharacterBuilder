@@ -7,6 +7,6 @@ namespace Characters.Dice
         public static readonly FigtherHitDie Fighter = new FigtherHitDie();
 
         protected HitDie(int numberOfSides) : base(numberOfSides) { }
-        public HitPoints MaxHitPoints() => new HitPoints(_numberOfSides);
+        public IHitPoints MaxHitPoints() => new HitPoints(_numberOfSides);
     }
 }

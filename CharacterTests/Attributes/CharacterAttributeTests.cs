@@ -67,7 +67,7 @@ namespace CharacterTests.Attributes
         {
             //arrange
             ICharacterAttribute attribute = new CharacterAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
-            AttributeScore expectedScore = new AttributeScore(14);
+            IAttributeScore expectedScore = new AttributeScore(14);
             //act
             attribute.Set(expectedScore);
             //assert
@@ -82,7 +82,7 @@ namespace CharacterTests.Attributes
             AttributeScore expectedAttributeBonus = new AttributeScore(-5);
 
             //act
-            AttributeScore actualAttributeBonus = attribute.Bonus();
+            IAttributeScore actualAttributeBonus = attribute.Bonus();
 
             //assert
             actualAttributeBonus.Should().Be(expectedAttributeBonus);

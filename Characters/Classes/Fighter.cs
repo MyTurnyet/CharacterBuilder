@@ -20,6 +20,6 @@ namespace Characters.Classes
         public override List<ISkill> Skills() => new List<ISkill>
             {Skill.Acrobatics,Skill.AnimalHandling,Skill.Athletics,Skill.History,
                 Skill.Insight,Skill.Intimidation,Skill.Perception,Skill.Survival};
-        public HitPoints BaseHitPoints() => HitDie().MaxHitPoints();
+        public override IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }
 }

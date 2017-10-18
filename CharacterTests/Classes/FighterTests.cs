@@ -28,11 +28,11 @@ namespace CharacterTests.Classes
         public void ShouldReturnHitPointsFromHitDie()
         {
             //arrange
-            Fighter fighter = new Fighter();
-            HitPoints expectedHitPoints = new HitPoints(10);
+            ICharacterClass fighter = new Fighter();
+            IHitPoints expectedHitPoints = new HitPoints(10);
 
             //act
-            HitPoints actualHitPoints = fighter.BaseHitPoints();
+            IHitPoints actualHitPoints = fighter.BaseHitPoints();
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
         }
@@ -40,7 +40,7 @@ namespace CharacterTests.Classes
         public void ShouldReturnProficiencies()
         {
             //arrange
-            List<Proficiency> expectedProf = new List<Proficiency>
+            List<IProficiency> expectedProf = new List<IProficiency>
             {
                 Proficiency.SimpleWeapons,
                 Proficiency.MartialWeapons,
@@ -58,7 +58,7 @@ namespace CharacterTests.Classes
         public void ShouldReturnSavingThrows()
         {
             //assign
-            List<SavingThrowAttribute> expectedThrowAttributes = new List<SavingThrowAttribute>
+            List<ISavingThrowAttribute> expectedThrowAttributes = new List<ISavingThrowAttribute>
             {
                 SavingThrowAttribute.Strength,
                 SavingThrowAttribute.Constitution

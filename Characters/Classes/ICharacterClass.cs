@@ -13,5 +13,6 @@ namespace Characters.Classes
         List<ISavingThrowAttribute> SavingThrows();
         List<ISkill> Skills();
         ITextOf Name();
+        IHitPoints BaseHitPoints();
     }
 }

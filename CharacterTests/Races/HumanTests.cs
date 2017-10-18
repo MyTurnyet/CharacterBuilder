@@ -67,7 +67,7 @@ namespace CharacterTests.Races
         {
             //arrange
             //act
-            List<Proficiency> actualProfs = CharacterRace.Human.Proficiencies();
+            List<IProficiency> actualProfs = CharacterRace.Human.Proficiencies();
 
             //assert
             actualProfs.Count.Should().Be(0);

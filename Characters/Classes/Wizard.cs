@@ -21,5 +21,7 @@ namespace Characters.Classes
         public override List<ISkill> Skills() => new List<ISkill>
             {Skill.Arcana,Skill.History,Skill.Insight,
                 Skill.Investigation,Skill.Medicine,Skill.Religion};
+
+        public override IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }
 }

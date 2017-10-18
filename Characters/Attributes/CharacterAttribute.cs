@@ -18,12 +18,14 @@ namespace Characters.Attributes
         }
         public override bool Equals(object obj) => (CharacterAttribute)obj != null && ((CharacterAttribute)obj)._name == _name;
         public bool MatchesName(IAttributeName attributeName) => attributeName.Equals(_name);
-        public AttributeScore Score() => BaseScore() + (AttributeScore)_racialAttributeAdjustment;
-        private AttributeScore BaseScore() => (AttributeScore)_value;
+        public IAttributeScore Score() => (AttributeScore)BaseScore() + (AttributeScore)_racialAttributeAdjustment;
+        public void ApplyRacialBonus(ICharacterRace race) => _racialAttributeAdjustment = race.RacialAttributeAdjustment(this);
+        public void Set(IAttributeScore expectedScore) => _value = expectedScore;
+        private IAttributeScore BaseScore() => (AttributeScore)_value;
         public void ApplyRacialBonus(CharacterRace race) => _racialAttributeAdjustment = race.RacialAttributeAdjustment(this);
         public void Set(AttributeScore score) => _value = score;
-        public AttributeScore Bonus() => new AttributeScore(Score().Bonus());
-        public HitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
+        public IAttributeScore Bonus() => new AttributeScore(Score().Bonus());
+        public IHitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

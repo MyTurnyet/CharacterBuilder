@@ -23,6 +23,7 @@ namespace Characters.Classes
         public abstract List<ISavingThrowAttribute> SavingThrows();
         public abstract List<ISkill> Skills();
         public ITextOf Name() => _className;
+        public abstract IHitPoints BaseHitPoints();
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

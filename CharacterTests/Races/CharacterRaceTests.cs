@@ -36,7 +36,7 @@ namespace CharacterTests.Races
             ICharacterRace race = CharacterRace.Human;
          
             //assert
-            TextOf name = race.Name();
+            ITextOf name = race.Name();
             name.Should().Be(new TextOf("Human"));
         }
     }

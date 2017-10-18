@@ -4,6 +4,6 @@ namespace Characters.Dice
 {
     public interface IHitDie
     {
-        HitPoints MaxHitPoints();
+        IHitPoints MaxHitPoints();
     }
 }
