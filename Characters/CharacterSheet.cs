@@ -39,7 +39,7 @@ namespace Characters
 
         public TextOf StatsList()
         {
-            return new TextOf("");
+            return new TextOf("Test Stats");
         }
     }
 }
