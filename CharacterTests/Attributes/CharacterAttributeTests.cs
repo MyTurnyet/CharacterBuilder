@@ -86,19 +86,5 @@ namespace CharacterTests.Attributes
             //assert
             actualAttributeBonus.Should().Be(expectedAttributeBonus);
         }
-        [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnRacialAttributeBonus()
-        {
-            //arrange
-            ICharacterAttribute attribute = new DexterityAttribute( new AttributeScore(10));
-            ICharacterRace race = new Human();
-            IAttributeScore expectedAttributeScore = new AttributeScore(11);
-
-            //act
-            attribute.ApplyRacialBonus(race);
-
-            //assert
-            expectedAttributeScore.Should().Be(attribute.Score());
-        }
     }
 }

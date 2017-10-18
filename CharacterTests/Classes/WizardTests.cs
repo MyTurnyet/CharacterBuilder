@@ -24,6 +24,17 @@ namespace CharacterTests.Classes
             hitDie.Should().Be(expecteDie);
         }
         [TestMethod, TestCategory("Unit")]
+        public void ShouldMatchBaseHitPoints()
+        {
+            //arrange
+            Wizard wizard = new Wizard();
+            IHitPoints expectHitPoints = new HitPoints(6);
+            //act
+            IHitPoints baseHitPoints = wizard.BaseHitPoints();
+            //assert
+            baseHitPoints.Should().Be(expectHitPoints);
+        }
+        [TestMethod, TestCategory("Unit")]
         public void ShouldReturnProficiencies()
         {
             //arrange
