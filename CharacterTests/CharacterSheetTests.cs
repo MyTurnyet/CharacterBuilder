@@ -111,6 +111,18 @@ namespace CharacterTests
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnStatsBlock()
+        {
+            //arrange
+            _characterSheet = new CharacterSheet();
+            TextOf expectedText = new TextOf("Test Stats");
+            //act
+            TextOf actualTextOf = _characterSheet.StatsList();
+
+            //assert
+            actualTextOf.Should().Be(expectedText);
+        }
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldShouldReturnProficienciesForDwarfFighter()

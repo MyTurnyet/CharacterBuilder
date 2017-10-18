@@ -8,6 +8,10 @@
       <Value>Attributes\ICharacterAttribute.cs:Characters\Characters.csproj</Value>
       <Value>Attributes\ISavingThrowAttribute.cs:Characters\Characters.csproj</Value>
       <Value>Classes\ICharacterClass.cs:Characters\Characters.csproj</Value>
+      <Value>ICharacterSheet.cs:Characters\Characters.csproj</Value>
+      <Value>Characters\Characters.csproj\Properties</Value>
+      <Value>ICharacterBuilderFacilitator.cs:CharacterBuilderWin\CharacterBuilderWin.csproj</Value>
+      <Value>CharacterBuilderWin\CharacterBuilderWin.csproj\Properties</Value>
     </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
