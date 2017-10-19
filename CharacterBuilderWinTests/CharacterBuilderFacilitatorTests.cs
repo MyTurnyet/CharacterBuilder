@@ -23,8 +23,5 @@ namespace CharacterBuilderWinTests
             //assert
             actualSheet.ToString().Should().Be(sb.ToString());
         }
-
     }
-
-   
 }
