@@ -4,6 +4,7 @@ using Characters.Attributes;
 using Characters.Classes;
 using Characters.Dice;
 using Characters.Physical;
+using Characters.Physical.Proficiencies;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -38,7 +39,7 @@ namespace CharacterTests.Classes
         public void ShouldReturnProficiencies()
         {
             //arrange
-            List<Proficiency> expectedProf = new List<Proficiency>
+            List<IProficiency> expectedProf = new List<IProficiency>
             {
                 Proficiency.Dagger,
                 Proficiency.Darts,

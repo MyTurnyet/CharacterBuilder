@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Characters.Attributes;
 using Characters.Physical;
+using Characters.Physical.Proficiencies;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -2,6 +2,7 @@
 using Characters.Attributes;
 using Characters.Dice;
 using Characters.Physical;
+using Characters.Physical.Proficiencies;
 
 namespace Characters.Classes
 {

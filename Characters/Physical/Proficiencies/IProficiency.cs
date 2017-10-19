@@ -1,8 +1,8 @@
-﻿namespace Characters.Physical
+﻿namespace Characters.Physical.Proficiencies
 {
     public interface IProficiency
     {
         bool Equals(object obj);
-        TextOf Name();
+        ITextOf Name();
     }
 }

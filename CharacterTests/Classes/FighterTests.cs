@@ -4,6 +4,7 @@ using Characters.Attributes;
 using Characters.Classes;
 using Characters.Dice;
 using Characters.Physical;
+using Characters.Physical.Proficiencies;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

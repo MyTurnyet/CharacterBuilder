@@ -2,6 +2,7 @@
 using Characters;
 using Characters.Attributes;
 using Characters.Physical;
+using Characters.Physical.Proficiencies;
 
 namespace CharacterBuilderWinTests.Fakes
 {

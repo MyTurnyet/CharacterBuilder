@@ -2,6 +2,7 @@
 using Characters.Attributes;
 using Characters.Classes;
 using Characters.Physical;
+using Characters.Physical.Proficiencies;
 using Characters.Races;
 
 namespace Characters

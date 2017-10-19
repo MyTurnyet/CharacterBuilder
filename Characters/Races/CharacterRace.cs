@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Characters.Attributes;
 using Characters.Physical;
+using Characters.Physical.Proficiencies;
 
 namespace Characters.Races
 {
