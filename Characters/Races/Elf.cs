@@ -16,10 +16,10 @@ namespace Characters.Races
         {
             return new List<IProficiency>
             {
-                Proficiency.Longsword,
-                Proficiency.Shortbow,
-                Proficiency.Shortsword,
-                Proficiency.Longbow
+                new Longsword(),
+                new Shortbow(),
+                new Shortsword(),
+                new Longbow()
             };
         }
     }

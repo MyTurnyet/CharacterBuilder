@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Shortbow : Proficiency
+    public class Shortbow : IProficiency
     {
-        public Shortbow() : base(new TextOf("Shortbow")) { }
+        public ITextOf Name => new TextOf("Shortbow");
     }
 }

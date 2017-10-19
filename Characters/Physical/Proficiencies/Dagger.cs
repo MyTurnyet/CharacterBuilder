@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Dagger : Proficiency
+    public class Dagger : IProficiency
     {
-        public Dagger() : base(new TextOf("Dagger")) { }
+        public ITextOf Name => new TextOf("Dagger");
     }
 }

@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class MasonsTools : Proficiency
+    public class MasonsTools : IProficiency
     {
-        public MasonsTools() : base(new TextOf("Mason's Tools")) { }
+        public ITextOf Name => new TextOf("Mason's Tools");
     }
 }

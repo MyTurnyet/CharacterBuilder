@@ -11,10 +11,10 @@ namespace Characters.Classes
         public Fighter() : base(new TextOf("Fighter")) { }
         public override IHitDie HitDie() => Dice.HitDie.Fighter;
         public override List<IProficiency> Proficiencies() => new List<IProficiency>{
-            Proficiency.SimpleWeapons,
-            Proficiency.MartialWeapons,
-            Proficiency.AllArmor,
-            Proficiency.AllShields
+            new SimpleWeapons(),
+            new MartialWeapons(),
+            new AllArmor(),
+            new AllShields()
         };
         public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute>
         {SavingThrowAttribute.Strength,SavingThrowAttribute.Constitution};

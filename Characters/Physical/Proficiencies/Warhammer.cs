@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Warhammer : Proficiency
+    public class Warhammer : IProficiency
     {
-        public Warhammer() : base(new TextOf("Warhammer")) { }
+        public ITextOf Name => new TextOf("Warhammer");
     }
 }

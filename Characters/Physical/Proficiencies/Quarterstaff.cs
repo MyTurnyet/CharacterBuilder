@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Quarterstaff : Proficiency
+    public class Quarterstaff : IProficiency
     {
-        public Quarterstaff() : base(new TextOf("Quarterstaff")) { }
+        public ITextOf Name => new TextOf("Quarterstaff");
     }
 }

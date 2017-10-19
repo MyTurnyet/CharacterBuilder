@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class AllShields : Proficiency
+    public class AllShields : IProficiency
     {
-        public AllShields() : base(new TextOf("All Shields")) { }
+        public ITextOf Name => new TextOf("All Shields");
     }
 }

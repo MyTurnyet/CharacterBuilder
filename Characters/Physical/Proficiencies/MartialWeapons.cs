@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class MartialWeapons : Proficiency
+    public class MartialWeapons : IProficiency
     {
-        public MartialWeapons():base(new TextOf("Martial Weapons") ){ }
+        public ITextOf Name => new TextOf("Martial Weapons");
     }
 }

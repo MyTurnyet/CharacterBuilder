@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Longsword : Proficiency
+    public class Longsword : IProficiency
     {
-        public Longsword():base(new TextOf("Longsword") ){ }
+        public ITextOf Name => new TextOf("Longsword");
     }
 }

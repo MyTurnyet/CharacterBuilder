@@ -12,11 +12,11 @@ namespace Characters.Classes
         public override IHitDie HitDie() => Dice.HitDie.Wizard;
         public override List<IProficiency> Proficiencies() => new List<IProficiency>
         {
-            Proficiency.Dagger,
-            Proficiency.Darts,
-            Proficiency.Sling,
-            Proficiency.Quarterstaff,
-            Proficiency.LightCrossbow,
+            new Darts(),
+            new Dagger(),
+            new Sling(),
+            new Quarterstaff(),
+            new LightCrossbow()
         };
         public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute> { SavingThrowAttribute.Intellegence, SavingThrowAttribute.Wisdom };
         public override List<ISkill> Skills() => new List<ISkill>

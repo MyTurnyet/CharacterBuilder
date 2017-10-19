@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class MediumArmor : Proficiency
+    public class MediumArmor : IProficiency
     {
-        public MediumArmor() : base(new TextOf("Medium Armor")) { }
+        public ITextOf Name => new TextOf("Medium Armor");
     }
 }

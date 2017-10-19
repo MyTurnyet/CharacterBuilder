@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class ThrowingHammer : Proficiency
+    public class ThrowingHammer : IProficiency
     {
-        public ThrowingHammer() : base(new TextOf("Throwing Hammer")) { }
+        public ITextOf Name => new TextOf("Throwing Hammer");
     }
 }

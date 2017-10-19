@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class BrewersSupplies : Proficiency
+    public class BrewersSupplies : IProficiency
     {
-        public BrewersSupplies() : base(new TextOf("Brewer's Supplies")) { }
+        public ITextOf Name => new TextOf("Brewer's Supplies");
     }
 }

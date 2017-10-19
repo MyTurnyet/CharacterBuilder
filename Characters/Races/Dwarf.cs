@@ -16,13 +16,13 @@ namespace Characters.Races
         {
             return new List<IProficiency>
             {
-                Proficiency.Battleaxe,
-                Proficiency.Handaxe,
-                Proficiency.ThrowingHammer,
-                Proficiency.Warhammer,
-                Proficiency.BrewersSupplies,
-                Proficiency.MasonsTools,
-                Proficiency.SmithsTools
+                new Battleaxe(),
+                new Handaxe(),
+                new ThrowingHammer(),
+                new Warhammer(),
+                new BrewersSupplies(),
+                new MasonsTools(),
+                new SmithsTools()
             };
         }
     }

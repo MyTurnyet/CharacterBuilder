@@ -1,7 +1,7 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Sling : Proficiency
+    public class Sling : IProficiency
     {
-        public Sling() : base(new TextOf("Sling")) { }
+        public ITextOf Name => new TextOf("Sling");
     }
 }
