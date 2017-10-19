@@ -58,7 +58,7 @@ namespace CharacterTests.Races
         public void ShouldReturnProficiencies()
         {
             //arrange
-            List<Proficiency> expectedProf = new List<Proficiency>
+            List<IProficiency> expectedProf = new List<IProficiency>
             {
                 Proficiency.Battleaxe,
                 Proficiency.Handaxe,
@@ -69,7 +69,7 @@ namespace CharacterTests.Races
                 Proficiency.SmithsTools
             };
             //act
-            List<Proficiency> actualProfs = CharacterRace.HillDwarf.Proficiencies();
+            List<IProficiency> actualProfs = CharacterRace.HillDwarf.Proficiencies();
             
             //assert
             actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();

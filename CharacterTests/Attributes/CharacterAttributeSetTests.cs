@@ -19,7 +19,7 @@ namespace CharacterTests.Attributes
         public void ShouldReturnDexterityAttributeScores()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Dexterity);
+            ICharacterAttribute expectedAttribute = new DexterityAttribute();
             //assert
             _attributeSet.Dexterity().Should().Be(expectedAttribute);
         }
@@ -28,7 +28,7 @@ namespace CharacterTests.Attributes
         public void ShouldReturnStrengthAttributeScores()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Strength);
+            ICharacterAttribute expectedAttribute = new StrengthAttribute();
             //assert
             _attributeSet.Strength().Should().Be(expectedAttribute);
         }
@@ -37,7 +37,7 @@ namespace CharacterTests.Attributes
         public void ShouldReturnConstitutionAttributeScores()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Constitution);
+            ICharacterAttribute expectedAttribute = new ConstitutionAttribute();
             //assert
             _attributeSet.Constitution().Should().Be(expectedAttribute);
         }
@@ -46,7 +46,7 @@ namespace CharacterTests.Attributes
         public void ShouldReturnIntellegenceAttributeScores()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Intelligence);
+            ICharacterAttribute expectedAttribute = new IntellegenceAttribute();
             //assert
             _attributeSet.Intellegence().Should().Be(expectedAttribute);
         }
@@ -55,7 +55,7 @@ namespace CharacterTests.Attributes
         public void ShouldReturnWisdomAttributeScores()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Wisdom);
+            ICharacterAttribute expectedAttribute = new WisdomAttribute();
             //assert
             _attributeSet.Wisdom().Should().Be(expectedAttribute);
         }
@@ -64,7 +64,7 @@ namespace CharacterTests.Attributes
         public void ShouldReturnCharismaAttributeScores()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = CreateAttribute(CharacterAttributeName.Charisma);
+            ICharacterAttribute expectedAttribute = new CharismaAttribute();
             //assert
             _attributeSet.Charisma().Should().Be(expectedAttribute);
         }
@@ -73,7 +73,7 @@ namespace CharacterTests.Attributes
         public void ShouldMatchName()
         {
             //assign
-            ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
+            ICharacterAttribute expectedAttribute = new StrengthAttribute(new AttributeScore(18));
             //act
             ICharacterAttribute actualAttribute = _attributeSet.MatchesName(CharacterAttributeName.Strength);
             //assert
@@ -84,12 +84,11 @@ namespace CharacterTests.Attributes
         public void ShouldAddAttribute()
         {
             //arrange
-            ICharacterAttribute expectedAttribute = new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore(18));
+            ICharacterAttribute expectedAttribute = new StrengthAttribute(new AttributeScore(18));
             //act
             _attributeSet.Strength().Set(expectedAttribute.Score());
             //assert
             _attributeSet.Strength().Score().Should().Be(expectedAttribute.Score());
         }
-        private ICharacterAttribute CreateAttribute(IAttributeName attributeName) => new CharacterAttribute(attributeName, new AttributeScore(0));
     }
 }

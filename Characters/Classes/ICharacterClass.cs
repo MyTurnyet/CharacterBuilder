@@ -9,9 +9,10 @@ namespace Characters.Classes
     {
         bool Equals(object obj);
         IHitDie HitDie();
-        List<Proficiency> Proficiencies();
-        List<SavingThrowAttribute> SavingThrows();
-        List<Skill> Skills();
-        TextOf Name();
+        List<IProficiency> Proficiencies();
+        List<ISavingThrowAttribute> SavingThrows();
+        List<ISkill> Skills();
+        ITextOf Name();
+        IHitPoints BaseHitPoints();
     }
 }

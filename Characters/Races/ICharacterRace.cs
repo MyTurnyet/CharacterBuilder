@@ -10,8 +10,9 @@ namespace Characters.Races
         int GetHashCode();
         IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
         ISpeed Speed();
-        HitPoints BonusHitPoints();
-        List<Proficiency> Proficiencies();
-        TextOf Name();
+        IHitPoints BonusHitPoints();
+        List<IProficiency> Proficiencies();
+        ITextOf Name();
+        ISize Size();
     }
 }

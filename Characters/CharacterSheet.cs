@@ -28,16 +28,20 @@ namespace Characters
             attribute.ApplyRacialBonus((CharacterRace)_race);
             return attribute;
         }
-        public HitPoints HitPoints() => _characterClass.HitDie().MaxHitPoints() + _attributeSet.Constitution().BonusHitPoints() + _race.BonusHitPoints();
-        public List<Proficiency> Proficiencies()
+        public IHitPoints HitPoints()
         {
-            List<Proficiency> proficiencies = new List<Proficiency>();
+            return (HitPoints)_characterClass.HitDie().MaxHitPoints() + (HitPoints)_attributeSet.Constitution().BonusHitPoints() + (HitPoints)_race.BonusHitPoints();
+        }
+
+        public List<IProficiency> Proficiencies()
+        {
+            List<IProficiency> proficiencies = new List<IProficiency>();
             proficiencies.AddRange(_characterClass.Proficiencies());
             proficiencies.AddRange(_race.Proficiencies());
             return proficiencies;
         }
 
-        public TextOf StatsList()
+        public ITextOf StatsList()
         {
             return new TextOf("Test Stats");
         }

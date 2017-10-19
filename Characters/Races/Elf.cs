@@ -6,14 +6,14 @@ namespace Characters.Races
 {
     public abstract class Elf : CharacterRace
     {
-        internal Elf(TextOf race) : base(race){}
+        internal Elf(ITextOf race) : base(race){}
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyDexterityBonus(attribute);
         private AttributeScore ApplyDexterityBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Dexterity) ? new AttributeScore(0) : new AttributeScore(2);
         public override ISpeed Speed() => new Speed(30);
-        public override Size Size() => Physical.Size.Medium;
-        public override List<Proficiency> Proficiencies()
+        public override ISize Size() => Physical.Size.Medium;
+        public override List<IProficiency> Proficiencies()
         {
-            return new List<Proficiency>
+            return new List<IProficiency>
             {
                 Proficiency.Longsword,
                 Proficiency.Shortbow,

@@ -57,7 +57,7 @@ namespace CharacterTests.Races
         public void ShouldReturnProficiencies()
         {
             //arrange
-            List<Proficiency> expectedProf = new List<Proficiency>
+            List<IProficiency> expectedProf = new List<IProficiency>
             {
                 Proficiency.Longbow,
                 Proficiency.Longsword,
@@ -65,7 +65,7 @@ namespace CharacterTests.Races
                 Proficiency.Shortsword
             };
             //act
-            List<Proficiency> actualProfs = CharacterRace.HighElf.Proficiencies();
+            List<IProficiency> actualProfs = CharacterRace.HighElf.Proficiencies();
 
             //assert
             actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();

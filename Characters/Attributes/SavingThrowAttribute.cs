@@ -1,9 +1,9 @@
 ﻿namespace Characters.Attributes
 {
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public class SavingThrowAttribute : ISavingThrowAttribute
     {
         private readonly IAttributeName _attributeName;
-
         public static readonly SavingThrowAttribute Strength = new SavingThrowAttribute(CharacterAttributeName.Strength);
         public static readonly SavingThrowAttribute Dexterity = new SavingThrowAttribute(CharacterAttributeName.Dexterity);
         public static readonly SavingThrowAttribute Constitution = new SavingThrowAttribute(CharacterAttributeName.Constitution);
@@ -15,9 +15,8 @@
         {
             _attributeName = attributeName;
         }
-#pragma warning disable 659
         public override bool Equals(object obj) => Equals((SavingThrowAttribute)obj);
-#pragma warning restore 659
         private bool Equals(SavingThrowAttribute other) => Equals(_attributeName, other._attributeName);
     }
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

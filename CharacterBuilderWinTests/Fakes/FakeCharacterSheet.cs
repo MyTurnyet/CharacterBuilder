@@ -19,17 +19,17 @@ namespace CharacterBuilderWinTests.Fakes
             throw new System.NotImplementedException();
         }
 
-        public HitPoints HitPoints()
+        public IHitPoints HitPoints()
         {
             throw new System.NotImplementedException();
         }
 
-        public List<Proficiency> Proficiencies()
+        public List<IProficiency> Proficiencies()
         {
             throw new System.NotImplementedException();
         }
 
-        public TextOf StatsList()
+        public ITextOf StatsList()
         {
             return new TextOf("Strength: 10");
         }

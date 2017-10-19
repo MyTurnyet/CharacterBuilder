@@ -3,5 +3,6 @@
     public interface IAttributeScore
     {
         bool Equals(object obj);
+        int Bonus();
     }
 }

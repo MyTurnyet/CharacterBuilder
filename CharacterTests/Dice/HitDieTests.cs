@@ -12,9 +12,9 @@ namespace CharacterTests.Dice
         public void ShouldReturnMaximumHitpoints()
         {
             //arrange
-            HitPoints expectedHitPoints = new HitPoints(10);
+            IHitPoints expectedHitPoints = new HitPoints(10);
             //act
-            HitPoints actualHitPoints = HitDie.Fighter.MaxHitPoints();
+            IHitPoints actualHitPoints = HitDie.Fighter.MaxHitPoints();
 
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);

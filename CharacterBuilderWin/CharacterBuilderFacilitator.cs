@@ -16,7 +16,7 @@ namespace CharacterBuilderWin
 
         public StringBuilder CharacterSheetText()
         {
-            TextOf stats =  _characterSheet.StatsList();
+            ITextOf stats =  _characterSheet.StatsList();
             StringBuilder stringBuilder = new StringBuilder();
             stats.AddToStringBuilder(stringBuilder);
             return stringBuilder;
