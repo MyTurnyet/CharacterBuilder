@@ -13,7 +13,7 @@ namespace CharacterTests.Physical
         {
             //assert
             AllArmor allArmor = new AllArmor();
-            allArmor.Equals(new AllArmor()).Should().BeTrue();
+            (allArmor == new AllArmor()).Should().BeTrue();
         }
         [TestMethod, TestCategory("Unit")]
         public void ShouldNotEquate()
@@ -21,7 +21,7 @@ namespace CharacterTests.Physical
             //assert
             AllArmor allArmor = new AllArmor();
             AllShields allShields = new AllShields();   
-            (allArmor == allShields).Should().BeFalse();
+            (allArmor != allShields).Should().BeTrue();
         }
     }
 }

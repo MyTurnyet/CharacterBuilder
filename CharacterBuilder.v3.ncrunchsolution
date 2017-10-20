@@ -12,6 +12,12 @@
       <Value>Characters\Characters.csproj\Properties</Value>
       <Value>ICharacterBuilderFacilitator.cs:CharacterBuilderWin\CharacterBuilderWin.csproj</Value>
       <Value>CharacterBuilderWin\CharacterBuilderWin.csproj\Properties</Value>
+      <Value>Physical\IHitPoints.cs:Characters\Characters.csproj</Value>
+      <Value>Physical\ISize.cs:Characters\Characters.csproj</Value>
+      <Value>Physical\ISkill.cs:Characters\Characters.csproj</Value>
+      <Value>Physical\ISpeed.cs:Characters\Characters.csproj</Value>
+      <Value>Physical\Proficiencies\IEquateableProficiency.cs:Characters\Characters.csproj</Value>
+      <Value>Physical\Proficiencies\IProficiency.cs:Characters\Characters.csproj</Value>
     </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>

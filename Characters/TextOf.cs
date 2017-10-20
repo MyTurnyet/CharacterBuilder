@@ -13,8 +13,6 @@ namespace Characters
             _text = text;
         }
 
-        public TextOf():this(string.Empty){}
-
         public override bool Equals(object obj) => Equals((TextOf)obj);
 
         private bool Equals(TextOf other) => other._text == _text;
