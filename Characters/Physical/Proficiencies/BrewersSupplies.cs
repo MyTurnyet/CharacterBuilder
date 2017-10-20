@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class BrewersSupplies : IProficiency
+    public class BrewersSupplies : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("Brewer's Supplies");
+        public BrewersSupplies():base(new TextOf("Brewer's Supplies"))
+        {
+            
+        }
+        public ITextOf Name =>ProficiencyName;
     }
 }

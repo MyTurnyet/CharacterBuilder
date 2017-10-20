@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Darts : IProficiency
+    public class Darts : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("Darts");
+        public Darts():base(new TextOf("Darts"))
+        {
+            
+        }
+        public ITextOf Name =>ProficiencyName;
     }
 }

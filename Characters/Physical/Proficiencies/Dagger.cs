@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Dagger : IProficiency
+    public class Dagger : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("Dagger");
+        public Dagger():base(new TextOf("Dagger"))
+        {
+            
+        }
+        public ITextOf Name => ProficiencyName;
     }
 }

@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class SimpleWeapons : IProficiency
+    public class SimpleWeapons : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("Simple Weapons");
+        public SimpleWeapons():base(new TextOf("Simple Weapons"))
+        {
+            
+        }
+        public ITextOf Name => ProficiencyName;
     }
 }

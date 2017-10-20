@@ -70,12 +70,12 @@
     <Compile Include="Physical\Proficiencies\BrewersSupplies.cs" />
     <Compile Include="Physical\Proficiencies\Dagger.cs" />
     <Compile Include="Physical\Proficiencies\Darts.cs" />
-    <Compile Include="Physical\Proficiencies\EquateProficiency.cs" />
     <Compile Include="Physical\Proficiencies\Handaxe.cs" />
     <Compile Include="Physical\Proficiencies\IProficiency.cs" />
     <Compile Include="Physical\ISize.cs" />
     <Compile Include="Physical\ISkill.cs" />
     <Compile Include="Physical\ISpeed.cs" />
+    <Compile Include="Physical\Proficiencies\IEquateableProficiency.cs" />
     <Compile Include="Physical\Proficiencies\LightArmor.cs" />
     <Compile Include="Physical\Proficiencies\LightCrossbow.cs" />
     <Compile Include="Physical\Proficiencies\Longbow.cs" />
@@ -83,6 +83,7 @@
     <Compile Include="Physical\Proficiencies\MartialWeapons.cs" />
     <Compile Include="Physical\Proficiencies\MasonsTools.cs" />
     <Compile Include="Physical\Proficiencies\MediumArmor.cs" />
+    <Compile Include="Physical\Proficiencies\EquatableProficiency.cs" />
     <Compile Include="Physical\Proficiencies\Quarterstaff.cs" />
     <Compile Include="Physical\Proficiencies\Shortbow.cs" />
     <Compile Include="Physical\Proficiencies\Shortsword.cs" />

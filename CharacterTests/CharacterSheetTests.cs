@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Characters;
 using Characters.Attributes;
 using Characters.Classes;
@@ -147,6 +148,7 @@ namespace CharacterTests
             //act
             List<IProficiency> actualProficiencies = _characterSheet.Proficiencies();
             //assert
+            actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
         [TestMethod, TestCategory("Unit")]
         public void ShouldShouldReturnProficienciesForDwarfWizard()
@@ -172,7 +174,7 @@ namespace CharacterTests
             //act
             List<IProficiency> actualProficiencies = _characterSheet.Proficiencies();
             //assert
-            //actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
+            actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
 
         #region Helper Methods

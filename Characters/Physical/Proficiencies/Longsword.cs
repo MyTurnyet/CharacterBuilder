@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Longsword : IProficiency
+    public class Longsword : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("Longsword");
+        public Longsword():base(new TextOf("Longsword"))
+        {
+            
+        }
+        public ITextOf Name =>ProficiencyName;
     }
 }

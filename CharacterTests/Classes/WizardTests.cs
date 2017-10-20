@@ -51,7 +51,7 @@ namespace CharacterTests.Classes
             List<IProficiency> actualProfs = CharacterClass.Wizard.Proficiencies();
 
             //assert
-            //actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
+            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
 
         [TestMethod, TestCategory("Unit")]

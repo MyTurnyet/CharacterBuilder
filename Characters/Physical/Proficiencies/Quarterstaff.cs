@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class Quarterstaff : IProficiency
+    public class Quarterstaff : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("Quarterstaff");
+        public Quarterstaff():base(new TextOf("Quarterstaff"))
+        {
+            
+        }
+        public ITextOf Name => ProficiencyName;
     }
 }

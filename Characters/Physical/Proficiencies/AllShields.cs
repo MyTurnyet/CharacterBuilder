@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class AllShields : IProficiency
+    public class AllShields : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("All Shields");
+        public AllShields():base(new TextOf("All Shields"))
+        {
+            
+        }
+        public ITextOf Name => ProficiencyName;
     }
 }

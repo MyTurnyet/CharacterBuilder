@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class LightCrossbow : IProficiency
+    public class LightCrossbow : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("LightCrossbow");
+        public LightCrossbow():base(new TextOf("LightCrossbow"))
+        {
+            
+        }
+        public ITextOf Name => ProficiencyName;
     }
 }

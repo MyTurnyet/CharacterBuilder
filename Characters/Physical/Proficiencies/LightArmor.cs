@@ -1,7 +1,11 @@
 namespace Characters.Physical.Proficiencies
 {
-    public class LightArmor : IProficiency
+    public class LightArmor : EquatableProficiency, IProficiency
     {
-        public ITextOf Name => new TextOf("Light Armor");
+        public LightArmor():base(new TextOf("Light Armor"))
+        {
+            
+        }
+        public ITextOf Name => ProficiencyName;
     }
 }
