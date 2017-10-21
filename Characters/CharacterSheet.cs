@@ -29,10 +29,7 @@ namespace Characters
             attribute.ApplyRacialBonus((CharacterRace)_race);
             return attribute;
         }
-        public IHitPoints HitPoints()
-        {
-            return (HitPoints)_characterClass.HitDie().MaxHitPoints() + (HitPoints)_attributeSet.Constitution().BonusHitPoints() + (HitPoints)_race.BonusHitPoints();
-        }
+        public IHitPoints HitPoints() => (HitPoints)_characterClass.HitDie().MaxHitPoints() + (HitPoints)_attributeSet.MatchesName(CharacterAttributeName.Constitution).BonusHitPoints() + (HitPoints)_race.BonusHitPoints();
 
         public List<IProficiency> Proficiencies()
         {

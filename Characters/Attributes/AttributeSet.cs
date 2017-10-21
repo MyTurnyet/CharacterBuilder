@@ -16,17 +16,23 @@ namespace Characters.Attributes
 
         }
         private readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>();
-        public ICharacterAttribute Dexterity() => GetAttributeFromName(CharacterAttributeName.Dexterity);
-        public ICharacterAttribute Strength() => GetAttributeFromName(CharacterAttributeName.Strength);
-        public ICharacterAttribute Constitution() => GetAttributeFromName(CharacterAttributeName.Constitution);
-        public ICharacterAttribute Intellegence() => GetAttributeFromName(CharacterAttributeName.Intelligence);
-        public ICharacterAttribute Wisdom() => GetAttributeFromName(CharacterAttributeName.Wisdom);
-        public ICharacterAttribute Charisma() => GetAttributeFromName(CharacterAttributeName.Charisma);
+        //public ICharacterAttribute Dexterity() => GetAttributeFromName(CharacterAttributeName.Dexterity);
+        //public ICharacterAttribute Strength() => GetAttributeFromName(CharacterAttributeName.Strength);
+        //public ICharacterAttribute Constitution() => GetAttributeFromName(CharacterAttributeName.Constitution);
+        //public ICharacterAttribute Intellegence() => GetAttributeFromName(CharacterAttributeName.Intelligence);
+        //public ICharacterAttribute Wisdom() => GetAttributeFromName(CharacterAttributeName.Wisdom);
+        //public ICharacterAttribute Charisma() => GetAttributeFromName(CharacterAttributeName.Charisma);
         public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
         public TextOf DisplayText()
         {
-            TextOf displayText = Strength().DisplayText();
+            TextOf displayText = GetAttributeFromName(CharacterAttributeName.Strength).DisplayText();
             return displayText;
+        }
+
+        public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)
+        {
+            _attributes.Remove(GetAttributeFromName(attName));
+            _attributes.Add(new CharacterAttribute(attName,attributeScore));
         }
 
         private ICharacterAttribute GetAttributeFromName(IAttributeName name) => _attributes.First(arrib => arrib.MatchesName(name));

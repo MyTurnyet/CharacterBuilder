@@ -11,11 +11,11 @@ namespace Characters
         public TextOf() : this(string.Empty) { }
         public TextOf(int value) : this(value.ToString()) { }
         public TextOf(StringBuilder stringBuilder) : this(stringBuilder.ToString()){}
+        public TextOf(TextOf textOfToCopy) : this(textOfToCopy._text){}
         public TextOf(string text)
         {
             _text = text;
         }
-
         public override bool Equals(object obj) => Equals((TextOf)obj);
         private bool Equals(TextOf other) => other._text == _text;
         public void AddToStringBuilder(StringBuilder stringBuilder) => stringBuilder.Append(_text);

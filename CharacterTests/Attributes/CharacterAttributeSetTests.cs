@@ -22,7 +22,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new DexterityAttribute();
             //assert
-            _attributeSet.Dexterity().Should().Be(expectedAttribute);
+            _attributeSet.MatchesName(CharacterAttributeName.Dexterity).Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -31,7 +31,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new StrengthAttribute();
             //assert
-            _attributeSet.Strength().Should().Be(expectedAttribute);
+            _attributeSet.MatchesName(CharacterAttributeName.Strength).Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -40,7 +40,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new ConstitutionAttribute();
             //assert
-            _attributeSet.Constitution().Should().Be(expectedAttribute);
+            _attributeSet.MatchesName(CharacterAttributeName.Constitution).Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -49,7 +49,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new IntellegenceAttribute();
             //assert
-            _attributeSet.Intellegence().Should().Be(expectedAttribute);
+            _attributeSet.MatchesName(CharacterAttributeName.Intelligence).Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -58,7 +58,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new WisdomAttribute();
             //assert
-            _attributeSet.Wisdom().Should().Be(expectedAttribute);
+            _attributeSet.MatchesName(CharacterAttributeName.Wisdom).Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -67,7 +67,7 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new CharismaAttribute();
             //assert
-            _attributeSet.Charisma().Should().Be(expectedAttribute);
+            _attributeSet.MatchesName(CharacterAttributeName.Charisma).Should().Be(expectedAttribute);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -87,9 +87,9 @@ namespace CharacterTests.Attributes
             //arrange
             ICharacterAttribute expectedAttribute = new StrengthAttribute(new AttributeScore(18));
             //act
-            _attributeSet.Strength().Set(expectedAttribute.Score());
+            _attributeSet.MatchesName(CharacterAttributeName.Strength).Set(expectedAttribute.Score());
             //assert
-            _attributeSet.Strength().Score().Should().Be(expectedAttribute.Score());
+            _attributeSet.MatchesName(CharacterAttributeName.Strength).Score().Should().Be(expectedAttribute.Score());
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -98,7 +98,8 @@ namespace CharacterTests.Attributes
             //TODO: add all stats
             //assign
             TextOf expectedtTextOf = new TextOf("STR: 11");
-            _attributeSet.Strength().Set(new AttributeScore(11));
+            _attributeSet.SetAttribute(CharacterAttributeName.Strength, new AttributeScore(11));
+            //_attributeSet.Strength().Set(new AttributeScore(11));
             //act
             TextOf actualTextOf = _attributeSet.DisplayText();
             //assert

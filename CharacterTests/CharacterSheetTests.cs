@@ -201,13 +201,12 @@ namespace CharacterTests
             _wizAttribute = new WisdomAttribute(new AttributeScore(8));
             _chrAttribute = new CharismaAttribute(new AttributeScore(6));
             _attributeSet = new AttributeSet();
-            _attributeSet.Strength().Set(_strAttribute.Score());
-            _attributeSet.Dexterity().Set(_dexAttribute.Score());
-            _attributeSet.Constitution().Set(_conAttribute.Score());
-            _attributeSet.Intellegence().Set(_intAttribute.Score());
-            _attributeSet.Wisdom().Set(_wizAttribute.Score());
-            _attributeSet.Charisma().Set(_chrAttribute.Score());
-
+            _attributeSet.MatchesName(CharacterAttributeName.Strength).Set(_strAttribute.Score());
+            _attributeSet.MatchesName(CharacterAttributeName.Dexterity).Set(_dexAttribute.Score());
+            _attributeSet.MatchesName(CharacterAttributeName.Constitution).Set(_conAttribute.Score());
+            _attributeSet.MatchesName(CharacterAttributeName.Intelligence).Set(_intAttribute.Score());
+            _attributeSet.MatchesName(CharacterAttributeName.Wisdom).Set(_wizAttribute.Score());
+            _attributeSet.MatchesName(CharacterAttributeName.Charisma).Set(_chrAttribute.Score());
         }
         #endregion Helper Methods
     }
