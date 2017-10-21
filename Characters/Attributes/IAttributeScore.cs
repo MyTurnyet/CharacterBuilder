@@ -4,5 +4,6 @@
     {
         bool Equals(object obj);
         int Bonus();
+        TextOf AsText();
     }
 }

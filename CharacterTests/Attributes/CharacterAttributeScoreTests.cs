@@ -1,4 +1,5 @@
-﻿using Characters.Attributes;
+﻿using Characters;
+using Characters.Attributes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -46,6 +47,14 @@ namespace CharacterTests.Attributes
             IAttributeScore totalScore = new AttributeScore(2);
             //assert
             totalScore.Should().Be(score2 - score1);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnAsText()
+        {
+            //arrange
+            AttributeScore score1 = new AttributeScore(6);
+            //assert
+            score1.AsText().Should().Be(new TextOf("6"));
         }
     }
 }

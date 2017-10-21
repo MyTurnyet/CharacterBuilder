@@ -129,7 +129,7 @@ namespace CharacterTests
         public void ShouldShouldReturnProficienciesForDwarfFighter()
         {
             //assign
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf, _attributeSet);
+            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf);
             List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 new Battleaxe(),
@@ -154,7 +154,7 @@ namespace CharacterTests
         public void ShouldShouldReturnProficienciesForDwarfWizard()
         {
             //assign
-            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf, _attributeSet);
+            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf);
             List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 new Battleaxe(),
@@ -176,6 +176,20 @@ namespace CharacterTests
             //assert
             actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
+
+        //[TestMethod, TestCategory("Unit")]
+        //public void ShouldReturnCorrectStatsList()
+        //{
+        //    //assign
+        //    _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf,_attributeSet);
+        //    TextOf expectedTextOf = new TextOf("Strength: 10\r\nDexterity: 10");
+        //    //act
+        //    ITextOf actualTextOf = _characterSheet.StatsList();
+        //    //assert
+        //    actualTextOf.Should().Be(expectedTextOf);
+
+        //}
+
 
         #region Helper Methods
         private void SetupAttributes()

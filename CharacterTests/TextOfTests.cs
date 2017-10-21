@@ -18,6 +18,18 @@ namespace CharacterTests
             //assert
             textOf2.Should().Be(textOf1);
         }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnStringEmptyWhenUsingEmptyConstructor()
+        {
+            //assign
+            TextOf expectedTextOf = new TextOf(string.Empty);
+            TextOf actualTextOf = new TextOf();
+
+            //assert
+            actualTextOf.Should().Be(expectedTextOf);
+        }
+
         [TestMethod, TestCategory("Unit")]
         public void ShouldTakeStringBuilder()
         {

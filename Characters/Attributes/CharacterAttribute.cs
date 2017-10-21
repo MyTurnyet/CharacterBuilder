@@ -1,4 +1,6 @@
-﻿using Characters.Physical;
+﻿using System;
+using System.Text;
+using Characters.Physical;
 using Characters.Races;
 
 namespace Characters.Attributes
@@ -24,6 +26,14 @@ namespace Characters.Attributes
         private IAttributeScore BaseScore() => (AttributeScore)_value;
         public IAttributeScore Bonus() => new AttributeScore(Score().Bonus());
         public IHitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
+        public TextOf DisplayText()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            _name.Name().AddToStringBuilder(stringBuilder);
+            stringBuilder.Append(": ");
+            Score().AsText().AddToStringBuilder(stringBuilder);
+            return new TextOf(stringBuilder);
+        }
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

@@ -23,6 +23,12 @@ namespace Characters.Attributes
         public ICharacterAttribute Wisdom() => GetAttributeFromName(CharacterAttributeName.Wisdom);
         public ICharacterAttribute Charisma() => GetAttributeFromName(CharacterAttributeName.Charisma);
         public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
+        public TextOf DisplayText()
+        {
+            TextOf displayText = Strength().DisplayText();
+            return displayText;
+        }
+
         private ICharacterAttribute GetAttributeFromName(IAttributeName name) => _attributes.First(arrib => arrib.MatchesName(name));
 
     }

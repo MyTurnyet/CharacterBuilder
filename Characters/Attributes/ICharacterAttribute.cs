@@ -12,5 +12,6 @@ namespace Characters.Attributes
         void Set(IAttributeScore expectedScore);
         IAttributeScore Bonus();
         IHitPoints BonusHitPoints();
+        TextOf DisplayText();
     }
 }

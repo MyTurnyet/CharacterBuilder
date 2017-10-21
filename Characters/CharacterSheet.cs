@@ -12,16 +12,16 @@ namespace Characters
         private readonly ICharacterClass _characterClass;
         private readonly ICharacterRace _race;
         private readonly IAttributeSet _attributeSet;
-
+        public CharacterSheet() : this(new Fighter(), new Human(), new AttributeSet()) { }
+        public CharacterSheet(ICharacterClass characterClass, ICharacterRace race) : this(characterClass, race, new AttributeSet()) { }
+        
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, IAttributeSet attributeSet)
         {
             _characterClass = characterClass;
             _race = race;
             _attributeSet = attributeSet;
-
         }
 
-        public CharacterSheet() : this(new Fighter(), new Human(), new AttributeSet()) { }
 
         public ICharacterAttribute Attribute(IAttributeName attributeName)
         {

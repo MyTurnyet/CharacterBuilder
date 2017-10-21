@@ -9,5 +9,6 @@
         ICharacterAttribute Wisdom();
         ICharacterAttribute Charisma();
         ICharacterAttribute MatchesName(IAttributeName attributeName);
+        TextOf DisplayText();
     }
 }

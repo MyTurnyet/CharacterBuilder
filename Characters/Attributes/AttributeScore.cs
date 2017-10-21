@@ -17,6 +17,7 @@ namespace Characters.Attributes
         public static IAttributeScore operator +(AttributeScore left, AttributeScore right) => new AttributeScore(left._value + right._value);
         public static IAttributeScore operator -(AttributeScore left, AttributeScore right) => new AttributeScore(left._value - right._value);
         public int Bonus() => (int)Math.Floor((decimal)(_value - 10) / 2);
+        public TextOf AsText() => new TextOf(_value);
     }
 #pragma warning restore 659
 }

@@ -12,7 +12,7 @@ namespace CharacterBuilderWinTests
         //public void ShouldTakeFacilitator()
         //{
         //    //arrange
-        //    FrmMain frmMain = new FrmMain(new CharacterBuilderFacilitator(new FakeCharacterSheet()));
+        //    FrmMain frmMain = new FrmMain();
         //    //act
         //    frmMain.tbOutput.Text.Should().Be("test");
         //}
