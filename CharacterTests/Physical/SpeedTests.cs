@@ -31,12 +31,12 @@ namespace CharacterTests.Physical
         public void ShouldAdd()
         {
             //arrange
-            Speed expectedSpeed = new Speed(22);
-            Speed firstSpeed = new Speed(10);
-            Speed secondSpeed = new Speed(12);
+            ISpeed expectedSpeed = new Speed(22);
+            ISpeed firstSpeed = new Speed(10);
+            ISpeed secondSpeed = new Speed(12);
 
             //act
-            Speed actualSpeed = firstSpeed + secondSpeed;
+            ISpeed actualSpeed = firstSpeed.Add(secondSpeed);
             //assert
             actualSpeed.Should().Be(expectedSpeed);
         }

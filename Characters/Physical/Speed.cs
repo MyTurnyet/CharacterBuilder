@@ -11,7 +11,10 @@
         }
 
         public override bool Equals(object obj) => (Speed)obj != null && ((Speed)obj)._distance == _distance;
-        public static Speed operator +(Speed left, Speed right) => new Speed(left._distance + right._distance);
+        public ISpeed Add(ISpeed speedToAdd)
+        {
+            return new Speed(_distance + ((Speed)speedToAdd)._distance);
+        }
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

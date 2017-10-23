@@ -10,7 +10,7 @@ namespace Characters.Races
         public WoodElf() : base(new TextOf("Wood Elf")) { }
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => (AttributeScore)base.RacialAttributeAdjustment(attribute).Add(ApplyWisdomBonus(attribute));
         private IAttributeScore ApplyWisdomBonus(ICharacterAttribute attribute) => attribute.MatchesName(CharacterAttributeName.Wisdom) ? new AttributeScore(1) : new AttributeScore(0);
-        public override ISpeed Speed() => (Speed)base.Speed() + (Speed)_fleetFootBonus;
+        public override ISpeed Speed() => base.Speed().Add(_fleetFootBonus);
         public override IHitPoints BonusHitPoints() => new HitPoints(0);
     }
 }

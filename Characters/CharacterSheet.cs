@@ -15,7 +15,7 @@ namespace Characters
         private readonly IAttributeSet _attributeSet;
         public CharacterSheet() : this(new Fighter(), new Human(), new AttributeSet()) { }
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race) : this(characterClass, race, new AttributeSet()) { }
-        
+
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, IAttributeSet attributeSet)
         {
             _characterClass = characterClass;
@@ -23,15 +23,13 @@ namespace Characters
             _attributeSet = attributeSet;
         }
 
-
         public ICharacterAttribute Attribute(IAttributeName attributeName)
         {
             ICharacterAttribute attribute = _attributeSet.MatchesName(attributeName);
             attribute.ApplyRacialBonus((CharacterRace)_race);
             return attribute;
         }
-        public IHitPoints HitPoints() => (HitPoints)_characterClass.HitDie().MaxHitPoints() + (HitPoints)_attributeSet.MatchesName(CharacterAttributeName.Constitution).BonusHitPoints() + (HitPoints)_race.BonusHitPoints();
-
+        public IHitPoints HitPoints() => (HitPoints)_characterClass.HitDie().MaxHitPoints().Add((HitPoints)_attributeSet.MatchesName(CharacterAttributeName.Constitution).BonusHitPoints()).Add((HitPoints)_race.BonusHitPoints());
         public List<IProficiency> Proficiencies()
         {
             List<IProficiency> proficiencies = new List<IProficiency>();
@@ -39,10 +37,6 @@ namespace Characters
             proficiencies.AddRange(_race.Proficiencies());
             return proficiencies;
         }
-
-        public ITextOf StatsList()
-        {
-            return new TextOf("Test Stats");
-        }
+        public ITextOf StatsList() => new TextOf("Test Stats");
     }
 }
