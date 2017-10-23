@@ -61,6 +61,7 @@
     <Compile Include="Classes\FighterTests.cs" />
     <Compile Include="Classes\WizardTests.cs" />
     <Compile Include="Dice\HitDieTests.cs" />
+    <Compile Include="Display\AttributeDisplayTextTests.cs" />
     <Compile Include="Physical\SpeedTests.cs" />
     <Compile Include="CharacterSheetTests.cs" />
     <Compile Include="Physical\SizeTests.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="Races\WoodElfTests.cs" />
     <Compile Include="Races\HumanTests.cs" />
     <Compile Include="Dice\DieTests.cs" />
-    <Compile Include="TextOfTests.cs" />
+    <Compile Include="Display\TextOfTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

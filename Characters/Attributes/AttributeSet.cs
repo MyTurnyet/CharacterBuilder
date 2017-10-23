@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Characters.Display;
 
 namespace Characters.Attributes
 {
@@ -16,16 +17,11 @@ namespace Characters.Attributes
 
         }
         private readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>();
-        //public ICharacterAttribute Dexterity() => GetAttributeFromName(CharacterAttributeName.Dexterity);
-        //public ICharacterAttribute Strength() => GetAttributeFromName(CharacterAttributeName.Strength);
-        //public ICharacterAttribute Constitution() => GetAttributeFromName(CharacterAttributeName.Constitution);
-        //public ICharacterAttribute Intellegence() => GetAttributeFromName(CharacterAttributeName.Intelligence);
-        //public ICharacterAttribute Wisdom() => GetAttributeFromName(CharacterAttributeName.Wisdom);
-        //public ICharacterAttribute Charisma() => GetAttributeFromName(CharacterAttributeName.Charisma);
         public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
-        public TextOf DisplayText()
+        public ITextOf DisplayText()
         {
-            TextOf displayText = GetAttributeFromName(CharacterAttributeName.Strength).DisplayText();
+            TextOf displayText = new TextOf();
+            GetAttributeFromName(CharacterAttributeName.Strength).DisplayText(displayText);
             return displayText;
         }
 

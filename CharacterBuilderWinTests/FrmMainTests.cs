@@ -1,7 +1,4 @@
-﻿using System;
-using CharacterBuilderWin;
-using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CharacterBuilderWinTests
 {

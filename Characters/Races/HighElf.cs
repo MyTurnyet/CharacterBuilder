@@ -1,4 +1,5 @@
 ﻿using Characters.Attributes;
+using Characters.Display;
 using Characters.Physical;
 
 namespace Characters.Races

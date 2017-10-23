@@ -1,4 +1,6 @@
-﻿namespace Characters.Physical.Proficiencies
+﻿using Characters.Display;
+
+namespace Characters.Physical.Proficiencies
 {
 #pragma warning disable 660,661,659
     public abstract class EquatableProficiency : IEquateableProficiency

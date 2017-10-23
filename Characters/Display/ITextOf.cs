@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Characters
+namespace Characters.Display
 {
     public interface ITextOf
     {

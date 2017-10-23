@@ -1,9 +1,9 @@
 ﻿using System.Text;
-using Characters;
+using Characters.Display;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CharacterTests
+namespace CharacterTests.Display
 {
     [TestClass]
     public class TextOfTests

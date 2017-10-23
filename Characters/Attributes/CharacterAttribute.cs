@@ -1,5 +1,5 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
+using Characters.Display;
 using Characters.Physical;
 using Characters.Races;
 
@@ -18,6 +18,7 @@ namespace Characters.Attributes
             _name = name;
             _value = value;
         }
+
         public override bool Equals(object obj) => (CharacterAttribute)obj != null && ((CharacterAttribute)obj)._name == _name;
         public bool MatchesName(IAttributeName attributeName) => attributeName.Equals(_name);
         public IAttributeScore Score() => (AttributeScore)BaseScore() + (AttributeScore)_racialAttributeAdjustment;
@@ -26,12 +27,14 @@ namespace Characters.Attributes
         private IAttributeScore BaseScore() => (AttributeScore)_value;
         public IAttributeScore Bonus() => new AttributeScore(Score().Bonus());
         public IHitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
-        public TextOf DisplayText()
+    
+        public ITextOf DisplayText(ITextOf displayTextOf)
         {
             StringBuilder stringBuilder = new StringBuilder();
             _name.Name().AddToStringBuilder(stringBuilder);
             stringBuilder.Append(": ");
             Score().AsText().AddToStringBuilder(stringBuilder);
+            displayTextOf.AddToStringBuilder(stringBuilder);
             return new TextOf(stringBuilder);
         }
     }

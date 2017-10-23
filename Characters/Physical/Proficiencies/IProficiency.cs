@@ -1,4 +1,6 @@
-﻿namespace Characters.Physical.Proficiencies
+﻿using Characters.Display;
+
+namespace Characters.Physical.Proficiencies
 {
     public interface IProficiency
     {

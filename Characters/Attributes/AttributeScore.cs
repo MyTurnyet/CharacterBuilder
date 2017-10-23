@@ -1,4 +1,5 @@
 ﻿using System;
+using Characters.Display;
 
 namespace Characters.Attributes
 {
@@ -7,11 +8,11 @@ namespace Characters.Attributes
     {
         private readonly int _value;
 
+        public AttributeScore() : this(0) { }
         public AttributeScore(int value)
         {
             _value = value;
         }
-        
         public override bool Equals(object obj) => (AttributeScore)obj != null && Equals((AttributeScore)obj);
         private bool Equals(AttributeScore other) => _value == other._value;
         public static IAttributeScore operator +(AttributeScore left, AttributeScore right) => new AttributeScore(left._value + right._value);

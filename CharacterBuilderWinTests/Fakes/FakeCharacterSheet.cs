@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Characters;
 using Characters.Attributes;
+using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 

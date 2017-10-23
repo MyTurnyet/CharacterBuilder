@@ -1,4 +1,5 @@
-﻿using Characters.Physical;
+﻿using Characters.Display;
+using Characters.Physical;
 using Characters.Races;
 
 namespace Characters.Attributes
@@ -12,6 +13,6 @@ namespace Characters.Attributes
         void Set(IAttributeScore expectedScore);
         IAttributeScore Bonus();
         IHitPoints BonusHitPoints();
-        TextOf DisplayText();
+        ITextOf DisplayText(ITextOf displayTextOf);
     }
 }

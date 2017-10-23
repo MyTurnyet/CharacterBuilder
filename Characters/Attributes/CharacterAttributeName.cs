@@ -1,4 +1,6 @@
-﻿namespace Characters.Attributes
+﻿using Characters.Display;
+
+namespace Characters.Attributes
 {
 #pragma warning disable 659
     public class CharacterAttributeName : IAttributeName

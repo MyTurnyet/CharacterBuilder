@@ -1,5 +1,4 @@
-﻿using System;
-using Characters;
+﻿using Characters.Display;
 using Characters.Physical.Proficiencies;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -7,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CharacterTests.Physical
 {
     [TestClass]
-    public class IProficiencyTests
+    public class ProficiencyTests
     {
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnCorrectName()

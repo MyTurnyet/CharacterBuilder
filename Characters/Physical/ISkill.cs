@@ -1,4 +1,6 @@
-﻿namespace Characters.Physical
+﻿using Characters.Display;
+
+namespace Characters.Physical
 {
     public interface ISkill
     {

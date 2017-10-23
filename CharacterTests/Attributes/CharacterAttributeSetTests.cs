@@ -1,5 +1,4 @@
-﻿using Characters;
-using Characters.Attributes;
+﻿using Characters.Attributes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -92,19 +91,17 @@ namespace CharacterTests.Attributes
             _attributeSet.MatchesName(CharacterAttributeName.Strength).Score().Should().Be(expectedAttribute.Score());
         }
 
-        [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnTextOfStats()
-        {
-            //TODO: add all stats
-            //assign
-            TextOf expectedtTextOf = new TextOf("STR: 11");
-            _attributeSet.SetAttribute(CharacterAttributeName.Strength, new AttributeScore(11));
-            //_attributeSet.Strength().Set(new AttributeScore(11));
-            //act
-            TextOf actualTextOf = _attributeSet.DisplayText();
-            //assert
-            actualTextOf.Should().Be(expectedtTextOf);
-        }
-
+        //[TestMethod, TestCategory("Unit")]
+        //public void ShouldReturnTextOfStats()
+        //{
+        //    //TODO: add all stats
+        //    //assign
+        //    ITextOf expectedtTextOf = new TextOf("STR: 11");
+        //    _attributeSet.SetAttribute(CharacterAttributeName.Strength, new AttributeScore(11));
+        //    //act
+        //    ITextOf actualTextOf = _attributeSet.DisplayText();
+        //    //assert
+        //    actualTextOf.Should().Be(expectedtTextOf);
+        //}
     }
 }

@@ -1,5 +1,5 @@
-﻿using Characters;
-using Characters.Classes;
+﻿using Characters.Classes;
+using Characters.Display;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

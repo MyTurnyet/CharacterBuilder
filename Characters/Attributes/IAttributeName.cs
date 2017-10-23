@@ -1,4 +1,6 @@
-﻿namespace Characters.Attributes
+﻿using Characters.Display;
+
+namespace Characters.Attributes
 {
     public interface IAttributeName
     {

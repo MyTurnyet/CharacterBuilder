@@ -1,3 +1,5 @@
+using Characters.Display;
+
 namespace Characters.Physical.Proficiencies
 {
     public class MartialWeapons : EquatableProficiency, IProficiency

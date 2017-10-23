@@ -3,6 +3,7 @@ using System.Linq;
 using Characters;
 using Characters.Attributes;
 using Characters.Classes;
+using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Races;

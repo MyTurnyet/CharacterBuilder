@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Characters
+namespace Characters.Display
 {
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public class TextOf : ITextOf
