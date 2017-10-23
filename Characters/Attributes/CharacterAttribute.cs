@@ -21,7 +21,7 @@ namespace Characters.Attributes
 
         public override bool Equals(object obj) => (CharacterAttribute)obj != null && ((CharacterAttribute)obj)._name == _name;
         public bool MatchesName(IAttributeName attributeName) => attributeName.Equals(_name);
-        public IAttributeScore Score() => (AttributeScore)BaseScore() + (AttributeScore)_racialAttributeAdjustment;
+        public IAttributeScore Score() => (AttributeScore)BaseScore().Add(_racialAttributeAdjustment);
         public void ApplyRacialBonus(ICharacterRace race) => _racialAttributeAdjustment = race.RacialAttributeAdjustment(this);
         public void Set(IAttributeScore expectedScore) => _value = expectedScore;
         private IAttributeScore BaseScore() => (AttributeScore)_value;

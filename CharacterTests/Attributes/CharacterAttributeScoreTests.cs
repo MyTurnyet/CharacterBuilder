@@ -35,8 +35,9 @@ namespace CharacterTests.Attributes
             AttributeScore score1 = new AttributeScore(4);
             AttributeScore score2 = new AttributeScore(8);
             IAttributeScore totalScore = new AttributeScore(12);
+            IAttributeScore actualScore = score1.Add(score2);
             //assert
-            totalScore.Should().Be(score1 + score2);
+            totalScore.Should().Be(actualScore);
         }
         [TestMethod, TestCategory("Unit")]
         public void ShouldSubtract()
@@ -45,8 +46,9 @@ namespace CharacterTests.Attributes
             AttributeScore score1 = new AttributeScore(6);
             AttributeScore score2 = new AttributeScore(8);
             IAttributeScore totalScore = new AttributeScore(2);
+            IAttributeScore actualScore = score2.Subtract(score1);
             //assert
-            totalScore.Should().Be(score2 - score1);
+            totalScore.Should().Be(actualScore);
         }
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnAsText()

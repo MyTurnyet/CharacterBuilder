@@ -6,6 +6,8 @@ namespace Characters.Attributes
     {
         bool Equals(object obj);
         int Bonus();
+        IAttributeScore Add(IAttributeScore scoreToAdd);
+        IAttributeScore Subtract(IAttributeScore scoreToSubtract);
         TextOf AsText();
     }
 }
