@@ -1,5 +1,6 @@
 ﻿using Characters.Display;
 using Characters.Physical;
+using Characters.Physical.Sizes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -9,12 +10,12 @@ namespace CharacterTests.Physical
     public class SizeTests
     {
         [TestMethod, TestCategory("Unit")]
-        public void ShouldEquate() => Size.Tiny.Should().Be(Size.Tiny);
+        public void ShouldEquate() => new Tiny().Should().Be(new Tiny());
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldNotEquate() => Size.Tiny.Should().NotBe(Size.Medium);
+        public void ShouldNotEquate() => new Tiny().Should().NotBe(new Medium());
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnName() => Size.Medium.Name().Should().Be(new TextOf("Medium"));
+        public void ShouldReturnName() => new Medium().Name().Should().Be(new TextOf("Medium"));
     }
 }

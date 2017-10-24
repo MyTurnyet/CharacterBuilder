@@ -74,7 +74,7 @@
     <Compile Include="Physical\Proficiencies\Darts.cs" />
     <Compile Include="Physical\Proficiencies\Handaxe.cs" />
     <Compile Include="Physical\Proficiencies\IProficiency.cs" />
-    <Compile Include="Physical\ISize.cs" />
+    <Compile Include="Physical\Sizes\ISize.cs" />
     <Compile Include="Physical\ISkill.cs" />
     <Compile Include="Physical\ISpeed.cs" />
     <Compile Include="Physical\Proficiencies\IEquateableProficiency.cs" />
@@ -94,7 +94,8 @@
     <Compile Include="Physical\Proficiencies\SmithsTools.cs" />
     <Compile Include="Physical\Proficiencies\ThrowingHammer.cs" />
     <Compile Include="Physical\Proficiencies\Warhammer.cs" />
-    <Compile Include="Physical\Size.cs" />
+    <Compile Include="Physical\Sizes\Size.cs" />
+    <Compile Include="Physical\Sizes\Tiny.cs" />
     <Compile Include="Physical\Skill.cs" />
     <Compile Include="Physical\Speed.cs" />
     <Compile Include="Classes\CharacterClass.cs" />

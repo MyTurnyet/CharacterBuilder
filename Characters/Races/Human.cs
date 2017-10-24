@@ -3,6 +3,7 @@ using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Sizes;
 
 namespace Characters.Races
 {
@@ -14,7 +15,7 @@ namespace Characters.Races
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => _racialAttributeAdjustment;
         public override ISpeed Speed() => new Speed(30);
         public override IHitPoints BonusHitPoints() => new HitPoints(0);
-        public override ISize Size() => Physical.Size.Medium;
+        public override ISize Size() => new Medium();
         public override List<IProficiency> Proficiencies() => _proficiencies;
     }
 }

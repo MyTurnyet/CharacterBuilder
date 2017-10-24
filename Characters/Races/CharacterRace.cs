@@ -3,6 +3,7 @@ using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Sizes;
 
 namespace Characters.Races
 {

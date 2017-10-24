@@ -2,6 +2,7 @@
 using Characters.Attributes;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Sizes;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -52,7 +53,7 @@ namespace CharacterTests.Races
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnSize() => CharacterRace.HillDwarf.Size().Should().Be(Size.Medium);
+        public void ShouldReturnSize() => CharacterRace.HillDwarf.Size().Should().Be(new Medium());
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnProficiencies()

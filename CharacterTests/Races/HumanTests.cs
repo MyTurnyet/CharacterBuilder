@@ -2,6 +2,7 @@
 using Characters.Attributes;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Sizes;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -55,7 +56,7 @@ namespace CharacterTests.Races
             ISize actualsSize = CharacterRace.Human.Size();
 
             //assert
-            actualsSize.Should().Be(Size.Medium);
+            actualsSize.Should().Be(new Medium());
         }
 
         [TestMethod, TestCategory("Unit")]
