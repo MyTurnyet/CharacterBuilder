@@ -1,5 +1,6 @@
 ﻿using Characters.Display;
 using Characters.Physical;
+using Characters.Physical.Skills;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,29 +13,29 @@ namespace CharacterTests.Physical
         public void ShouldEquate()
         {
             //assign
-            Skill expectedSkill = Skill.Acrobatics;
-            Skill actualSkill = Skill.Acrobatics;
+            SkillBase expectedSkillBase = new Acrobatics();
+            SkillBase actualSkillBase = new Acrobatics();
 
             //assert
-            actualSkill.Should().Be(expectedSkill);
+            actualSkillBase.Should().Be(expectedSkillBase);
         }
         [TestMethod, TestCategory("Unit")]
         public void ShouldNotEquate()
         {
             //assign
-            Skill expectedSkill = Skill.Acrobatics;
-            Skill actualSkill = Skill.Deception;
+            SkillBase expectedSkillBase = new Acrobatics();
+            SkillBase actualSkillBase = new Deception();
 
             //assert
-            actualSkill.Should().NotBe(expectedSkill);
+            actualSkillBase.Should().NotBe(expectedSkillBase);
         }
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnName()
         {
             //assign
-            Skill actualSkill = Skill.Deception;
+            SkillBase actualSkillBase = new Deception();
             //act
-            TextOf name = actualSkill.Name();
+            TextOf name = actualSkillBase.Name();
             //assert
             name.Should().Be(new TextOf("Deception"));
         }

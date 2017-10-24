@@ -4,6 +4,7 @@ using Characters.Dice;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Skills;
 
 namespace Characters.Classes
 {
@@ -21,8 +22,8 @@ namespace Characters.Classes
         };
         public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute> { SavingThrowAttribute.Intellegence, SavingThrowAttribute.Wisdom };
         public override List<ISkill> Skills() => new List<ISkill>
-            {Skill.Arcana,Skill.History,Skill.Insight,
-                Skill.Investigation,Skill.Medicine,Skill.Religion};
+            {new Arcana(),new History(),new Insight(),
+                new Investigation(),new Medicine(),new Religion()};
 
         public override IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }

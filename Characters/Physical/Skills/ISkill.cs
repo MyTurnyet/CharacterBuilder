@@ -1,6 +1,6 @@
 ﻿using Characters.Display;
 
-namespace Characters.Physical
+namespace Characters.Physical.Skills
 {
     public interface ISkill
     {

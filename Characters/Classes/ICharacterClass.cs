@@ -4,6 +4,7 @@ using Characters.Dice;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Skills;
 
 namespace Characters.Classes
 {

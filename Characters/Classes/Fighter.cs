@@ -4,6 +4,7 @@ using Characters.Dice;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Skills;
 
 namespace Characters.Classes
 {
@@ -20,8 +21,8 @@ namespace Characters.Classes
         public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute>
         {SavingThrowAttribute.Strength,SavingThrowAttribute.Constitution};
         public override List<ISkill> Skills() => new List<ISkill>
-            {Skill.Acrobatics,Skill.AnimalHandling,Skill.Athletics,Skill.History,
-                Skill.Insight,Skill.Intimidation,Skill.Perception,Skill.Survival};
+            {new Acrobatics(),new AnimalHandling(),new Athletics(),new History(),
+                new Insight(),new Intimidation(),new Perception(),new Survival()};
         public override IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }
 }

@@ -5,6 +5,7 @@ using Characters.Classes;
 using Characters.Dice;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Skills;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -76,14 +77,14 @@ namespace CharacterTests.Classes
             //assign
             List<ISkill> expectedSkills = new List<ISkill>
             {
-                Skill.Acrobatics,
-                Skill.AnimalHandling,
-                Skill.Athletics,
-                Skill.History,
-                Skill.Insight,
-                Skill.Intimidation,
-                Skill.Perception,
-                Skill.Survival
+                new Acrobatics(),
+                new AnimalHandling(),
+                new Athletics(),
+                new History(),
+                new Insight(),
+                new Intimidation(),
+                new Perception(),
+                new Survival()
             };
             //act
             List<ISkill> actualSkills = CharacterClass.Fighter.Skills();
