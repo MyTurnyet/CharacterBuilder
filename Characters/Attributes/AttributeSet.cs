@@ -20,9 +20,8 @@ namespace Characters.Attributes
         public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
         public ITextOf DisplayText()
         {
-            TextOf displayText = new TextOf();
-            GetAttributeFromName(CharacterAttributeName.Strength).DisplayText(displayText);
-            return displayText;
+            ITextOf strengthText = GetAttributeFromName(CharacterAttributeName.Strength).DisplayText();
+            return strengthText;
         }
 
         public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)

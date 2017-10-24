@@ -28,13 +28,12 @@ namespace Characters.Attributes
         public IAttributeScore Bonus() => new AttributeScore(Score().Bonus());
         public IHitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
     
-        public ITextOf DisplayText(ITextOf displayTextOf)
+        public ITextOf DisplayText()
         {
             StringBuilder stringBuilder = new StringBuilder();
             _name.Name().AddToStringBuilder(stringBuilder);
             stringBuilder.Append(": ");
             Score().AsText().AddToStringBuilder(stringBuilder);
-            displayTextOf.AddToStringBuilder(stringBuilder);
             return new TextOf(stringBuilder);
         }
     }

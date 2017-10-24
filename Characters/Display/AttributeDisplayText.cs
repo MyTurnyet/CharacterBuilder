@@ -12,7 +12,7 @@ namespace Characters.Display
 
         public ITextOf Text()
         {
-            ITextOf textOf =_characterAttribute.DisplayText(new TextOf());
+            ITextOf textOf =_characterAttribute.DisplayText();
             return textOf;
         }
     }

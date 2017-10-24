@@ -13,6 +13,7 @@ namespace Characters.Attributes
         void Set(IAttributeScore expectedScore);
         IAttributeScore Bonus();
         IHitPoints BonusHitPoints();
-        ITextOf DisplayText(ITextOf displayTextOf);
+        //ITextOf DisplayText(ITextOf displayTextOf);
+        ITextOf DisplayText();
     }
 }
