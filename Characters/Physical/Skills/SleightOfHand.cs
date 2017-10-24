@@ -5,6 +5,6 @@ namespace Characters.Physical.Skills
 {
     public class SleightOfHand : SkillBase, ISkill
     {
-        public SleightOfHand() : base(new TextOf("Sleight Of Hand"), new DexterityAttribute()) { }
+        public SleightOfHand() : base(new TextObj("Sleight Of Hand"), new DexterityAttribute()) { }
     }
 }

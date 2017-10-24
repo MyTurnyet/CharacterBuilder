@@ -28,13 +28,13 @@ namespace Characters.Attributes
         public IAttributeScore Bonus() => new AttributeScore(Score().Bonus());
         public IHitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
     
-        public ITextOf DisplayText()
+        public ITextObj DisplayText()
         {
             StringBuilder stringBuilder = new StringBuilder();
             _name.Name().AddToStringBuilder(stringBuilder);
             stringBuilder.Append(": ");
             Score().AsText().AddToStringBuilder(stringBuilder);
-            return new TextOf(stringBuilder);
+            return new TextObj(stringBuilder);
         }
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()

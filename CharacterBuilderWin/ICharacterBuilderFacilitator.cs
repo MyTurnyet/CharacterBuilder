@@ -4,6 +4,6 @@ namespace CharacterBuilderWin
 {
     public interface ICharacterBuilderFacilitator
     {
-        StringBuilder CharacterSheetText();
+        //StringBuilder CharacterSheetText();
     }
 }

@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class SimpleWeapons : EquatableProficiency, IProficiency
     {
-        public SimpleWeapons():base(new TextOf("Simple Weapons"))
+        public SimpleWeapons():base(new TextObj("Simple Weapons"))
         {
             
         }
-        public ITextOf Name => ProficiencyName;
+        public ITextObj Name => ProficiencyName;
     }
 }

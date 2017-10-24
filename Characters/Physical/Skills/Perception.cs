@@ -5,6 +5,6 @@ namespace Characters.Physical.Skills
 {
     public class Perception : SkillBase, ISkill
     {
-        public Perception() : base(new TextOf("Perception"), new WisdomAttribute()) { }
+        public Perception() : base(new TextObj("Perception"), new WisdomAttribute()) { }
     }
 }

@@ -11,11 +11,11 @@ namespace Characters.Classes
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public abstract class CharacterClass : ICharacterClass
     {
-        private readonly ITextOf _className;
+        private readonly ITextObj _className;
         public static readonly ICharacterClass Fighter = new Fighter();
         public static readonly ICharacterClass Wizard = new Wizard();
 
-        protected CharacterClass(ITextOf className)
+        protected CharacterClass(ITextObj className)
         {
             _className = className;
         }
@@ -25,7 +25,7 @@ namespace Characters.Classes
         public abstract List<IProficiency> Proficiencies();
         public abstract List<ISavingThrowAttribute> SavingThrows();
         public abstract List<ISkill> Skills();
-        public ITextOf Name() => _className;
+        public ITextObj Name() => _className;
         public abstract IHitPoints BaseHitPoints();
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()

@@ -5,6 +5,6 @@ namespace Characters.Attributes
     public interface IAttributeName
     {
         bool Equals(object obj);
-        TextOf Name();
+        TextObj Name();
     }
 }

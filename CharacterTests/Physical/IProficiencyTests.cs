@@ -36,28 +36,28 @@ namespace CharacterTests.Physical
             Warhammer warhammer = new Warhammer();
 
             //assert
-            allArmor.Name.Should().Be(new TextOf("All Armor"));
-            allShields.Name.Should().Be(new TextOf("All Shields"));
-            battleaxe.Name.Should().Be(new TextOf("Battleaxe"));
-            brewersSupplies.Name.Should().Be(new TextOf("Brewer's Supplies"));
-            dagger.Name.Should().Be(new TextOf("Dagger"));
-            darts.Name.Should().Be(new TextOf("Darts"));
-            handaxe.Name.Should().Be(new TextOf("Handaxe"));
-            lightArmor.Name.Should().Be(new TextOf("Light Armor"));
-            lightCrossbow.Name.Should().Be(new TextOf("Light Crossbow"));
-            longbow.Name.Should().Be(new TextOf("Longbow"));
-            longsword.Name.Should().Be(new TextOf("Longsword"));
-            martialWeapons.Name.Should().Be(new TextOf("Martial Weapons"));
-            masonsTools.Name.Should().Be(new TextOf("Mason's Tools"));
-            mediumArmor.Name.Should().Be(new TextOf("Medium Armor"));
-            quarterstaff.Name.Should().Be(new TextOf("Quarterstaff"));
-            shortbow.Name.Should().Be(new TextOf("Shortbow"));
-            shortsword.Name.Should().Be(new TextOf("Shortsword"));
-            simpleWeapons.Name.Should().Be(new TextOf("Simple Weapons"));
-            sling.Name.Should().Be(new TextOf("Sling"));
-            smithsTools.Name.Should().Be(new TextOf("Smith's Tools"));
-            throwingHammer.Name.Should().Be(new TextOf("Throwing Hammer"));
-            warhammer.Name.Should().Be(new TextOf("Warhammer"));
+            allArmor.Name.Should().Be(new TextObj("All Armor"));
+            allShields.Name.Should().Be(new TextObj("All Shields"));
+            battleaxe.Name.Should().Be(new TextObj("Battleaxe"));
+            brewersSupplies.Name.Should().Be(new TextObj("Brewer's Supplies"));
+            dagger.Name.Should().Be(new TextObj("Dagger"));
+            darts.Name.Should().Be(new TextObj("Darts"));
+            handaxe.Name.Should().Be(new TextObj("Handaxe"));
+            lightArmor.Name.Should().Be(new TextObj("Light Armor"));
+            lightCrossbow.Name.Should().Be(new TextObj("Light Crossbow"));
+            longbow.Name.Should().Be(new TextObj("Longbow"));
+            longsword.Name.Should().Be(new TextObj("Longsword"));
+            martialWeapons.Name.Should().Be(new TextObj("Martial Weapons"));
+            masonsTools.Name.Should().Be(new TextObj("Mason's Tools"));
+            mediumArmor.Name.Should().Be(new TextObj("Medium Armor"));
+            quarterstaff.Name.Should().Be(new TextObj("Quarterstaff"));
+            shortbow.Name.Should().Be(new TextObj("Shortbow"));
+            shortsword.Name.Should().Be(new TextObj("Shortsword"));
+            simpleWeapons.Name.Should().Be(new TextObj("Simple Weapons"));
+            sling.Name.Should().Be(new TextObj("Sling"));
+            smithsTools.Name.Should().Be(new TextObj("Smith's Tools"));
+            throwingHammer.Name.Should().Be(new TextObj("Throwing Hammer"));
+            warhammer.Name.Should().Be(new TextObj("Warhammer"));
         }
     }
 }

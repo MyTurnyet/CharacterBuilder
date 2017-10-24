@@ -37,6 +37,6 @@ namespace Characters
             proficiencies.AddRange(_race.Proficiencies());
             return proficiencies;
         }
-        public ITextOf StatsList() => new TextOf("Test Stats");
+        public ITextObj StatsList() => new TextObj("Test Stats");
     }
 }

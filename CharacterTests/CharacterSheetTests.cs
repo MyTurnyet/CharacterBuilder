@@ -118,12 +118,12 @@ namespace CharacterTests
         {
             //arrange
             _characterSheet = new CharacterSheet();
-            ITextOf expectedText = new TextOf("Test Stats");
+            ITextObj expectedText = new TextObj("Test Stats");
             //act
-            ITextOf actualTextOf = _characterSheet.StatsList();
+            ITextObj actualTextObj = _characterSheet.StatsList();
 
             //assert
-            actualTextOf.Should().Be(expectedText);
+            actualTextObj.Should().Be(expectedText);
         }
 
         [TestMethod, TestCategory("Unit")]

@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class Longbow : EquatableProficiency, IProficiency
     {
-        public Longbow():base(new TextOf("Longbow"))
+        public Longbow():base(new TextObj("Longbow"))
         {
             
         }
-        public ITextOf Name => ProficiencyName;
+        public ITextObj Name => ProficiencyName;
     }
 }

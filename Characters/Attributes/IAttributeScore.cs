@@ -8,6 +8,6 @@ namespace Characters.Attributes
         int Bonus();
         IAttributeScore Add(IAttributeScore scoreToAdd);
         IAttributeScore Subtract(IAttributeScore scoreToSubtract);
-        TextOf AsText();
+        TextObj AsText();
     }
 }

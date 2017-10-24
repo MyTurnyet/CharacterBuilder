@@ -10,7 +10,7 @@ namespace Characters.Classes
 {
     public class Fighter : CharacterClass
     {
-        public Fighter() : base(new TextOf("Fighter")) { }
+        public Fighter() : base(new TextObj("Fighter")) { }
         public override IHitDie HitDie() => Dice.HitDie.Fighter;
         public override List<IProficiency> Proficiencies() => new List<IProficiency>{
             new SimpleWeapons(),

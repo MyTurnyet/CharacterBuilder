@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class ThrowingHammer : EquatableProficiency, IProficiency
     {
-        public ThrowingHammer():base(new TextOf("Throwing Hammer"))
+        public ThrowingHammer():base(new TextObj("Throwing Hammer"))
         {
             
         }
-        public ITextOf Name => ProficiencyName;
+        public ITextObj Name => ProficiencyName;
     }
 }

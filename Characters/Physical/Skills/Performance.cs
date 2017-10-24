@@ -5,6 +5,6 @@ namespace Characters.Physical.Skills
 {
     public class Performance : SkillBase, ISkill
     {
-        public Performance() : base(new TextOf("Performance"), new CharismaAttribute()) { }
+        public Performance() : base(new TextObj("Performance"), new CharismaAttribute()) { }
     }
 }

@@ -15,7 +15,7 @@ namespace Characters.Races
         ISpeed Speed();
         IHitPoints BonusHitPoints();
         List<IProficiency> Proficiencies();
-        ITextOf Name();
+        ITextObj Name();
         ISize Size();
     }
 }

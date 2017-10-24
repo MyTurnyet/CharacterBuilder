@@ -11,6 +11,6 @@ namespace Characters
         ICharacterAttribute Attribute(IAttributeName attributeName);
         IHitPoints HitPoints();
         List<IProficiency> Proficiencies();
-        ITextOf StatsList();
+        ITextObj StatsList();
     }
 }

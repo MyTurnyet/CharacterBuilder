@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class Sling : EquatableProficiency, IProficiency
     {
-        public Sling():base(new TextOf("Sling"))
+        public Sling():base(new TextObj("Sling"))
         {
             
         }
-        public ITextOf Name => ProficiencyName;
+        public ITextObj Name => ProficiencyName;
     }
 }

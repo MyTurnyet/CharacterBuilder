@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class MartialWeapons : EquatableProficiency, IProficiency
     {
-        public MartialWeapons():base(new TextOf("Martial Weapons"))
+        public MartialWeapons():base(new TextObj("Martial Weapons"))
         {
             
         }
-        public ITextOf Name =>ProficiencyName;
+        public ITextObj Name =>ProficiencyName;
     }
 }

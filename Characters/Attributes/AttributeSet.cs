@@ -18,10 +18,10 @@ namespace Characters.Attributes
         }
         private readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>();
         public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
-        public ITextOf DisplayText()
+        public ITextObj DisplayText()
         {
-            ITextOf strengthText = GetAttributeFromName(CharacterAttributeName.Strength).DisplayText();
-            return strengthText;
+            return GetAttributeFromName(CharacterAttributeName.Strength).DisplayText();
+                //.Append(GetAttributeFromName(CharacterAttributeName.Dexterity).DisplayText());
         }
 
         public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)

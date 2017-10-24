@@ -1,5 +1,4 @@
-﻿using System.Text;
-using Characters.Display;
+﻿using Characters.Display;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,8 +11,8 @@ namespace CharacterTests.Display
         public void ShouldEquate()
         {
             //arrange
-            TextOf textOf1 = new TextOf("Test");
-            TextOf textOf2 = new TextOf("Test");
+            TextObj textOf1 = new TextObj("Test");
+            TextObj textOf2 = new TextObj("Test");
 
             //assert
             textOf2.Should().Be(textOf1);
@@ -23,26 +22,48 @@ namespace CharacterTests.Display
         public void ShouldReturnStringEmptyWhenUsingEmptyConstructor()
         {
             //assign
-            TextOf expectedTextOf = new TextOf(string.Empty);
-            TextOf actualTextOf = new TextOf();
+            TextObj expectedTextObj = new TextObj(string.Empty);
+            TextObj actualTextObj = new TextObj();
 
             //assert
-            actualTextOf.Should().Be(expectedTextOf);
+            actualTextObj.Should().Be(expectedTextObj);
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldTakeStringBuilder()
+        public void ShouldAppendTextOfObjects()
         {
             //arrange
-            StringBuilder sb = new StringBuilder();
-            string expectedText = "Test of Stringbuilder";
-            TextOf textOf1 = new TextOf(expectedText);
-
+            ITextObjAppendable textObj = new TextObj("test");
+            ITextObjAppendable textObjAppend = new TextObj("output");
+            ITextObjAppendable expected = new TextObj("testoutput");
             //act
-            textOf1.AddToStringBuilder(sb);
-
+            ITextObjAppendable actual = textObj.Append(textObjAppend);
             //assert
-            sb.ToString().Should().Be(expectedText);
+            actual.Should().Be(expected);
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnNewLine()
+        {
+            //arrange
+            ITextObj newlineTextObj = new NewLineTextObj();
+            ITextObj expectedTextObj = new TextObj("\r\n");
+            //assert
+            newlineTextObj.Should().Be(expectedTextObj);
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldAppendNewLine()
+        {
+            //arrange
+            ITextObjAppendable textObj = new TextObj("test");
+            ITextObj newLineObj = new NewLineTextObj();
+            ITextObjAppendable expectedTextObj = new TextObj("test\r\ntest");
+            //act
+            ITextObjAppendable actualTextObj = textObj.Append(newLineObj).Append(textObj);
+            //assert
+            actualTextObj.Should().Be(expectedTextObj);
         }
     }
 }
+

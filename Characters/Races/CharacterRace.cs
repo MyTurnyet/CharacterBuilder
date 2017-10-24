@@ -10,7 +10,7 @@ namespace Characters.Races
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public abstract class CharacterRace : ICharacterRace
     {
-        private readonly ITextOf _race;
+        private readonly ITextObj _race;
 
         public static readonly ICharacterRace Human = new Human();
         public static readonly ICharacterRace WoodElf = new WoodElf();
@@ -19,7 +19,7 @@ namespace Characters.Races
         public static readonly ICharacterRace MountainDwarf = new MountainDwarf();
 
 
-        internal CharacterRace(ITextOf race)
+        internal CharacterRace(ITextObj race)
         {
             _race = race;
         }
@@ -31,7 +31,7 @@ namespace Characters.Races
         public abstract IHitPoints BonusHitPoints();
         public abstract ISize Size();
         public abstract List<IProficiency> Proficiencies();
-        public ITextOf Name()
+        public ITextObj Name()
         {
             return _race;
         }

@@ -56,7 +56,7 @@ namespace CharacterTests.Attributes
             //arrange
             AttributeScore score1 = new AttributeScore(6);
             //assert
-            score1.AsText().Should().Be(new TextOf("6"));
+            score1.AsText().Should().Be(new TextObj("6"));
         }
     }
 }

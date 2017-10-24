@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class SmithsTools : EquatableProficiency, IProficiency
     {
-        public SmithsTools():base(new TextOf("Smith's Tools"))
+        public SmithsTools():base(new TextObj("Smith's Tools"))
         {
             
         }
-        public ITextOf Name => ProficiencyName;
+        public ITextObj Name => ProficiencyName;
     }
 }

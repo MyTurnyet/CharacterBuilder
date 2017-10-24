@@ -15,7 +15,7 @@ namespace Characters.Classes
         List<IProficiency> Proficiencies();
         List<ISavingThrowAttribute> SavingThrows();
         List<ISkill> Skills();
-        ITextOf Name();
+        ITextObj Name();
         IHitPoints BaseHitPoints();
     }
 }

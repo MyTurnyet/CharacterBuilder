@@ -5,7 +5,7 @@ namespace Characters.Attributes
     public interface IAttributeSet
     {
         ICharacterAttribute MatchesName(IAttributeName attributeName);
-        ITextOf DisplayText();
+        ITextObj DisplayText();
         void SetAttribute(IAttributeName attName, IAttributeScore attributeScore);
     }
 }

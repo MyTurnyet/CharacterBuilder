@@ -6,7 +6,7 @@ namespace Characters.Physical.Skills
     public interface ISkill
     {
         bool Equals(object obj);
-        ITextOf Name();
+        ITextObj Name();
         ICharacterAttribute BaseAttribute();
     }
 }

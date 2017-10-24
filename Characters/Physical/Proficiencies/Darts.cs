@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class Darts : EquatableProficiency, IProficiency
     {
-        public Darts():base(new TextOf("Darts"))
+        public Darts():base(new TextObj("Darts"))
         {
             
         }
-        public ITextOf Name =>ProficiencyName;
+        public ITextObj Name =>ProficiencyName;
     }
 }

@@ -4,6 +4,6 @@ namespace Characters.Physical.Sizes
 {
     public class Medium : Size
     {
-        public Medium() : base(5, new TextOf("Medium")){}
+        public Medium() : base(5, new TextObj("Medium")){}
     }
 }

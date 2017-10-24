@@ -14,6 +14,6 @@ namespace Characters.Attributes
         IAttributeScore Bonus();
         IHitPoints BonusHitPoints();
         //ITextOf DisplayText(ITextOf displayTextOf);
-        ITextOf DisplayText();
+        ITextObj DisplayText();
     }
 }

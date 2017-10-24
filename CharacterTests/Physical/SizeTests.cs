@@ -13,6 +13,6 @@ namespace CharacterTests.Physical
         public void ShouldEquate() => new Medium().Should().Be(new Medium());
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnName() => new Medium().Name().Should().Be(new TextOf("Medium"));
+        public void ShouldReturnName() => new Medium().Name().Should().Be(new TextObj("Medium"));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Characters.Display
 {
-    public class AttributeDisplayText : TextOf, IAttributeDisplayText
+    public class AttributeDisplayText : TextObj, IAttributeDisplayText
     {
         private readonly CharacterAttribute _characterAttribute;
         public AttributeDisplayText(CharacterAttribute characterAttribute)
@@ -10,10 +10,10 @@ namespace Characters.Display
             _characterAttribute = characterAttribute;
         }
 
-        public ITextOf Text()
+        public ITextObj Text()
         {
-            ITextOf textOf =_characterAttribute.DisplayText();
-            return textOf;
+            ITextObj textObj =_characterAttribute.DisplayText();
+            return textObj;
         }
     }
 }

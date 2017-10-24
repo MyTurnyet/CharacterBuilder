@@ -63,7 +63,8 @@
     <Compile Include="Dice\WizardHitDie.cs" />
     <Compile Include="Display\AttributeDisplayText.cs" />
     <Compile Include="Display\IAttributeDisplayText.cs" />
-    <Compile Include="Display\ITextOf.cs" />
+    <Compile Include="Display\ITextObj.cs" />
+    <Compile Include="Display\NewLineTextObj.cs" />
     <Compile Include="Physical\HitPoints.cs" />
     <Compile Include="Physical\IHitPoints.cs" />
     <Compile Include="Physical\Proficiencies\AllArmor.cs" />
@@ -133,7 +134,7 @@
     <Compile Include="Races\ICharacterRace.cs" />
     <Compile Include="ICharacterSheet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Display\TextOf.cs" />
+    <Compile Include="Display\TextObj.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class Handaxe : EquatableProficiency, IProficiency
     {
-        public Handaxe():base(new TextOf("Handaxe"))
+        public Handaxe():base(new TextObj("Handaxe"))
         {
             
         }
-        public ITextOf Name => ProficiencyName;
+        public ITextObj Name => ProficiencyName;
     }
 }

@@ -10,7 +10,7 @@ namespace Characters.Classes
 {
     public class Wizard : CharacterClass
     {
-        public Wizard() : base(new TextOf("Wizard")) { }
+        public Wizard() : base(new TextObj("Wizard")) { }
         public override IHitDie HitDie() => Dice.HitDie.Wizard;
         public override List<IProficiency> Proficiencies() => new List<IProficiency>
         {

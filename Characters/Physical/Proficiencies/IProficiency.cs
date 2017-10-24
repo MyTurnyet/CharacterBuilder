@@ -4,6 +4,6 @@ namespace Characters.Physical.Proficiencies
 {
     public interface IProficiency
     {
-        ITextOf Name { get; }
+        ITextObj Name { get; }
     }
 }

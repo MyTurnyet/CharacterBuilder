@@ -4,10 +4,10 @@ namespace Characters.Physical.Proficiencies
 {
     public class Shortsword : EquatableProficiency, IProficiency
     {
-        public Shortsword():base(new TextOf("Shortsword"))
+        public Shortsword():base(new TextObj("Shortsword"))
         {
             
         }
-        public ITextOf Name => ProficiencyName;
+        public ITextObj Name => ProficiencyName;
     }
 }

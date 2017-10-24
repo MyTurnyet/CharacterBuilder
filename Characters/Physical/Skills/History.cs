@@ -5,6 +5,6 @@ namespace Characters.Physical.Skills
 {
     public class History : SkillBase, ISkill
     {
-        public History() : base(new TextOf("History"), new IntellegenceAttribute()) { }
+        public History() : base(new TextObj("History"), new IntellegenceAttribute()) { }
     }
 }

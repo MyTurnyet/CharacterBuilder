@@ -97,12 +97,12 @@ namespace CharacterTests.Attributes
         {
             //TODO: add all stats
             //assign
-            ITextOf expectedtTextOf = new TextOf("STR: 11");
+            ITextObj expectedtTextObj = new TextObj("STR: 11");
             _attributeSet.SetAttribute(CharacterAttributeName.Strength, new AttributeScore(11));
             //act
-            ITextOf actualTextOf = _attributeSet.DisplayText();
+            ITextObj actualTextObj = _attributeSet.DisplayText();
             //assert
-            actualTextOf.Should().Be(expectedtTextOf);
+            actualTextObj.Should().Be(expectedtTextObj);
         }
     }
 }

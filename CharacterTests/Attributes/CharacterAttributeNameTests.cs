@@ -35,7 +35,7 @@ namespace CharacterTests.Attributes
             IAttributeName nameStr = CharacterAttributeName.Strength;
 
             //assert
-            nameStr.Name().Should().Be(new TextOf("STR"));
+            nameStr.Name().Should().Be(new TextObj("STR"));
         }
 
         

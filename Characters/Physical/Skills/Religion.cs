@@ -5,6 +5,6 @@ namespace Characters.Physical.Skills
 {
     public class Religion : SkillBase, ISkill
     {
-        public Religion() : base(new TextOf("Religion"), new IntellegenceAttribute()) { }
+        public Religion() : base(new TextObj("Religion"), new IntellegenceAttribute()) { }
     }
 }

@@ -5,6 +5,6 @@ namespace Characters.Physical.Skills
 {
     public class Survival : SkillBase, ISkill
     {
-        public Survival() : base(new TextOf("Survival"),new WisdomAttribute()) { }
+        public Survival() : base(new TextObj("Survival"),new WisdomAttribute()) { }
     }
 }

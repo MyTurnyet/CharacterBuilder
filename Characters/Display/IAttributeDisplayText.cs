@@ -2,6 +2,6 @@
 {
     public interface IAttributeDisplayText
     {
-        ITextOf Text();
+        ITextObj Text();
     }
 }

@@ -5,7 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Acrobatics:SkillBase,ISkill
     {
-        public Acrobatics():base(new TextOf("Acrobatics"),new DexterityAttribute()){}
+        public Acrobatics():base(new TextObj("Acrobatics"),new DexterityAttribute()){}
 
     }
 }

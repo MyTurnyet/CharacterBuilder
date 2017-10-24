@@ -16,9 +16,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Acrobatics();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Acrobatics"));
+            name.Should().Be(new TextObj("Acrobatics"));
         }
 
         [TestMethod, TestCategory("Unit")]

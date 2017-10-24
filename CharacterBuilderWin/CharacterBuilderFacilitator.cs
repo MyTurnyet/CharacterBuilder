@@ -15,12 +15,12 @@ namespace CharacterBuilderWin
 
         public CharacterBuilderFacilitator():this(new CharacterSheet()){}
 
-        public StringBuilder CharacterSheetText()
-        {
-            ITextOf stats =  _characterSheet.StatsList();
-            StringBuilder stringBuilder = new StringBuilder();
-            stats.AddToStringBuilder(stringBuilder);
-            return stringBuilder;
-        }
+        //public StringBuilder CharacterSheetText()
+        //{
+        //    ITextOf stats =  _characterSheet.StatsList();
+        //    StringBuilder stringBuilder = new StringBuilder();
+        //    stats.AddToStringBuilder(stringBuilder);
+        //    return stringBuilder;
+        //}
     }
 }

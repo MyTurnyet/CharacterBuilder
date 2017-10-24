@@ -31,9 +31,9 @@ namespace CharacterBuilderWinTests.Fakes
             throw new System.NotImplementedException();
         }
 
-        public ITextOf StatsList()
+        public ITextObj StatsList()
         {
-            return new TextOf("Strength: 10");
+            return new TextObj("Strength: 10");
         }
     }
 }

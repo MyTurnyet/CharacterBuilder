@@ -5,6 +5,6 @@ namespace Characters.Physical.Sizes
     public interface ISize
     {
         bool Equals(object obj);
-        TextOf Name();
+        TextObj Name();
     }
 }

@@ -17,9 +17,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new AnimalHandling();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Animal Handling"));
+            name.Should().Be(new TextObj("Animal Handling"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -44,9 +44,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Arcana();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Arcana"));
+            name.Should().Be(new TextObj("Arcana"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -73,9 +73,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Athletics();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Athletics"));
+            name.Should().Be(new TextObj("Athletics"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -102,9 +102,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Deception();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Deception"));
+            name.Should().Be(new TextObj("Deception"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -130,9 +130,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new History();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("History"));
+            name.Should().Be(new TextObj("History"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -158,9 +158,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Insight();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Insight"));
+            name.Should().Be(new TextObj("Insight"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -186,9 +186,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Intimidation();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Intimidation"));
+            name.Should().Be(new TextObj("Intimidation"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -213,9 +213,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Investigation();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Investigation"));
+            name.Should().Be(new TextObj("Investigation"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -241,9 +241,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Medicine();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Medicine"));
+            name.Should().Be(new TextObj("Medicine"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -268,9 +268,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Nature();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Nature"));
+            name.Should().Be(new TextObj("Nature"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -296,9 +296,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Perception();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Perception"));
+            name.Should().Be(new TextObj("Perception"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -325,9 +325,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Performance();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Performance"));
+            name.Should().Be(new TextObj("Performance"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -353,9 +353,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Persuasion();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Persuasion"));
+            name.Should().Be(new TextObj("Persuasion"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -380,9 +380,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Religion();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Religion"));
+            name.Should().Be(new TextObj("Religion"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -407,9 +407,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new SleightOfHand();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Sleight Of Hand"));
+            name.Should().Be(new TextObj("Sleight Of Hand"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -435,9 +435,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Stealth();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Stealth"));
+            name.Should().Be(new TextObj("Stealth"));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -463,9 +463,9 @@ namespace CharacterTests.Physical.Skills
             //assign
             ISkill actualSkillBase = new Survival();
             //act
-            ITextOf name = actualSkillBase.Name();
+            ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextOf("Survival"));
+            name.Should().Be(new TextObj("Survival"));
         }
 
         [TestMethod, TestCategory("Unit")]

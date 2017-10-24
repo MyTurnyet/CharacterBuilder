@@ -9,7 +9,7 @@ namespace Characters.Races
 {
     public abstract class Elf : CharacterRace
     {
-        internal Elf(ITextOf race) : base(race){}
+        internal Elf(ITextObj race) : base(race){}
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyDexterityBonus(attribute);
         private AttributeScore ApplyDexterityBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Dexterity) ? new AttributeScore(0) : new AttributeScore(2);
         public override ISpeed Speed() => new Speed(30);
