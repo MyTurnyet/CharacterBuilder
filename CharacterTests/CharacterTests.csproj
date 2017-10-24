@@ -62,12 +62,14 @@
     <Compile Include="Classes\WizardTests.cs" />
     <Compile Include="Dice\HitDieTests.cs" />
     <Compile Include="Display\AttributeDisplayTextTests.cs" />
+    <Compile Include="Physical\Skills\AcrobaticsTests.cs" />
+    <Compile Include="Physical\Skills\AnimalHandlingTests.cs" />
     <Compile Include="Physical\SpeedTests.cs" />
     <Compile Include="CharacterSheetTests.cs" />
     <Compile Include="Physical\SizeTests.cs" />
     <Compile Include="Physical\HitPointsTests.cs" />
     <Compile Include="Physical\EquatableProficiencyTests.cs" />
-    <Compile Include="Physical\SkillTests.cs" />
+    <Compile Include="Physical\Skills\SkillTests.cs" />
     <Compile Include="Physical\IProficiencyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\CharacterClassTests.cs" />

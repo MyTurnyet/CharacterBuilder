@@ -10,10 +10,7 @@ namespace CharacterTests.Physical
     public class SizeTests
     {
         [TestMethod, TestCategory("Unit")]
-        public void ShouldEquate() => new Tiny().Should().Be(new Tiny());
-
-        [TestMethod, TestCategory("Unit")]
-        public void ShouldNotEquate() => new Tiny().Should().NotBe(new Medium());
+        public void ShouldEquate() => new Medium().Should().Be(new Medium());
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnName() => new Medium().Name().Should().Be(new TextOf("Medium"));

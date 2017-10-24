@@ -1,15 +1,28 @@
-﻿using Characters.Display;
+﻿using Characters.Attributes;
+using Characters.Display;
 
 namespace Characters.Physical.Skills
 {
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public class SkillBase
     {
-        private readonly TextOf _skillName;
-        protected SkillBase(TextOf skillName) => _skillName = skillName;
+        private readonly ITextOf _skillName;
+        private readonly ICharacterAttribute _baseAttribute;
+
+        protected SkillBase(ITextOf skillName, ICharacterAttribute baseAttribute)
+        {
+            _skillName = skillName;
+            _baseAttribute = baseAttribute;
+        }
+
         public override bool Equals(object obj) => Equals((SkillBase)obj);
         private bool Equals(SkillBase other) => string.Equals(_skillName, other._skillName);
-        public TextOf Name() => _skillName;
+        public ITextOf Name() => _skillName;
+        public ICharacterAttribute BaseAttribute()
+        {
+            return _baseAttribute;
+        }
+
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

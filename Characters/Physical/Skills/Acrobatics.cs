@@ -1,9 +1,11 @@
-﻿using Characters.Display;
+﻿using Characters.Attributes;
+using Characters.Display;
 
 namespace Characters.Physical.Skills
 {
     public class Acrobatics:SkillBase,ISkill
     {
-        public Acrobatics():base(new TextOf("Acrobatics")){}
+        public Acrobatics():base(new TextOf("Acrobatics"),new DexterityAttribute()){}
+
     }
 }

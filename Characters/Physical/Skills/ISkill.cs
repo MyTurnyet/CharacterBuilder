@@ -1,10 +1,12 @@
-﻿using Characters.Display;
+﻿using Characters.Attributes;
+using Characters.Display;
 
 namespace Characters.Physical.Skills
 {
     public interface ISkill
     {
         bool Equals(object obj);
-        TextOf Name();
+        ITextOf Name();
+        ICharacterAttribute BaseAttribute();
     }
 }
