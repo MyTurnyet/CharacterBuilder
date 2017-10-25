@@ -16,7 +16,7 @@ namespace CharacterTests.Display
                 new CharacterAttribute(CharacterAttributeName.Strength, new AttributeScore());
             ITextObj expectedTextObj = new TextObj("STR: 0");
             //act
-            AttributeDisplayText actualDisplayText = new AttributeDisplayText(characterAttribute);
+            IAttributeDisplayText actualDisplayText = new AttributeDisplayText(characterAttribute);
 
             //assert
             actualDisplayText.Text().Should().Be(expectedTextObj);

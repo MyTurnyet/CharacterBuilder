@@ -113,18 +113,6 @@ namespace CharacterTests
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
         }
-        [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnStatsBlock()
-        {
-            //arrange
-            _characterSheet = new CharacterSheet();
-            ITextObj expectedText = new TextObj("Test Stats");
-            //act
-            ITextObj actualTextObj = _characterSheet.StatsList();
-
-            //assert
-            actualTextObj.Should().Be(expectedText);
-        }
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldShouldReturnProficienciesForDwarfFighter()
@@ -178,18 +166,18 @@ namespace CharacterTests
             actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
 
-        //[TestMethod, TestCategory("Unit")]
-        //public void ShouldReturnCorrectStatsList()
-        //{
-        //    //assign
-        //    _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf,_attributeSet);
-        //    TextOf expectedTextOf = new TextOf("Strength: 10\r\nDexterity: 10");
-        //    //act
-        //    ITextOf actualTextOf = _characterSheet.StatsList();
-        //    //assert
-        //    actualTextOf.Should().Be(expectedTextOf);
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnCorrectStatsList()
+        {
+            //assign
+            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf, _attributeSet);
+            TextObj expectedTextOf = new TextObj("STR: 16\r\nDEX: 10");
+            //act
+            ITextObj actualTextOf = _characterSheet.StatsList();
+            //assert
+            actualTextOf.Should().Be(expectedTextOf);
 
-        //}
+        }
 
 
         #region Helper Methods

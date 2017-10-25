@@ -20,14 +20,9 @@ namespace Characters.Attributes
         public ICharacterAttribute MatchesName(IAttributeName attributeName) => GetAttributeFromName(attributeName);
         public ITextObj DisplayText()
         {
-            TextObj strDisplayText = (TextObj)GetAttributeFromName(CharacterAttributeName.Strength).DisplayText();
-            TextObj dexDisplayText = (TextObj)GetAttributeFromName(CharacterAttributeName.Dexterity).DisplayText();
-            TextObj conDisplayText = (TextObj)GetAttributeFromName(CharacterAttributeName.Constitution).DisplayText();
-            TextObj wisDisplayText = (TextObj)GetAttributeFromName(CharacterAttributeName.Wisdom).DisplayText();
-            TextObj intDisplayText = (TextObj)GetAttributeFromName(CharacterAttributeName.Intelligence).DisplayText();
-            TextObj chaDisplayText = (TextObj)GetAttributeFromName(CharacterAttributeName.Charisma).DisplayText();
-
-            return strDisplayText;
+            return GetAttributeFromName(CharacterAttributeName.Strength).DisplayText()
+                .Append(new NewLineTextObj())
+                .Append(GetAttributeFromName(CharacterAttributeName.Dexterity).DisplayText());
         }
 
         public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)

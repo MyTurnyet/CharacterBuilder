@@ -83,7 +83,7 @@
     <Compile Include="Races\WoodElfTests.cs" />
     <Compile Include="Races\HumanTests.cs" />
     <Compile Include="Dice\DieTests.cs" />
-    <Compile Include="Display\TextOfTests.cs" />
+    <Compile Include="Display\TextObjTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
