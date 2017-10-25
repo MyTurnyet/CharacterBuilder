@@ -10,7 +10,7 @@ namespace Characters.Display
             _characterAttribute = characterAttribute;
         }
 
-        public ITextObj Text()
+        public new ITextObj Text()
         {
             ITextObj textObj =_characterAttribute.DisplayText();
             return textObj;
