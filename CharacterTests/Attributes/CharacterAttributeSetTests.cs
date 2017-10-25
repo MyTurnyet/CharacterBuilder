@@ -97,7 +97,7 @@ namespace CharacterTests.Attributes
         {
             //TODO: add all stats
             //assign
-            ITextObj expectedtTextObj = new TextObj("STR: 11\r\nDEX: 0");
+            ITextObj expectedtTextObj = new TextObj("STR: 11\r\nDEX: 0\r\nCON: 0\r\nINT: 0");
             _attributeSet.SetAttribute(CharacterAttributeName.Strength, new AttributeScore(11));
             //act
             ITextObj actualTextObj = _attributeSet.DisplayText();

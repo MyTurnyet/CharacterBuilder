@@ -9,11 +9,6 @@ namespace Characters.Display
         {
             _characterAttribute = characterAttribute;
         }
-
-        public new ITextObj Text()
-        {
-            ITextObj textObj =_characterAttribute.DisplayText();
-            return textObj;
-        }
+        public ITextObj Text() => _characterAttribute.DisplayText();
     }
 }

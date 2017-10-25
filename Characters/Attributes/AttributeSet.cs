@@ -22,7 +22,11 @@ namespace Characters.Attributes
         {
             return GetAttributeFromName(CharacterAttributeName.Strength).DisplayText()
                 .Append(new NewLineTextObj())
-                .Append(GetAttributeFromName(CharacterAttributeName.Dexterity).DisplayText());
+                .Append(GetAttributeFromName(CharacterAttributeName.Dexterity).DisplayText())
+                .Append(new NewLineTextObj())
+                .Append(GetAttributeFromName(CharacterAttributeName.Constitution).DisplayText())
+                .Append(new NewLineTextObj())
+                .Append(GetAttributeFromName(CharacterAttributeName.Intelligence).DisplayText());
         }
 
         public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)

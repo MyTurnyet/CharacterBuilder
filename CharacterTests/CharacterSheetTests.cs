@@ -7,6 +7,7 @@ using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Races;
+using CharacterTests.Fakes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,18 +17,11 @@ namespace CharacterTests
     public class CharacterSheetTests
     {
         private ICharacterSheet _characterSheet;
-        private IAttributeSet _attributeSet;
-        private ICharacterAttribute _strAttribute;
-        private ICharacterAttribute _dexAttribute;
-        private ICharacterAttribute _conAttribute;
-        private ICharacterAttribute _intAttribute;
-        private ICharacterAttribute _wizAttribute;
-        private ICharacterAttribute _chrAttribute;
+        private readonly IAttributeSet _attributeSet = new FakeAttributeSet();
 
         [TestInitialize]
         public void Setup()
         {
-            SetupAttributes();
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -39,31 +33,31 @@ namespace CharacterTests
             //act
             ICharacterAttribute actualAttribute = _characterSheet.Attribute(CharacterAttributeName.Dexterity);
             //assert
-            actualAttribute.Should().Be(_dexAttribute);
+            actualAttribute.Should().Be(new DexterityAttribute());
         }
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldApplyRacialBonusToAttributes()
         {
             //arrange
-            AttributeScore expectedDexterityScore = new AttributeScore(12);
-            AttributeScore expectedWisdomScore = new AttributeScore(9);
+            AttributeScore expectedDexterityScore = new AttributeScore(2);
+            AttributeScore expectedWisdomScore = new AttributeScore(1);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
             //assert
-            _characterSheet.Attribute(CharacterAttributeName.Strength).Score().Should().Be(_strAttribute.Score());
+            _characterSheet.Attribute(CharacterAttributeName.Strength).Score().Should().Be(new StrengthAttribute().Score());
 
             _characterSheet.Attribute(CharacterAttributeName.Dexterity).Score().Should().Be(expectedDexterityScore);
-            _characterSheet.Attribute(CharacterAttributeName.Constitution).Score().Should().Be(_conAttribute.Score());
-            _characterSheet.Attribute(CharacterAttributeName.Intelligence).Score().Should().Be(_intAttribute.Score());
+            _characterSheet.Attribute(CharacterAttributeName.Constitution).Score().Should().Be(new ConstitutionAttribute().Score());
+            _characterSheet.Attribute(CharacterAttributeName.Intelligence).Score().Should().Be(new IntellegenceAttribute().Score());
             _characterSheet.Attribute(CharacterAttributeName.Wisdom).Score().Should().Be(expectedWisdomScore);
-            _characterSheet.Attribute(CharacterAttributeName.Charisma).Score().Should().Be(_chrAttribute.Score());
+            _characterSheet.Attribute(CharacterAttributeName.Charisma).Score().Should().Be(new CharismaAttribute().Score());
         }
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnStartingHitPointsForHillDwarfFighter()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(12);
+            IHitPoints expectedHitPoints = new HitPoints(6);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf, _attributeSet);
 
             //act
@@ -72,11 +66,12 @@ namespace CharacterTests
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
         }
+
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnStartingHitPointsForMountainDwarfFighter()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(11);
+            IHitPoints expectedHitPoints = new HitPoints(5);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.MountainDwarf, _attributeSet);
 
             //act
@@ -90,7 +85,7 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForWoodElfWizard()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(7);
+            IHitPoints expectedHitPoints = new HitPoints(1);
             _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.WoodElf, _attributeSet);
 
             //act
@@ -104,7 +99,7 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForWoodElfFighter()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(11);
+            IHitPoints expectedHitPoints = new HitPoints(5);
             _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
 
             //act
@@ -170,8 +165,8 @@ namespace CharacterTests
         public void ShouldReturnCorrectStatsList()
         {
             //assign
-            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf, _attributeSet);
-            TextObj expectedTextOf = new TextObj("STR: 16\r\nDEX: 10");
+            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf, new FakeAttributeSet());
+            TextObj expectedTextOf = new TextObj("This Works!");
             //act
             ITextObj actualTextOf = _characterSheet.StatsList();
             //assert
@@ -179,24 +174,5 @@ namespace CharacterTests
 
         }
 
-
-        #region Helper Methods
-        private void SetupAttributes()
-        {
-            _strAttribute = new StrengthAttribute(new AttributeScore(16));
-            _dexAttribute = new DexterityAttribute(new AttributeScore(10));
-            _conAttribute = new ConstitutionAttribute(new AttributeScore(13));
-            _intAttribute = new IntellegenceAttribute(new AttributeScore(14));
-            _wizAttribute = new WisdomAttribute(new AttributeScore(8));
-            _chrAttribute = new CharismaAttribute(new AttributeScore(6));
-            _attributeSet = new AttributeSet();
-            _attributeSet.MatchesName(CharacterAttributeName.Strength).Set(_strAttribute.Score());
-            _attributeSet.MatchesName(CharacterAttributeName.Dexterity).Set(_dexAttribute.Score());
-            _attributeSet.MatchesName(CharacterAttributeName.Constitution).Set(_conAttribute.Score());
-            _attributeSet.MatchesName(CharacterAttributeName.Intelligence).Set(_intAttribute.Score());
-            _attributeSet.MatchesName(CharacterAttributeName.Wisdom).Set(_wizAttribute.Score());
-            _attributeSet.MatchesName(CharacterAttributeName.Charisma).Set(_chrAttribute.Score());
-        }
-        #endregion Helper Methods
     }
 }

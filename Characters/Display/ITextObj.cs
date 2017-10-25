@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Characters.Display
+﻿namespace Characters.Display
 {
     public interface ITextObj
     {
