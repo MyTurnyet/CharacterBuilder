@@ -65,6 +65,7 @@
     <Compile Include="Display\IAttributeDisplayText.cs" />
     <Compile Include="Display\ITextObj.cs" />
     <Compile Include="Display\NewLineTextObj.cs" />
+    <Compile Include="Display\TextObjBase.cs" />
     <Compile Include="Physical\HitPoints.cs" />
     <Compile Include="Physical\IHitPoints.cs" />
     <Compile Include="Physical\Proficiencies\AllArmor.cs" />

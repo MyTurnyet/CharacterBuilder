@@ -13,7 +13,7 @@ namespace CharacterBuilderWin
             _characterSheet = characterSheet;
         }
 
-        public CharacterBuilderFacilitator():this(new CharacterSheet()){}
+        //public CharacterBuilderFacilitator():this(new CharacterSheet()){}
 
         //public StringBuilder CharacterSheetText()
         //{

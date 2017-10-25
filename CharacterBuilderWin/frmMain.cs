@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using Characters;
+using Characters.Classes;
+using Characters.Races;
 
 namespace CharacterBuilderWin
 {
@@ -12,7 +15,7 @@ namespace CharacterBuilderWin
             _facilitator = facilitator;
         }
 
-        public FrmMain():this(new CharacterBuilderFacilitator())
+        public FrmMain():this(new CharacterBuilderFacilitator(new CharacterSheet(new Fighter(), new WoodElf())))
         {
             InitializeComponent();
         }

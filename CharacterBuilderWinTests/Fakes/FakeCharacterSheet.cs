@@ -33,7 +33,7 @@ namespace CharacterBuilderWinTests.Fakes
 
         public ITextObj StatsList()
         {
-            return new TextObj("Strength: 10");
+            return new TextObj("Strength: 10\r\nDexterity: 10");
         }
     }
 }

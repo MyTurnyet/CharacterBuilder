@@ -13,7 +13,6 @@ namespace Characters
         private readonly ICharacterClass _characterClass;
         private readonly ICharacterRace _race;
         private readonly IAttributeSet _attributeSet;
-        public CharacterSheet() : this(new Fighter(), new Human(), new AttributeSet()) { }
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race) : this(characterClass, race, new AttributeSet()) { }
 
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, IAttributeSet attributeSet)
@@ -37,6 +36,9 @@ namespace Characters
             proficiencies.AddRange(_race.Proficiencies());
             return proficiencies;
         }
-        public ITextObj StatsList() => new TextObj("Test Stats");
+        public ITextObj StatsList()
+        {
+            return _attributeSet.DisplayText();
+        }
     }
 }

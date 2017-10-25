@@ -20,6 +20,8 @@
       <Value>Physical\Proficiencies\IProficiency.cs:Characters\Characters.csproj</Value>
       <Value>CharacterBuilderWin\CharacterBuilderWin.csproj</Value>
       <Value>Physical\Sizes\ISize.cs:Characters\Characters.csproj</Value>
+      <Value>Display\IAttributeDisplayText.cs:Characters\Characters.csproj</Value>
+      <Value>Display\ITextObj.cs:Characters\Characters.csproj</Value>
     </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
