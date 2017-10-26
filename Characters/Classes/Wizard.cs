@@ -8,7 +8,7 @@ using Characters.Physical.Skills;
 
 namespace Characters.Classes
 {
-    public class Wizard : CharacterClass
+    public class Wizard : CharacterClassBase, ICharacterClass
     {
         public Wizard() : base(new TextObj("Wizard")) { }
         public override IHitDie HitDie() => Dice.HitDie.Wizard;
@@ -24,7 +24,5 @@ namespace Characters.Classes
         public override List<ISkill> Skills() => new List<ISkill>
             {new Arcana(),new History(),new Insight(),
                 new Investigation(),new Medicine(),new Religion()};
-
-        public override IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }
 }

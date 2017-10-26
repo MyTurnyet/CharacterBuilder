@@ -49,7 +49,7 @@ namespace CharacterTests.Classes
                 new LightCrossbow()
             };
             //act
-            List<IProficiency> actualProfs = CharacterClass.Wizard.Proficiencies();
+            List<IProficiency> actualProfs = new Wizard().Proficiencies();
 
             //assert
             actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
@@ -65,7 +65,7 @@ namespace CharacterTests.Classes
                 SavingThrowAttribute.Wisdom
             };
             //act
-            List<ISavingThrowAttribute> savingThrows = CharacterClass.Wizard.SavingThrows();
+            List<ISavingThrowAttribute> savingThrows = new Wizard().SavingThrows();
             //assert
             savingThrows.All(i => expectedThrowAttributes.Contains(i)).Should().BeTrue();
         }
@@ -83,7 +83,7 @@ namespace CharacterTests.Classes
                 new Religion()
             };
             //act
-            List<ISkill> actualSkills = CharacterClass.Wizard.Skills();
+            List<ISkill> actualSkills = new Wizard().Skills();
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }

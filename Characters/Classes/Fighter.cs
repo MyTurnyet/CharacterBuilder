@@ -8,21 +8,14 @@ using Characters.Physical.Skills;
 
 namespace Characters.Classes
 {
-    public class Fighter : CharacterClass
+    public class Fighter : CharacterClassBase, ICharacterClass
     {
         public Fighter() : base(new TextObj("Fighter")) { }
         public override IHitDie HitDie() => Dice.HitDie.Fighter;
-        public override List<IProficiency> Proficiencies() => new List<IProficiency>{
-            new SimpleWeapons(),
-            new MartialWeapons(),
-            new AllArmor(),
-            new AllShields()
-        };
-        public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute>
-        {SavingThrowAttribute.Strength,SavingThrowAttribute.Constitution};
+        public override List<IProficiency> Proficiencies() => new List<IProficiency> { new SimpleWeapons(), new MartialWeapons(), new AllArmor(), new AllShields() };
+        public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute> { SavingThrowAttribute.Strength, SavingThrowAttribute.Constitution };
         public override List<ISkill> Skills() => new List<ISkill>
             {new Acrobatics(),new AnimalHandling(),new Athletics(),new History(),
                 new Insight(),new Intimidation(),new Perception(),new Survival()};
-        public override IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }
 }

@@ -12,8 +12,8 @@ namespace CharacterTests.Classes
         public void ShouldEquate()
         {
             //assign
-            ICharacterClass classFighter = CharacterClass.Fighter;
-            ICharacterClass classFighter2 = CharacterClass.Fighter;
+            ICharacterClass classFighter = new Fighter();
+            ICharacterClass classFighter2 = new Fighter();
 
             //assert
             classFighter2.Should().Be(classFighter);
@@ -22,8 +22,8 @@ namespace CharacterTests.Classes
         public void ShouldNotEquate()
         {
             //assign
-            ICharacterClass classFighter = CharacterClass.Fighter;
-            ICharacterClass classWizard = CharacterClass.Wizard;
+            ICharacterClass classFighter = new Fighter();
+            ICharacterClass classWizard = new Wizard();
 
             //assert
             classWizard.Should().NotBe(classFighter);
@@ -33,7 +33,7 @@ namespace CharacterTests.Classes
         public void ShouldReturnName()
         {
             //arrange
-            ICharacterClass classFighter = CharacterClass.Fighter;
+            ICharacterClass classFighter = new Fighter();
             //act
             ITextObj actualName = classFighter.Name();
             //assert

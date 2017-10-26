@@ -116,7 +116,7 @@
     <Compile Include="Physical\Skills\Stealth.cs" />
     <Compile Include="Physical\Skills\Survival.cs" />
     <Compile Include="Physical\Speed.cs" />
-    <Compile Include="Classes\CharacterClass.cs" />
+    <Compile Include="Classes\CharacterClassBase.cs" />
     <Compile Include="Races\CharacterRace.cs" />
     <Compile Include="CharacterSheet.cs" />
     <Compile Include="Attributes\ICharacterAttribute.cs" />

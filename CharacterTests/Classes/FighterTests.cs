@@ -50,7 +50,7 @@ namespace CharacterTests.Classes
                 new AllShields()
             };
             //act
-            List<IProficiency> actualProfs = CharacterClass.Fighter.Proficiencies();
+            List<IProficiency> actualProfs = new Fighter().Proficiencies();
 
             //assert
             actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
@@ -66,7 +66,7 @@ namespace CharacterTests.Classes
                 SavingThrowAttribute.Constitution
             };
             //act
-            List<ISavingThrowAttribute> savingThrows = CharacterClass.Fighter.SavingThrows();
+            List<ISavingThrowAttribute> savingThrows = new Fighter().SavingThrows();
             //assert
             savingThrows.All(i => expectedThrowAttributes.Contains(i)).Should().BeTrue();
         }
@@ -87,7 +87,7 @@ namespace CharacterTests.Classes
                 new Survival()
             };
             //act
-            List<ISkill> actualSkills = CharacterClass.Fighter.Skills();
+            List<ISkill> actualSkills = new Fighter().Skills();
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }
