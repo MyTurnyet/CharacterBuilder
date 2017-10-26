@@ -61,7 +61,6 @@
     <Compile Include="Classes\FighterTests.cs" />
     <Compile Include="Classes\WizardTests.cs" />
     <Compile Include="Dice\HitDieTests.cs" />
-    <Compile Include="Display\AttributeDisplayTextTests.cs" />
     <Compile Include="Fakes\FakeAttributeSet.cs" />
     <Compile Include="Physical\Skills\AcrobaticsTests.cs" />
     <Compile Include="Physical\Skills\AnimalHandlingTests.cs" />

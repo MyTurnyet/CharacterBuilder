@@ -61,8 +61,6 @@
     <Compile Include="Dice\IDie.cs" />
     <Compile Include="Dice\IHitDie.cs" />
     <Compile Include="Dice\WizardHitDie.cs" />
-    <Compile Include="Display\AttributeDisplayText.cs" />
-    <Compile Include="Display\IAttributeDisplayText.cs" />
     <Compile Include="Display\ITextObj.cs" />
     <Compile Include="Display\NewLineTextObj.cs" />
     <Compile Include="Display\TextObjBase.cs" />
