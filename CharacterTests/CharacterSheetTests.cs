@@ -28,7 +28,7 @@ namespace CharacterTests
         public void ShouldEquateAttributes()
         {
             //assign
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
+            _characterSheet = new CharacterSheet(new Fighter(), new WoodElf(), _attributeSet);
 
             //act
             ICharacterAttribute actualAttribute = _characterSheet.Attribute(CharacterAttributeName.Dexterity);
@@ -42,7 +42,7 @@ namespace CharacterTests
             //arrange
             AttributeScore expectedDexterityScore = new AttributeScore(2);
             AttributeScore expectedWisdomScore = new AttributeScore(1);
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
+            _characterSheet = new CharacterSheet(new Fighter(), new WoodElf(), _attributeSet);
             //assert
             _characterSheet.Attribute(CharacterAttributeName.Strength).Score().Should().Be(new StrengthAttribute().Score());
 
@@ -58,7 +58,7 @@ namespace CharacterTests
         {
             //arrange
             IHitPoints expectedHitPoints = new HitPoints(6);
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf, _attributeSet);
+            _characterSheet = new CharacterSheet(new Fighter(), new HillDwarf(), _attributeSet);
 
             //act
             IHitPoints actualHitPoints = _characterSheet.HitPoints();
@@ -72,7 +72,7 @@ namespace CharacterTests
         {
             //arrange
             IHitPoints expectedHitPoints = new HitPoints(5);
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.MountainDwarf, _attributeSet);
+            _characterSheet = new CharacterSheet(new Fighter(), new MountainDwarf(), _attributeSet);
 
             //act
             IHitPoints actualHitPoints = _characterSheet.HitPoints();
@@ -86,7 +86,7 @@ namespace CharacterTests
         {
             //arrange
             IHitPoints expectedHitPoints = new HitPoints(1);
-            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.WoodElf, _attributeSet);
+            _characterSheet = new CharacterSheet(new Wizard(), new WoodElf(), _attributeSet);
 
             //act
             IHitPoints actualHitPoints = _characterSheet.HitPoints();
@@ -100,7 +100,7 @@ namespace CharacterTests
         {
             //arrange
             IHitPoints expectedHitPoints = new HitPoints(5);
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.WoodElf, _attributeSet);
+            _characterSheet = new CharacterSheet(new Fighter(), new WoodElf(), _attributeSet);
 
             //act
             IHitPoints actualHitPoints = _characterSheet.HitPoints();
@@ -113,7 +113,7 @@ namespace CharacterTests
         public void ShouldShouldReturnProficienciesForDwarfFighter()
         {
             //assign
-            _characterSheet = new CharacterSheet(CharacterClass.Fighter, CharacterRace.HillDwarf);
+            _characterSheet = new CharacterSheet(new Fighter(), new HillDwarf(), new FakeAttributeSet());
             List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 new Battleaxe(),
@@ -138,7 +138,7 @@ namespace CharacterTests
         public void ShouldShouldReturnProficienciesForDwarfWizard()
         {
             //assign
-            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf);
+            _characterSheet = new CharacterSheet(new Wizard(), new HillDwarf(), new FakeAttributeSet());
             List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 new Battleaxe(),
@@ -165,7 +165,7 @@ namespace CharacterTests
         public void ShouldReturnCorrectStatsList()
         {
             //assign
-            _characterSheet = new CharacterSheet(CharacterClass.Wizard, CharacterRace.HillDwarf, new FakeAttributeSet());
+            _characterSheet = new CharacterSheet(new Wizard(), new HillDwarf(), new FakeAttributeSet());
             TextObj expectedTextOf = new TextObj("This Works!");
             //act
             ITextObj actualTextOf = _characterSheet.StatsList();
