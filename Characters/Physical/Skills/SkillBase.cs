@@ -18,15 +18,8 @@ namespace Characters.Physical.Skills
         public override bool Equals(object obj) => Equals((SkillBase)obj);
         private bool Equals(SkillBase other) => string.Equals(_skillName, other._skillName);
         public ITextObj Name() => _skillName;
-        public ICharacterAttribute BaseAttribute()
-        {
-            return _baseAttribute;
-        }
-        public IAttributeScore SkillBonus()
-        {
-            return _baseAttribute.Bonus();
-        }
-
+        public ICharacterAttribute BaseAttribute() => _baseAttribute;
+        public IAttributeScore SkillBonus() => _baseAttribute.Bonus();
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }
