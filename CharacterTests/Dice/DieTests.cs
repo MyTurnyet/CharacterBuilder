@@ -11,8 +11,8 @@ namespace CharacterTests.Dice
         public void ShouldEquate()
         {
             //arrange
-            Die die1 = Die.d4;
-            Die die2 = Die.d4;
+            DieBase die1 = new D4Die();
+            DieBase die2 = new D4Die();
 
             //assert
             die1.Should().Be(die2);
@@ -21,8 +21,8 @@ namespace CharacterTests.Dice
         public void ShouldNotEquate()
         {
             //arrange
-            Die die1 = Die.d4;
-            Die die2 = Die.d6;
+            DieBase die1 = new D4Die();
+            DieBase die2 = new D6Die();
 
             //assert
             die1.Should().NotBe(die2);

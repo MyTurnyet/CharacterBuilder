@@ -1,7 +1,7 @@
 namespace Characters.Dice
 {
-    public class FigtherHitDie : HitDie
+    public class FigtherHitDie : HitDieBase, IHitDie
     {
-        internal FigtherHitDie() : base(10){}
+        public FigtherHitDie() : base(10){}
     }
 }

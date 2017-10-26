@@ -55,9 +55,12 @@
     <Compile Include="Attributes\WisdomAttribute.cs" />
     <Compile Include="Classes\Fighter.cs" />
     <Compile Include="Classes\Wizard.cs" />
-    <Compile Include="Dice\Die.cs" />
+    <Compile Include="Dice\D10Die.cs" />
+    <Compile Include="Dice\D4Die.cs" />
+    <Compile Include="Dice\D6Die.cs" />
+    <Compile Include="Dice\DieBase.cs" />
     <Compile Include="Dice\FigtherHitDie.cs" />
-    <Compile Include="Dice\HitDie.cs" />
+    <Compile Include="Dice\HitDieBase.cs" />
     <Compile Include="Dice\IDie.cs" />
     <Compile Include="Dice\IHitDie.cs" />
     <Compile Include="Dice\WizardHitDie.cs" />

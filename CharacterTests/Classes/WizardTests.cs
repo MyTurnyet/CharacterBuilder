@@ -19,7 +19,7 @@ namespace CharacterTests.Classes
         {
             //arrange
             Wizard wizard = new Wizard();
-            IDie expecteDie = Die.d6;
+            IDie expecteDie =new D6Die();
             //act
             IHitDie hitDie = wizard.HitDie();
             //assert

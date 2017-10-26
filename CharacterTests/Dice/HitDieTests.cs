@@ -14,8 +14,7 @@ namespace CharacterTests.Dice
             //arrange
             IHitPoints expectedHitPoints = new HitPoints(10);
             //act
-            IHitPoints actualHitPoints = HitDie.Fighter.MaxHitPoints();
-
+            IHitPoints actualHitPoints = new FigtherHitDie().MaxHitPoints();
             //assert
             actualHitPoints.Should().Be(expectedHitPoints);
         }

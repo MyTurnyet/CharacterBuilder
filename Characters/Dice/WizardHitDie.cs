@@ -1,6 +1,6 @@
 ﻿namespace Characters.Dice
 {
-    public class WizardHitDie : HitDie
+    public class WizardHitDie : HitDieBase,IHitDie
     {
         internal WizardHitDie() : base(6){}
     }

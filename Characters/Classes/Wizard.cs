@@ -11,7 +11,7 @@ namespace Characters.Classes
     public class Wizard : CharacterClassBase, ICharacterClass
     {
         public Wizard() : base(new TextObj("Wizard")) { }
-        public override IHitDie HitDie() => Dice.HitDie.Wizard;
+        public override IHitDie HitDie() => new WizardHitDie();
         public override List<IProficiency> Proficiencies() => new List<IProficiency>
         {
             new Darts(),
