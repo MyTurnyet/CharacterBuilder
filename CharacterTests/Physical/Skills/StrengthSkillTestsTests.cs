@@ -34,6 +34,18 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(strengthAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            StrengthAttribute strengthAttribute = new StrengthAttribute(new AttributeScore(14));
+            ISkill athletics = new Athletics(strengthAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = athletics.SkillBonus();
 
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
 }

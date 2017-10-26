@@ -28,30 +28,6 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualSkillBase.Should().NotBe(expectedSkillBase);
-        }
-        //[TestMethod, TestCategory("Unit")]
-        //public void ShouldReturnName()
-        //{
-        //    //assign
-        //    ISkill actualSkillBase = new Deception();
-        //    //act
-        //    ITextOf name = actualSkillBase.Name();
-        //    //assert
-        //    name.Should().Be(new TextOf("Deception"));
-        //}
-
-        //[TestMethod, TestCategory("Unit")]
-        //public void ShouldReturnWisdomAsBaseAttribute()
-        //{
-        //    //arrange
-        //    ISkill deception = new Deception();
-        //    ICharacterAttribute charisma = new CharismaAttribute();
-        //    //act
-        //    ICharacterAttribute actualAttribute = deception.BaseAttribute();
-
-        //    //assert
-        //    actualAttribute.Should().Be(charisma);
-        //}
-        
+        }       
     }
 }

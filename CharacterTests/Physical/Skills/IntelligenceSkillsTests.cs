@@ -32,6 +32,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(intellegenceAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            IntellegenceAttribute intellegenceAttribute = new IntellegenceAttribute(new AttributeScore(14));
+            ISkill arcana = new Arcana(intellegenceAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = arcana.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
 
     [TestClass]
@@ -60,6 +73,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(intellegenceAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            IntellegenceAttribute intellegenceAttribute = new IntellegenceAttribute(new AttributeScore(14));
+            ISkill history = new History(intellegenceAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = history.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
     [TestClass]
     public class ReligionTests
@@ -86,6 +112,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(intellegenceAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            IntellegenceAttribute intellegenceAttribute = new IntellegenceAttribute(new AttributeScore(14));
+            ISkill religion = new Religion(intellegenceAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = religion.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
     [TestClass]
@@ -114,6 +153,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(intellegenceAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            IntellegenceAttribute intellegenceAttribute = new IntellegenceAttribute(new AttributeScore(14));
+            ISkill investigation = new Investigation(intellegenceAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = investigation.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
 
     [TestClass]
@@ -141,6 +193,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(intellegenceAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            IntellegenceAttribute intellegenceAttribute = new IntellegenceAttribute(new AttributeScore(14));
+            ISkill nature = new Nature(intellegenceAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = nature.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
 

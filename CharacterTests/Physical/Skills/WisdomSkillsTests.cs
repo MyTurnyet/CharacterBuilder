@@ -32,6 +32,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(wisdomAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            WisdomAttribute wisdomAttribute = new WisdomAttribute(new AttributeScore(14));
+            ISkill animalHandling = new AnimalHandling(wisdomAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = animalHandling.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
     [TestClass]
     public class InsightTests
@@ -59,6 +72,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(wisdomAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            WisdomAttribute wisdomAttribute = new WisdomAttribute(new AttributeScore(14));
+            ISkill insight = new Insight(wisdomAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = insight.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
     [TestClass]
@@ -88,6 +114,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(wisdomAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            WisdomAttribute wisdomAttribute = new WisdomAttribute(new AttributeScore(14));
+            ISkill medicine = new Medicine(wisdomAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = medicine.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
     [TestClass]
     public class PerceptionTests
@@ -115,6 +154,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(wisdomAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            WisdomAttribute wisdomAttribute = new WisdomAttribute(new AttributeScore(14));
+            ISkill perception = new Perception(wisdomAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = perception.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
 
@@ -144,6 +196,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(wisdomAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            WisdomAttribute wisdomAttribute = new WisdomAttribute(new AttributeScore(14));
+            ISkill survival = new Survival(wisdomAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = survival.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
 }

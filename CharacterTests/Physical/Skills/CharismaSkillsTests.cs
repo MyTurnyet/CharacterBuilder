@@ -33,6 +33,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(charismaAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            CharismaAttribute dexterityAttribute = new CharismaAttribute(new AttributeScore(14));
+            ISkill deception = new Deception(dexterityAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = deception.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
 
     [TestClass]
@@ -61,6 +74,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(charismaAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            CharismaAttribute dexterityAttribute = new CharismaAttribute(new AttributeScore(14));
+            ISkill intimidation = new Intimidation(dexterityAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = intimidation.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
 
@@ -91,6 +117,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(charismaAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            CharismaAttribute dexterityAttribute = new CharismaAttribute(new AttributeScore(14));
+            ISkill performance = new Performance(dexterityAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = performance.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
     [TestClass]
     public class PersuasionTests
@@ -118,6 +157,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(charismaAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            CharismaAttribute dexterityAttribute = new CharismaAttribute(new AttributeScore(14));
+            ISkill persuasion = new Persuasion(dexterityAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = persuasion.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
 

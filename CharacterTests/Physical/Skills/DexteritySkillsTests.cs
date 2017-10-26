@@ -75,6 +75,19 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualAttribute.Should().Be(dexterityAttribute);
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            DexterityAttribute dexterityAttribute = new DexterityAttribute(new AttributeScore(14));
+            ISkill sleightOfHand = new SleightOfHand(dexterityAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = sleightOfHand.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
+        }
     }
 
     [TestClass]
@@ -102,6 +115,19 @@ namespace CharacterTests.Physical.Skills
 
             //assert
             actualAttribute.Should().Be(dexterityAttribute);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnBonusOfBaseAttribute()
+        {
+            //arrange
+            DexterityAttribute dexterityAttribute = new DexterityAttribute(new AttributeScore(14));
+            ISkill stealth = new Stealth(dexterityAttribute);
+            IAttributeScore expectedScore = new AttributeScore(2);
+            //act
+            IAttributeScore actualScore = stealth.SkillBonus();
+
+            //assert
+            actualScore.Should().Be(expectedScore);
         }
     }
 
