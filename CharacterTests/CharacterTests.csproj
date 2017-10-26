@@ -62,8 +62,11 @@
     <Compile Include="Classes\WizardTests.cs" />
     <Compile Include="Dice\HitDieTests.cs" />
     <Compile Include="Fakes\FakeAttributeSet.cs" />
-    <Compile Include="Physical\Skills\AcrobaticsTests.cs" />
-    <Compile Include="Physical\Skills\AnimalHandlingTests.cs" />
+    <Compile Include="Physical\Skills\CharismaSkillsTests.cs" />
+    <Compile Include="Physical\Skills\DexteritySkillsTests.cs" />
+    <Compile Include="Physical\Skills\StrengthSkillTestsTests.cs" />
+    <Compile Include="Physical\Skills\IntelligenceSkillsTests.cs" />
+    <Compile Include="Physical\Skills\WisdomSkillsTests.cs" />
     <Compile Include="Physical\SpeedTests.cs" />
     <Compile Include="CharacterSheetTests.cs" />
     <Compile Include="Physical\SizeTests.cs" />

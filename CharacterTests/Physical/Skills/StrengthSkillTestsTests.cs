@@ -8,30 +8,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CharacterTests.Physical.Skills
 {
     [TestClass]
-    public class AcrobaticsTests
+    public class AthleticsTests
     {
+
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnName()
         {
             //assign
-            ISkill actualSkillBase = new Acrobatics();
+            ISkill actualSkillBase = new Athletics();
             //act
             ITextObj name = actualSkillBase.Name();
             //assert
-            name.Should().Be(new TextObj("Acrobatics"));
+            name.Should().Be(new TextObj("Athletics"));
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnBaseAttribute()
+        public void ShouldReturnWisdomAsBaseAttribute()
         {
             //arrange
-            ISkill acrobatics = new Acrobatics();
-            ICharacterAttribute dexterityAttribute = new DexterityAttribute();
+            ISkill skill = new Athletics();
+            ICharacterAttribute strengthAttribute = new StrengthAttribute();
             //act
-            ICharacterAttribute actualAttribute = acrobatics.BaseAttribute();
+            ICharacterAttribute actualAttribute = skill.BaseAttribute();
 
             //assert
-            actualAttribute.Should().Be(dexterityAttribute);
+            actualAttribute.Should().Be(strengthAttribute);
         }
+
     }
 }
