@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Stealth : SkillBase, ISkill
     {
-        public Stealth() : base(new TextObj("Stealth"), new DexterityAttribute()) { }
+        public Stealth() : this(new DexterityAttribute()) { }
+        public Stealth(DexterityAttribute dexterityAttribute) : base(new TextObj("Stealth"), dexterityAttribute) { }
     }
 }

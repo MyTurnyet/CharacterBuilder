@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Persuasion : SkillBase, ISkill
     {
-        public Persuasion() : base(new TextObj("Persuasion"), new CharismaAttribute()) { }
+        public Persuasion() : this(new CharismaAttribute()) { }
+        public Persuasion(CharismaAttribute charismaAttribute) : base(new TextObj("Persuasion"), charismaAttribute) { }
     }
 }

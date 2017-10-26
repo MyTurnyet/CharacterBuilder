@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class AnimalHandling : SkillBase, ISkill
     {
-        public AnimalHandling() : base(new TextObj("Animal Handling"), new WisdomAttribute()) { }
+        public AnimalHandling() : this(new WisdomAttribute()) { }
+        public AnimalHandling(WisdomAttribute wisdomAttribute) : base(new TextObj("Animal Handling"), wisdomAttribute) { }
     }
 }

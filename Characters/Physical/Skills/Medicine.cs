@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Medicine : SkillBase, ISkill
     {
-        public Medicine() : base(new TextObj("Medicine"),new WisdomAttribute()) { }
+        public Medicine() : this( new WisdomAttribute()) { }
+        public Medicine(WisdomAttribute wisdomAttribute) : base(new TextObj("Medicine"),wisdomAttribute) { }
     }
 }

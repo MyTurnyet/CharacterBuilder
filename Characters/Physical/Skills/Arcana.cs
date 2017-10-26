@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Arcana : SkillBase, ISkill
     {
-        public Arcana() : base(new TextObj("Arcana"), new IntellegenceAttribute()) { }
+        public Arcana() : this( new IntellegenceAttribute()) { }
+        public Arcana(IntellegenceAttribute intellegenceAttribute) : base(new TextObj("Arcana"), intellegenceAttribute) { }
     }
 }

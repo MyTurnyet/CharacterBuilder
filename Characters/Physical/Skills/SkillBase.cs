@@ -22,6 +22,10 @@ namespace Characters.Physical.Skills
         {
             return _baseAttribute;
         }
+        public IAttributeScore SkillBonus()
+        {
+            return _baseAttribute.Bonus();
+        }
 
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()

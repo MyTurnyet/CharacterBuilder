@@ -8,5 +8,6 @@ namespace Characters.Physical.Skills
         bool Equals(object obj);
         ITextObj Name();
         ICharacterAttribute BaseAttribute();
+        IAttributeScore SkillBonus();
     }
 }

@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Nature : SkillBase, ISkill
     {
-        public Nature() : base(new TextObj("Nature"), new IntellegenceAttribute()) { }
+        public Nature() : this(new IntellegenceAttribute()) { }
+        public Nature(IntellegenceAttribute intellegenceAttribute) : base(new TextObj("Nature"), intellegenceAttribute) { }
     }
 }

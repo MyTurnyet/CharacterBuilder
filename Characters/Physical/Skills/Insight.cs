@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Insight : SkillBase, ISkill
     {
-        public Insight() : base(new TextObj("Insight"), new WisdomAttribute()) { }
+        public Insight() : this(new WisdomAttribute()) { }
+        public Insight(WisdomAttribute wisdomAttribute) : base(new TextObj("Insight"), wisdomAttribute) { }
     }
 }

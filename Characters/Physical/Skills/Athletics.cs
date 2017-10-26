@@ -5,6 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Athletics : SkillBase, ISkill
     {
-        public Athletics() : base(new TextObj("Athletics"), new StrengthAttribute()) { }
+        public Athletics() : this(new StrengthAttribute()) { }
+        public Athletics(StrengthAttribute strengthAttribute) : base(new TextObj("Athletics"), strengthAttribute) { }
     }
 }
