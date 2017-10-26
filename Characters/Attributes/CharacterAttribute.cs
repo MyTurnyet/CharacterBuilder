@@ -1,11 +1,12 @@
-﻿using System.Text;
-using Characters.Display;
+﻿using Characters.Display;
 using Characters.Physical;
 using Characters.Races;
 
 namespace Characters.Attributes
 {
+#pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
     public class CharacterAttribute : ICharacterAttribute
+
     {
         private readonly IAttributeName _name;
         private IAttributeScore _value;
@@ -25,14 +26,7 @@ namespace Characters.Attributes
         private IAttributeScore BaseScore() => (AttributeScore)_value;
         public IAttributeScore Bonus() => new AttributeScore(Score().Bonus());
         public IHitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
-
-        public ITextObj DisplayText()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            _name.Name().AddToStringBuilder(stringBuilder);
-            stringBuilder.Append(": ");
-            Score().AsText().AddToStringBuilder(stringBuilder);
-            return new TextObj(stringBuilder);
-        }
+        public ITextObj DisplayText() => _name.Name().Append(new TextObj(": ")).Append(Score().AsText());
     }
+#pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }
