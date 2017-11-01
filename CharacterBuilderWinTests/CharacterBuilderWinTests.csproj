@@ -67,10 +67,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CharacterBuilderWin\CharacterBuilderWin.csproj">
-      <Project>{F0E3CFA5-0482-4C05-8855-3EE607ADE9C3}</Project>
-      <Name>CharacterBuilderWin</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Characters\Characters.csproj">
       <Project>{AAE45DE6-2AD0-4B91-8B0D-D35DF2537BEF}</Project>
       <Name>Characters</Name>
