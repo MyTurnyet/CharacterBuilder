@@ -22,7 +22,7 @@ namespace Characters.Classes
         public abstract IHitDie HitDie();
         public abstract List<IProficiency> Proficiencies();
         public abstract List<ISavingThrowAttribute> SavingThrows();
-        public abstract List<ISkill> Skills(IAttributeSet attributeSet);
+        public abstract List<ISkill> Skills();
         public ITextObj Name() => _className;
         public IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
     }

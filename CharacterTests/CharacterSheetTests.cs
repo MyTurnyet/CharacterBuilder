@@ -153,7 +153,7 @@ namespace CharacterTests
                 new Darts(),
                 new Sling(),
                 new Quarterstaff(),
-                new LightCrossbow(),
+                new LightCrossbow()
             };
 
             //act
@@ -180,21 +180,11 @@ namespace CharacterTests
         {
             //arrange
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
-            ICharacterAttribute intAtt = _characterSheet.Attribute(CharacterAttributeName.Intelligence);
             //assert
             List<ISkill> actualSkills = _characterSheet.Skills();
             actualSkills.First(item => item.Name().Equals(new TextObj("Investigation"))).SkillBonus().Should().Be(new AttributeScore(0));
         }
-        [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnMedicineSkillsForHumanWizard()
-        {
-            //arrange
-            _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
-            ICharacterAttribute intAtt = _characterSheet.Attribute(CharacterAttributeName.Intelligence);
-            //assert
-            List<ISkill> actualSkills = _characterSheet.Skills();
-            actualSkills.First(item => item.Name().Equals(new TextObj("Medicine"))).SkillBonus().Should().Be(new AttributeScore(2));
-        }
+
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnActivatedMedicineSkillForHumanWizard()
         {

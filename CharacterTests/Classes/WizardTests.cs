@@ -84,7 +84,7 @@ namespace CharacterTests.Classes
                 new Religion()
             };
             //act
-            List<ISkill> actualSkills = new Wizard().Skills(new FakeAttributeSet());
+            List<ISkill> actualSkills = new Wizard().Skills();
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }

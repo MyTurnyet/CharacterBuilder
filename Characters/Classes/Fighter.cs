@@ -15,7 +15,7 @@ namespace Characters.Classes
         public override IHitDie HitDie() =>new FigtherHitDie();
         public override List<IProficiency> Proficiencies() => new List<IProficiency> { new SimpleWeapons(), new MartialWeapons(), new AllArmor(), new AllShields() };
         public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute> { SavingThrowAttribute.Strength, SavingThrowAttribute.Constitution };
-        public override List<ISkill> Skills(IAttributeSet attributeSet) => new List<ISkill>
+        public override List<ISkill> Skills() => new List<ISkill>
             {new Acrobatics(),new AnimalHandling(),new Athletics(),new History(),
                 new Insight(),new Intimidation(),new Perception(),new Survival()};
     }

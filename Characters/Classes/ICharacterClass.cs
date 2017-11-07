@@ -15,7 +15,7 @@ namespace Characters.Classes
         IHitDie HitDie();
         List<IProficiency> Proficiencies();
         List<ISavingThrowAttribute> SavingThrows();
-        List<ISkill> Skills(IAttributeSet attributeSet);
+        List<ISkill> Skills();
         ITextObj Name();
         IHitPoints BaseHitPoints();
     }

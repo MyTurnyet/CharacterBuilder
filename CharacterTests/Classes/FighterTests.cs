@@ -88,7 +88,7 @@ namespace CharacterTests.Classes
                 new Survival()
             };
             //act
-            List<ISkill> actualSkills = new Fighter().Skills(new FakeAttributeSet());
+            List<ISkill> actualSkills = new Fighter().Skills();
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }
