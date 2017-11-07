@@ -5,6 +5,7 @@ using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
+using Characters.Races;
 
 namespace Characters.Classes
 {
@@ -14,7 +15,7 @@ namespace Characters.Classes
         IHitDie HitDie();
         List<IProficiency> Proficiencies();
         List<ISavingThrowAttribute> SavingThrows();
-        List<ISkill> Skills();
+        List<ISkill> Skills(IAttributeSet attributeSet);
         ITextObj Name();
         IHitPoints BaseHitPoints();
     }

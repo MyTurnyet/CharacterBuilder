@@ -32,7 +32,7 @@ namespace CharacterTests.Fakes
         readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>
         {
             new StrengthAttribute(new AttributeScore(10)), new DexterityAttribute(new AttributeScore(10)), new ConstitutionAttribute(new AttributeScore(10)),
-            new WisdomAttribute(new AttributeScore(10)), new IntellegenceAttribute(new AttributeScore(10)), new CharismaAttribute(new AttributeScore(10))
+            new WisdomAttribute(new AttributeScore(14)), new IntellegenceAttribute(new AttributeScore(10)), new CharismaAttribute(new AttributeScore(10))
         };
         public ICharacterAttribute MatchesName(IAttributeName attributeName)
         {

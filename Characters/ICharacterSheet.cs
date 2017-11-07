@@ -3,6 +3,7 @@ using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Skills;
 
 namespace Characters
 {
@@ -12,5 +13,7 @@ namespace Characters
         IHitPoints HitPoints();
         List<IProficiency> Proficiencies();
         ITextObj StatsList();
+        List<ISkill> Skills();
+        void ActivateSkill(ISkill skill);
     }
 }

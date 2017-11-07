@@ -6,6 +6,7 @@ using Characters.Dice;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
+using CharacterTests.Fakes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -87,7 +88,7 @@ namespace CharacterTests.Classes
                 new Survival()
             };
             //act
-            List<ISkill> actualSkills = new Fighter().Skills();
+            List<ISkill> actualSkills = new Fighter().Skills(new FakeAttributeSet());
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }

@@ -6,6 +6,7 @@ using Characters.Classes;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Skills;
 using Characters.Races;
 using CharacterTests.Fakes;
 using FluentAssertions;
@@ -175,13 +176,38 @@ namespace CharacterTests
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnSkillValuesForHumanWizard()
+        public void ShouldReturnInvestigationSkillsForHumanWizard()
         {
             //arrange
-            _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeAttributeSet());
-            //act
-
+            _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
+            ICharacterAttribute intAtt = _characterSheet.Attribute(CharacterAttributeName.Intelligence);
             //assert
+            List<ISkill> actualSkills = _characterSheet.Skills();
+            actualSkills.First(item => item.Name().Equals(new TextObj("Investigation"))).SkillBonus().Should().Be(new AttributeScore(0));
         }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnMedicineSkillsForHumanWizard()
+        {
+            //arrange
+            _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
+            ICharacterAttribute intAtt = _characterSheet.Attribute(CharacterAttributeName.Intelligence);
+            //assert
+            List<ISkill> actualSkills = _characterSheet.Skills();
+            actualSkills.First(item => item.Name().Equals(new TextObj("Medicine"))).SkillBonus().Should().Be(new AttributeScore(2));
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnActivatedMedicineSkillForHumanWizard()
+        {
+            //arrange
+            _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
+            ICharacterAttribute wisdomAtt = _characterSheet.Attribute(CharacterAttributeName.Wisdom);
+            Medicine medicine = new Medicine((WisdomAttribute)wisdomAtt,true);
+            //act
+            _characterSheet.ActivateSkill(medicine);
+            //assert
+            List<ISkill> actualSkills = _characterSheet.Skills();
+            actualSkills.First(item => item.Name().Equals(new TextObj("Medicine"))).SkillBonus().Should().Be(new AttributeScore(4));
+        }
+    
     }
 }

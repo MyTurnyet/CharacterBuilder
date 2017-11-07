@@ -5,6 +5,7 @@ using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
+using Characters.Races;
 
 namespace Characters.Classes
 {
@@ -21,8 +22,17 @@ namespace Characters.Classes
             new LightCrossbow()
         };
         public override List<ISavingThrowAttribute> SavingThrows() => new List<ISavingThrowAttribute> { SavingThrowAttribute.Intellegence, SavingThrowAttribute.Wisdom };
-        public override List<ISkill> Skills() => new List<ISkill>
-            {new Arcana(),new History(),new Insight(),
-                new Investigation(),new Medicine(),new Religion()};
+        public override List<ISkill> Skills(IAttributeSet attributeSet)
+        {
+            List<ISkill> skills = new List<ISkill>
+            {new Arcana((IntellegenceAttribute)attributeSet.MatchesName(CharacterAttributeName.Intelligence)),
+                new History((IntellegenceAttribute)attributeSet.MatchesName(CharacterAttributeName.Intelligence)),
+                new Insight((WisdomAttribute)attributeSet.MatchesName(CharacterAttributeName.Wisdom)),
+                new Investigation((IntellegenceAttribute)attributeSet.MatchesName(CharacterAttributeName.Intelligence)),
+                new Medicine((WisdomAttribute)attributeSet.MatchesName(CharacterAttributeName.Wisdom)),
+                new Religion((IntellegenceAttribute)attributeSet.MatchesName(CharacterAttributeName.Intelligence))};
+
+            return skills;
+        }
     }
 }

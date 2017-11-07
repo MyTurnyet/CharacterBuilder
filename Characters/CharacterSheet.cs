@@ -4,6 +4,7 @@ using Characters.Classes;
 using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
+using Characters.Physical.Skills;
 using Characters.Races;
 
 namespace Characters
@@ -13,6 +14,7 @@ namespace Characters
         private readonly ICharacterClass _characterClass;
         private readonly ICharacterRace _race;
         private readonly IAttributeSet _attributeSet;
+        private readonly List<ISkill> _activatedSkills = new List<ISkill>();
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race) : this(characterClass, race, new AttributeSet()) { }
 
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, IAttributeSet attributeSet)
@@ -39,6 +41,17 @@ namespace Characters
         public ITextObj StatsList()
         {
             return _attributeSet.DisplayText();
+        }
+
+        public List<ISkill> Skills()
+        {
+            List<ISkill> skills = _characterClass.Skills(_attributeSet);
+            return skills;
+        }
+
+        public void ActivateSkill(ISkill skill)
+        {
+            _activatedSkills.Add(skill);
         }
     }
 }
