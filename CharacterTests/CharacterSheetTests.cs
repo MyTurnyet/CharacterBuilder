@@ -40,24 +40,24 @@ namespace CharacterTests
         public void ShouldApplyRacialBonusToAttributes()
         {
             //arrange
-            AttributeScore expectedDexterityScore = new AttributeScore(2);
-            AttributeScore expectedWisdomScore = new AttributeScore(1);
+            AttributeScore expectedDexterityScore = new AttributeScore(12);
+            AttributeScore expectedWisdomScore = new AttributeScore(11);
             _characterSheet = new CharacterSheet(new Fighter(), new WoodElf(), _attributeSet);
             //assert
-            _characterSheet.Attribute(CharacterAttributeName.Strength).Score().Should().Be(new StrengthAttribute().Score());
+            _characterSheet.Attribute(CharacterAttributeName.Strength).Score().Should().Be(new FakeAttribute().Score());
 
             _characterSheet.Attribute(CharacterAttributeName.Dexterity).Score().Should().Be(expectedDexterityScore);
-            _characterSheet.Attribute(CharacterAttributeName.Constitution).Score().Should().Be(new ConstitutionAttribute().Score());
-            _characterSheet.Attribute(CharacterAttributeName.Intelligence).Score().Should().Be(new IntellegenceAttribute().Score());
+            _characterSheet.Attribute(CharacterAttributeName.Constitution).Score().Should().Be(new FakeAttribute().Score());
+            _characterSheet.Attribute(CharacterAttributeName.Intelligence).Score().Should().Be(new FakeAttribute().Score());
             _characterSheet.Attribute(CharacterAttributeName.Wisdom).Score().Should().Be(expectedWisdomScore);
-            _characterSheet.Attribute(CharacterAttributeName.Charisma).Score().Should().Be(new CharismaAttribute().Score());
+            _characterSheet.Attribute(CharacterAttributeName.Charisma).Score().Should().Be(new FakeAttribute().Score());
         }
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnStartingHitPointsForHillDwarfFighter()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(6);
+            IHitPoints expectedHitPoints = new HitPoints(11);
             _characterSheet = new CharacterSheet(new Fighter(), new HillDwarf(), _attributeSet);
 
             //act
@@ -71,7 +71,7 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForMountainDwarfFighter()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(5);
+            IHitPoints expectedHitPoints = new HitPoints(10);
             _characterSheet = new CharacterSheet(new Fighter(), new MountainDwarf(), _attributeSet);
 
             //act
@@ -85,7 +85,7 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForWoodElfWizard()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(1);
+            IHitPoints expectedHitPoints = new HitPoints(6);
             _characterSheet = new CharacterSheet(new Wizard(), new WoodElf(), _attributeSet);
 
             //act
@@ -99,7 +99,7 @@ namespace CharacterTests
         public void ShouldReturnStartingHitPointsForWoodElfFighter()
         {
             //arrange
-            IHitPoints expectedHitPoints = new HitPoints(5);
+            IHitPoints expectedHitPoints = new HitPoints(10);
             _characterSheet = new CharacterSheet(new Fighter(), new WoodElf(), _attributeSet);
 
             //act
@@ -174,5 +174,14 @@ namespace CharacterTests
 
         }
 
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSkillValuesForHumanWizard()
+        {
+            //arrange
+            _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeAttributeSet());
+            //act
+
+            //assert
+        }
     }
 }

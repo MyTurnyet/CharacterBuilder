@@ -37,8 +37,8 @@ namespace CharacterTests.Physical.Skills
         public void ShouldReturnBonusOfBaseAttribute()
         {
             //arrange
-            CharismaAttribute dexterityAttribute = new CharismaAttribute(new AttributeScore(14));
-            ISkill deception = new Deception(dexterityAttribute);
+            CharismaAttribute charismaAttribute = new CharismaAttribute(new AttributeScore(14));
+            ISkill deception = new Deception(charismaAttribute, false);
             IAttributeScore expectedScore = new AttributeScore(2);
             //act
             IAttributeScore actualScore = deception.SkillBonus();

@@ -7,14 +7,36 @@ namespace CharacterTests.Fakes
 {
     public class FakeAttributeSet : IAttributeSet
     {
-         List<ICharacterAttribute> attributes = new List<ICharacterAttribute>
+        readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>
          {
-             new StrengthAttribute(), new DexterityAttribute(), new ConstitutionAttribute(),
-             new WisdomAttribute(), new IntellegenceAttribute(), new CharismaAttribute()
+             new StrengthAttribute(new AttributeScore(10)), new DexterityAttribute(new AttributeScore(10)), new ConstitutionAttribute(new AttributeScore(10)),
+             new WisdomAttribute(new AttributeScore(10)), new IntellegenceAttribute(new AttributeScore(10)), new CharismaAttribute(new AttributeScore(10))
          };
         public ICharacterAttribute MatchesName(IAttributeName attributeName)
         {
-            return attributes.FirstOrDefault(att => att.MatchesName(attributeName));
+            return _attributes.FirstOrDefault(att => att.MatchesName(attributeName));
+        }
+
+        public ITextObj DisplayText()
+        {
+            return new TextObj("This Works!");
+        }
+
+        public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
+    public class FakeWizardAttributeSet : IAttributeSet
+    {
+        readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>
+        {
+            new StrengthAttribute(new AttributeScore(10)), new DexterityAttribute(new AttributeScore(10)), new ConstitutionAttribute(new AttributeScore(10)),
+            new WisdomAttribute(new AttributeScore(10)), new IntellegenceAttribute(new AttributeScore(10)), new CharismaAttribute(new AttributeScore(10))
+        };
+        public ICharacterAttribute MatchesName(IAttributeName attributeName)
+        {
+            return _attributes.FirstOrDefault(att => att.MatchesName(attributeName));
         }
 
         public ITextObj DisplayText()

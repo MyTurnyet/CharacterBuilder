@@ -6,6 +6,6 @@ namespace Characters.Physical.Skills
     public class Stealth : SkillBase, ISkill
     {
         public Stealth() : this(new DexterityAttribute()) { }
-        public Stealth(DexterityAttribute dexterityAttribute) : base(new TextObj("Stealth"), dexterityAttribute) { }
+        public Stealth(DexterityAttribute dexterityAttribute, bool activateSkill = false) : base(new TextObj("Stealth"), dexterityAttribute, activateSkill) { }
     }
 }

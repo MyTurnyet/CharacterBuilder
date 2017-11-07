@@ -5,7 +5,7 @@ namespace Characters.Physical.Skills
 {
     public class Deception : SkillBase, ISkill
     {
-        public Deception() : this(new CharismaAttribute()) { }
-        public Deception(CharismaAttribute charismaAttribute) : base(new TextObj("Deception"), charismaAttribute) { }
+        public Deception() : this(new CharismaAttribute(), false) { }
+        public Deception(CharismaAttribute charismaAttribute, bool activateSkill) : base(new TextObj("Deception"), charismaAttribute, activateSkill) { }
     }
 }
