@@ -176,27 +176,18 @@ namespace CharacterTests
         }
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnInvestigationSkillsForHumanWizard()
+        public void ShouldReturnActivatedAndNonActiveSkillsForHumanWizard()
         {
             //arrange
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
-            //assert
-            List<ISkill> actualSkills = _characterSheet.Skills();
-            actualSkills.First(item => item.Name().Equals(new TextObj("Investigation"))).SkillBonus().Should().Be(new AttributeScore(0));
-        }
-
-        [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnActivatedMedicineSkillForHumanWizard()
-        {
-            //arrange
-            _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
-            ICharacterAttribute wisdomAtt = _characterSheet.Attribute(CharacterAttributeName.Wisdom);
-            Medicine medicine = new Medicine((WisdomAttribute)wisdomAtt,true);
+            ICharacterAttribute attribute = _characterSheet.Attribute(CharacterAttributeName.Dexterity);
+            SleightOfHand slightOfHand = new SleightOfHand((DexterityAttribute)attribute,true);
             //act
-            _characterSheet.ActivateSkill(medicine);
+            _characterSheet.ActivateSkill(slightOfHand);
             //assert
             List<ISkill> actualSkills = _characterSheet.Skills();
-            actualSkills.First(item => item.Name().Equals(new TextObj("Medicine"))).SkillBonus().Should().Be(new AttributeScore(4));
+            actualSkills.First(item => item.Name().Equals(new TextObj("Sleight Of Hand"))).SkillBonus().Should().Be(new AttributeScore(1));
+            actualSkills.First(item => item.Name().Equals(new TextObj("Acrobatics"))).SkillBonus().Should().Be(new AttributeScore(-1));
         }
     
     }

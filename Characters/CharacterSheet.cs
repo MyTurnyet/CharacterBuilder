@@ -14,7 +14,7 @@ namespace Characters
         private readonly ICharacterClass _characterClass;
         private readonly ICharacterRace _race;
         private readonly IAttributeSet _attributeSet;
-        private List<ISkill> _allSkills = new List<ISkill>();
+        private readonly List<ISkill> _allSkills = new List<ISkill>();
         private readonly List<ISkill> _activatedSkills = new List<ISkill>();
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race) : this(characterClass, race, new AttributeSet()) { }
 
@@ -27,9 +27,8 @@ namespace Characters
 
         public ICharacterAttribute Attribute(IAttributeName attributeName)
         {
-            ICharacterAttribute attribute = _attributeSet.MatchesName(attributeName);
-            attribute.ApplyRacialBonus((CharacterRace)_race);
-            return attribute;
+            _attributeSet.MatchesName(attributeName).ApplyRacialBonus((CharacterRace)_race);
+            return _attributeSet.MatchesName(attributeName);
         }
         public IHitPoints HitPoints() => (HitPoints)_characterClass.HitDie().MaxHitPoints().Add((HitPoints)_attributeSet.MatchesName(CharacterAttributeName.Constitution).BonusHitPoints()).Add((HitPoints)_race.BonusHitPoints());
         public List<IProficiency> Proficiencies()
@@ -39,11 +38,7 @@ namespace Characters
             proficiencies.AddRange(_race.Proficiencies());
             return proficiencies;
         }
-        public ITextObj StatsList()
-        {
-            return _attributeSet.DisplayText();
-        }
-
+        public ITextObj StatsList() => _attributeSet.DisplayText();
         public List<ISkill> Skills()
         {
             FillAllSkills();
