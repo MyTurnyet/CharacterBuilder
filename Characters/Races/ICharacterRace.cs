@@ -4,7 +4,6 @@ using Characters.Display;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Sizes;
-using Characters.Physical.Skills;
 
 namespace Characters.Races
 {

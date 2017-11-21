@@ -2,10 +2,8 @@
 using Characters.Attributes;
 using Characters.Dice;
 using Characters.Display;
-using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
-using Characters.Races;
 
 namespace Characters.Classes
 {

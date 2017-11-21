@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Characters.Attributes;
 using Characters.Classes;
 using Characters.Display;
@@ -41,37 +42,13 @@ namespace Characters
         public ITextObj StatsList() => _attributeSet.DisplayText();
         public List<ISkill> Skills()
         {
-            FillAllSkills();
-            foreach (ISkill skill in _allSkills)
+            foreach (ISkill skill in new BaseSkillSet(_attributeSet).Skills().Where(s=> !_activatedSkills.Contains(s)))
             {
-                if (_activatedSkills.Contains(skill)) continue;
                 _activatedSkills.Add(skill);
             }
             return _activatedSkills;
         }
 
-        private void FillAllSkills()
-        {
-            _allSkills.Clear();
-            _allSkills.Add(new Acrobatics((DexterityAttribute)_attributeSet.MatchesName(CharacterAttributeName.Dexterity)));
-            _allSkills.Add(new SleightOfHand((DexterityAttribute)_attributeSet.MatchesName(CharacterAttributeName.Dexterity)));
-            _allSkills.Add(new Stealth((DexterityAttribute)_attributeSet.MatchesName(CharacterAttributeName.Dexterity)));
-            _allSkills.Add(new Deception((CharismaAttribute)_attributeSet.MatchesName(CharacterAttributeName.Charisma)));
-            _allSkills.Add(new Intimidation((CharismaAttribute)_attributeSet.MatchesName(CharacterAttributeName.Charisma)));
-            _allSkills.Add(new Performance((CharismaAttribute)_attributeSet.MatchesName(CharacterAttributeName.Charisma)));
-            _allSkills.Add(new Persuasion((CharismaAttribute)_attributeSet.MatchesName(CharacterAttributeName.Charisma)));
-            _allSkills.Add(new Arcana((IntellegenceAttribute)_attributeSet.MatchesName(CharacterAttributeName.Intelligence)));
-            _allSkills.Add(new History((IntellegenceAttribute)_attributeSet.MatchesName(CharacterAttributeName.Intelligence)));
-            _allSkills.Add(new Religion((IntellegenceAttribute)_attributeSet.MatchesName(CharacterAttributeName.Intelligence)));
-            _allSkills.Add(new Investigation((IntellegenceAttribute)_attributeSet.MatchesName(CharacterAttributeName.Intelligence)));
-            _allSkills.Add(new Nature((IntellegenceAttribute)_attributeSet.MatchesName(CharacterAttributeName.Intelligence)));
-            _allSkills.Add(new Athletics((StrengthAttribute)_attributeSet.MatchesName(CharacterAttributeName.Strength)));
-            _allSkills.Add(new AnimalHandling((WisdomAttribute)_attributeSet.MatchesName(CharacterAttributeName.Wisdom)));
-            _allSkills.Add(new Insight((WisdomAttribute)_attributeSet.MatchesName(CharacterAttributeName.Wisdom)));
-            _allSkills.Add(new Medicine((WisdomAttribute)_attributeSet.MatchesName(CharacterAttributeName.Wisdom)));
-            _allSkills.Add(new Perception((WisdomAttribute)_attributeSet.MatchesName(CharacterAttributeName.Wisdom)));
-            _allSkills.Add(new Survival((WisdomAttribute)_attributeSet.MatchesName(CharacterAttributeName.Wisdom)));
-        }
         public void ActivateSkill(ISkill skill) => _activatedSkills.Add(skill);
     }
 }

@@ -83,6 +83,7 @@
     <Compile Include="Physical\Skills\AnimalHandling.cs" />
     <Compile Include="Physical\Skills\Arcana.cs" />
     <Compile Include="Physical\Skills\Athletics.cs" />
+    <Compile Include="Physical\Skills\BaseSkillSet.cs" />
     <Compile Include="Physical\Skills\Deception.cs" />
     <Compile Include="Physical\Skills\History.cs" />
     <Compile Include="Physical\Skills\Insight.cs" />

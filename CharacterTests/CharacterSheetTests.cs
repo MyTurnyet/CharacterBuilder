@@ -20,11 +20,6 @@ namespace CharacterTests
         private ICharacterSheet _characterSheet;
         private readonly IAttributeSet _attributeSet = new FakeAttributeSet();
 
-        [TestInitialize]
-        public void Setup()
-        {
-        }
-
         [TestMethod, TestCategory("Unit")]
         public void ShouldEquateAttributes()
         {
@@ -114,7 +109,7 @@ namespace CharacterTests
         public void ShouldShouldReturnProficienciesForDwarfFighter()
         {
             //assign
-            _characterSheet = new CharacterSheet(new Fighter(), new HillDwarf(), new FakeAttributeSet());
+            _characterSheet = new CharacterSheet(new Fighter(), new HillDwarf(), _attributeSet);
             List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 new Battleaxe(),
@@ -139,7 +134,7 @@ namespace CharacterTests
         public void ShouldShouldReturnProficienciesForDwarfWizard()
         {
             //assign
-            _characterSheet = new CharacterSheet(new Wizard(), new HillDwarf(), new FakeAttributeSet());
+            _characterSheet = new CharacterSheet(new Wizard(), new HillDwarf(), _attributeSet);
             List<IProficiency> expectedProficiencies = new List<IProficiency>
             {
                 new Battleaxe(),
@@ -166,7 +161,7 @@ namespace CharacterTests
         public void ShouldReturnCorrectStatsList()
         {
             //assign
-            _characterSheet = new CharacterSheet(new Wizard(), new HillDwarf(), new FakeAttributeSet());
+            _characterSheet = new CharacterSheet(new Wizard(), new HillDwarf(), _attributeSet);
             TextObj expectedTextOf = new TextObj("This Works!");
             //act
             ITextObj actualTextOf = _characterSheet.StatsList();
