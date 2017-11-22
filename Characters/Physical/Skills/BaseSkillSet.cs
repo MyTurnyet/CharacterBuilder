@@ -6,12 +6,10 @@ namespace Characters.Physical.Skills
     public class BaseSkillSet
     {
         private readonly IAttributeSet _attributeSet;
-
         public BaseSkillSet(IAttributeSet attributeSet)
         {
             _attributeSet = attributeSet;
         }
-
         public List<ISkill> Skills() => new List<ISkill>()
         {
             new Acrobatics((DexterityAttribute) _attributeSet.MatchesName(CharacterAttributeName.Dexterity)),

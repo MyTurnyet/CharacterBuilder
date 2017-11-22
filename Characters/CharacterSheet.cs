@@ -15,10 +15,8 @@ namespace Characters
         private readonly ICharacterClass _characterClass;
         private readonly ICharacterRace _race;
         private readonly IAttributeSet _attributeSet;
-        private readonly List<ISkill> _allSkills = new List<ISkill>();
         private readonly List<ISkill> _activatedSkills = new List<ISkill>();
-        public CharacterSheet(ICharacterClass characterClass, ICharacterRace race) : this(characterClass, race, new AttributeSet()) { }
-
+        
         public CharacterSheet(ICharacterClass characterClass, ICharacterRace race, IAttributeSet attributeSet)
         {
             _characterClass = characterClass;
