@@ -1,5 +1,4 @@
-﻿using System;
-using Characters.Attributes;
+﻿using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical.Skills;
 using FluentAssertions;

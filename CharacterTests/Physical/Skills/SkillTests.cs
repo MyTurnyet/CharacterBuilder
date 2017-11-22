@@ -1,5 +1,4 @@
 ﻿using Characters.Attributes;
-using Characters.Display;
 using Characters.Physical.Skills;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -6,7 +6,6 @@ using Characters.Dice;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
-using CharacterTests.Fakes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
