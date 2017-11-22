@@ -7,7 +7,7 @@ using Characters.Physical.Sizes;
 
 namespace Characters.Races
 {
-    public class Human : CharacterRace
+    public class Human : CharacterRace, ICharacterRace
     {
         private readonly List<IProficiency> _proficiencies = new List<IProficiency>();
         private readonly AttributeScore _racialAttributeAdjustment = new AttributeScore(1);

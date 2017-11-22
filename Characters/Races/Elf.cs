@@ -7,7 +7,7 @@ using Characters.Physical.Sizes;
 
 namespace Characters.Races
 {
-    public abstract class Elf : CharacterRace
+    public abstract class Elf : CharacterRace, ICharacterRace
     {
         internal Elf(ITextObj race) : base(race){}
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyDexterityBonus(attribute);

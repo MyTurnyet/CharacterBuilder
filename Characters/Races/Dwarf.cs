@@ -7,7 +7,7 @@ using Characters.Physical.Sizes;
 
 namespace Characters.Races
 {
-    public abstract class Dwarf:CharacterRace
+    public abstract class Dwarf:CharacterRace, ICharacterRace
     {
         protected Dwarf(ITextObj race) : base(race){}
         public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyConstitutionBonus(attribute);

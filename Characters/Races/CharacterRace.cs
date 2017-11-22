@@ -8,7 +8,7 @@ using Characters.Physical.Sizes;
 namespace Characters.Races
 {
 #pragma warning disable CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
-    public abstract class CharacterRace : ICharacterRace
+    public abstract class CharacterRace
     {
         private readonly ITextObj _race;
 

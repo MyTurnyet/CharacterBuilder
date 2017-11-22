@@ -26,7 +26,7 @@ namespace Characters
 
         public ICharacterAttribute Attribute(IAttributeName attributeName)
         {
-            _attributeSet.MatchesName(attributeName).ApplyRacialBonus((CharacterRace)_race);
+            _attributeSet.MatchesName(attributeName).ApplyRacialBonus(_race);
             return _attributeSet.MatchesName(attributeName);
         }
         public IHitPoints HitPoints() => (HitPoints)_characterClass.HitDie().MaxHitPoints().Add((HitPoints)_attributeSet.MatchesName(CharacterAttributeName.Constitution).BonusHitPoints()).Add((HitPoints)_race.BonusHitPoints());
