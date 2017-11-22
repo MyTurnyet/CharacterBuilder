@@ -85,6 +85,8 @@
     <Compile Include="Races\HighElfTests.cs" />
     <Compile Include="Races\HillDwarfTests.cs" />
     <Compile Include="Races\MountainDwarfTests.cs" />
+    <Compile Include="Races\HalflingLightFootTests.cs" />
+    <Compile Include="Races\HalflingStoutTests.cs" />
     <Compile Include="Races\WoodElfTests.cs" />
     <Compile Include="Races\HumanTests.cs" />
     <Compile Include="Dice\DieTests.cs" />

@@ -129,6 +129,9 @@
     <Compile Include="Classes\ICharacterClass.cs" />
     <Compile Include="Races\Dwarf.cs" />
     <Compile Include="Races\Elf.cs" />
+    <Compile Include="Races\Halfling.cs" />
+    <Compile Include="Races\HalflingLightfoot.cs" />
+    <Compile Include="Races\HalflingStout.cs" />
     <Compile Include="Races\HighElf.cs" />
     <Compile Include="Races\HillDwarf.cs" />
     <Compile Include="Races\MountainDwarf.cs" />

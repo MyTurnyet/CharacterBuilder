@@ -17,6 +17,8 @@ namespace Characters.Races
         public static readonly ICharacterRace HighElf = new HighElf();
         public static readonly ICharacterRace HillDwarf = new HillDwarf();
         public static readonly ICharacterRace MountainDwarf = new MountainDwarf();
+        public static readonly ICharacterRace HalflingLightfoot = new HalflingLightfoot();
+        public static readonly ICharacterRace HalflingStout = new HalflingStout();
 
 
         internal CharacterRace(ITextObj race)
