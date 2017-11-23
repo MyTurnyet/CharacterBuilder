@@ -1,19 +1,17 @@
-using System.Text;
-
 namespace Characters.Display
 {
     public class TextObjBase : ITextObj
 
     {
-        protected readonly string _text;
+        protected readonly string Text;
         protected TextObjBase(string text)
         {
-            _text = text;
+            Text = text;
         }
         public override bool Equals(object obj) => Equals((TextObjBase)obj);
-        private bool Equals(TextObjBase other) => Equals(_text.GetHashCode(), other._text.GetHashCode());
-        public override int GetHashCode() => _text.GetHashCode();
-        public ITextObj Append(ITextObj textObjAppend) => new TextObjBase(_text + ((TextObjBase)textObjAppend)._text);
-        public void AddToStringBuilder(StringBuilder stringBuilder) => stringBuilder.Append(_text);
+        private bool Equals(TextObjBase other) => Equals(Text.GetHashCode(), other.Text.GetHashCode());
+        public override int GetHashCode() => Text.GetHashCode();
+        public ITextObj Append(ITextObj textObjAppend) => new TextObjBase(Text + ((TextObjBase)textObjAppend).Text);
+        
     }
 }
