@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Characters.Display
 {
     public class TextObjBase : ITextObj
@@ -12,6 +14,9 @@ namespace Characters.Display
         private bool Equals(TextObjBase other) => Equals(Text.GetHashCode(), other.Text.GetHashCode());
         public override int GetHashCode() => Text.GetHashCode();
         public ITextObj Append(ITextObj textObjAppend) => new TextObjBase(Text + ((TextObjBase)textObjAppend).Text);
-        
+        public void AddToStringBuilder(StringBuilder stringBuilder)
+        {
+            stringBuilder.Append(Text);
+        }
     }
 }

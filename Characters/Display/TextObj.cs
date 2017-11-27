@@ -1,4 +1,6 @@
-﻿namespace Characters.Display
+﻿using System.Text;
+
+namespace Characters.Display
 {
     public class TextObj : TextObjBase
     {
@@ -6,5 +8,7 @@
         public TextObj(TextObj textObjToCopy) : this(textObjToCopy.Text){ }
         public TextObj() : this(string.Empty) { }
         public TextObj(string text) : base(text) { }
+
+       
     }
 }
