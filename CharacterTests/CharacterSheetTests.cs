@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Characters;
 using Characters.Attributes;
 using Characters.Classes;
@@ -184,6 +185,28 @@ namespace CharacterTests
             actualSkills.First(item => item.Name().Equals(new TextObj("Sleight Of Hand"))).SkillBonus().Should().Be(new AttributeScore(1));
             actualSkills.First(item => item.Name().Equals(new TextObj("Acrobatics"))).SkillBonus().Should().Be(new AttributeScore(-1));
         }
-    
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnJsonObject()
+        {
+            //arrange
+            string attributeSetJson = "\"characterAttributes\":[" +
+                                      "{\"characterAttribute\":\"STR\",\"value\":0}" +
+                                      "{\"characterAttribute\":\"CON\",\"value\":0}" +
+                                      "{\"characterAttribute\":\"INT\",\"value\":0}" +
+                                      "{\"characterAttribute\":\"WIS\",\"value\":0}" +
+                                      "{\"characterAttribute\":\"CHR\",\"value\":0}" +
+                                      "{\"characterAttribute\":\"DEX\",\"value\":10}" +
+                                      "]";
+            string expectedJson = $"{{characterSheet:{{{attributeSetJson}}}}}";
+            AttributeSet attributeSet = new AttributeSet();
+            attributeSet.SetAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
+            _characterSheet = new CharacterSheet(new Wizard(), new Human(), attributeSet);
+            StringBuilder sb = new StringBuilder();
+            //act
+            _characterSheet.AddJsonToStringbuilder(sb);
+            //assert
+            sb.ToString().Should().Be(expectedJson);
+        }
     }
 }

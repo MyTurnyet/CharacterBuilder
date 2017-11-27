@@ -1,4 +1,5 @@
-﻿using Characters.Display;
+﻿using System.Text;
+using Characters.Display;
 using Characters.Physical;
 using Characters.Races;
 
@@ -15,5 +16,7 @@ namespace Characters.Attributes
         IHitPoints BonusHitPoints();
         //ITextOf DisplayText(ITextOf displayTextOf);
         ITextObj DisplayText();
+
+        void AddJsonToStringbuilder(StringBuilder stringBuilder);
     }
 }

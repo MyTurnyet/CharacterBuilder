@@ -1,5 +1,10 @@
-﻿using Characters.Attributes;
+﻿using System.Text;
+using Characters;
+using Characters.Attributes;
+using Characters.Classes;
 using Characters.Display;
+using Characters.Races;
+using CharacterTests.Fakes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -104,5 +109,19 @@ namespace CharacterTests.Attributes
             //assert
             actualTextObj.Should().Be(expectedtTextObj);
         }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnJsonObject()
+        {
+            //arrange
+            string expectedJson = "\"characterAttributes\":[{\"characterAttribute\":\"STR\",\"value\":0}{\"characterAttribute\":\"DEX\",\"value\":0}{\"characterAttribute\":\"CON\",\"value\":0}{\"characterAttribute\":\"INT\",\"value\":0}{\"characterAttribute\":\"WIS\",\"value\":0}{\"characterAttribute\":\"CHR\",\"value\":0}]";
+            
+            StringBuilder sb = new StringBuilder();
+            //act
+            _attributeSet.AddJsonToStringbuilder(sb);
+            //assert
+            sb.ToString().Should().Be(expectedJson);
+        }
+
     }
 }

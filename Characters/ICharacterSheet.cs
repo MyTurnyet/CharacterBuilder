@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
@@ -15,5 +16,6 @@ namespace Characters
         ITextObj StatsList();
         List<ISkill> Skills();
         void ActivateSkill(ISkill skill);
+        void AddJsonToStringbuilder(StringBuilder stringBuilder);
     }
 }

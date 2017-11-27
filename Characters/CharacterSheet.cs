@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Characters.Attributes;
 using Characters.Classes;
 using Characters.Display;
@@ -7,6 +9,7 @@ using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
 using Characters.Races;
+using Newtonsoft.Json;
 
 namespace Characters
 {
@@ -48,5 +51,11 @@ namespace Characters
         }
 
         public void ActivateSkill(ISkill skill) => _activatedSkills.Add(skill);
+        public void AddJsonToStringbuilder(StringBuilder stringbuilder)
+        {
+            stringbuilder.Append("{characterSheet:{");
+            _attributeSet.AddJsonToStringbuilder(stringbuilder);
+            stringbuilder.Append("}}");
+        }
     }
 }

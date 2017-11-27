@@ -1,4 +1,5 @@
-﻿using Characters.Display;
+﻿using System.Text;
+using Characters.Display;
 
 namespace Characters.Attributes
 {
@@ -7,5 +8,6 @@ namespace Characters.Attributes
         ICharacterAttribute MatchesName(IAttributeName attributeName);
         ITextObj DisplayText();
         void SetAttribute(IAttributeName attName, IAttributeScore attributeScore);
+        void AddJsonToStringbuilder(StringBuilder stringBuilder);
     }
 }

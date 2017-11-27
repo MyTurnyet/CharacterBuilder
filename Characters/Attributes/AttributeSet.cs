@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Characters.Display;
 
 namespace Characters.Attributes
@@ -33,6 +34,16 @@ namespace Characters.Attributes
         {
             _attributes.Remove(GetAttributeFromName(attName));
             _attributes.Add(new CharacterAttribute(attName,attributeScore));
+        }
+
+        public void AddJsonToStringbuilder(StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("\"characterAttributes\":[");
+            foreach (ICharacterAttribute attribute in _attributes)
+            {
+                attribute.AddJsonToStringbuilder(stringBuilder);
+            }
+            stringBuilder.Append("]");
         }
 
         private ICharacterAttribute GetAttributeFromName(IAttributeName name) => _attributes.First(arrib => arrib.MatchesName(name));

@@ -1,4 +1,5 @@
-﻿using Characters.Display;
+﻿using System.Text;
+using Characters.Display;
 using Characters.Physical;
 using Characters.Races;
 
@@ -26,6 +27,14 @@ namespace Characters.Attributes
         public IAttributeScore Bonus() => new AttributeScore(Score().Bonus());
         public IHitPoints BonusHitPoints() => new HitPoints(Score().Bonus());
         public ITextObj DisplayText() => _name.Name().Append(new TextObj(": ")).Append(Score().AsText());
+        public void AddJsonToStringbuilder(StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("{\"characterAttribute\":\"");
+            _name.Name().AddToStringBuilder(stringBuilder);
+            stringBuilder.Append("\",\"value\":");
+            _value.AsText().AddToStringBuilder(stringBuilder);
+            stringBuilder.Append("}");
+        }
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

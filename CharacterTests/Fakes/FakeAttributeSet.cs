@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Characters.Attributes;
 using Characters.Display;
 
@@ -26,6 +27,11 @@ namespace CharacterTests.Fakes
         {
             throw new System.NotImplementedException();
         }
+
+        public void AddJsonToStringbuilder(StringBuilder stringBuilder)
+        {
+            throw new System.NotImplementedException();
+        }
     }
     public class FakeWizardAttributeSet : IAttributeSet
     {
@@ -47,6 +53,16 @@ namespace CharacterTests.Fakes
         public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)
         {
             throw new System.NotImplementedException();
+        }
+
+        public void AddJsonToStringbuilder(StringBuilder stringBuilder)
+        {
+            stringBuilder.Append("\"characterAttributes\":[");
+            foreach (ICharacterAttribute attribute in _attributes)
+            {
+                attribute.AddJsonToStringbuilder(stringBuilder);
+            }
+            stringBuilder.Append("]");
         }
     }
 

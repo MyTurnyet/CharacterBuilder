@@ -1,5 +1,9 @@
-﻿using Characters.Attributes;
+﻿using System.Text;
+using Characters;
+using Characters.Attributes;
+using Characters.Classes;
 using Characters.Races;
+using CharacterTests.Fakes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -87,18 +91,18 @@ namespace CharacterTests.Attributes
             actualAttributeBonus.Should().Be(expectedAttributeBonus);
         }
 
-        //[TestMethod, TestCategory("Unit")]
-        //public void ShouldReturnDisplayAttribute()
-        //{
-        //    //assign
-        //    ICharacterAttribute attribute = new StrengthAttribute(new AttributeScore(11));
-        //    TextOf expectedTextOf = new TextOf("STR: 11");
-        //    TextOf displayText = new TextOf();
-        //    //act
-        //     attribute.DisplayText(displayText);
-        //    //assert
-        //    displayText.Should().Be(expectedTextOf);
-        //}
-
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnJsonObject()
+        {
+            //arrange
+            ICharacterAttribute attribute = new DexterityAttribute(new AttributeScore(10));
+            IAttributeScore expectedScore = new AttributeScore(14);
+            string expectedJson = "{\"characterAttribute\":\"DEX\",\"value\":10}";
+            StringBuilder sb = new StringBuilder();
+            //act
+            attribute.AddJsonToStringbuilder(sb);
+            //assert
+            sb.ToString().Should().Be(expectedJson);
+        }
     }
 }
