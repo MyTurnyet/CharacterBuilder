@@ -83,6 +83,7 @@
     <Compile Include="Physical\Proficiencies\IProficiency.cs" />
     <Compile Include="Physical\Sizes\ISize.cs" />
     <Compile Include="Physical\Sizes\Medium.cs" />
+    <Compile Include="Physical\Sizes\Small.cs" />
     <Compile Include="Physical\Skills\Acrobatics.cs" />
     <Compile Include="Physical\Skills\AnimalHandling.cs" />
     <Compile Include="Physical\Skills\Arcana.cs" />

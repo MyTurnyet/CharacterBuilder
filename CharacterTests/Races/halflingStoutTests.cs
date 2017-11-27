@@ -1,4 +1,8 @@
-﻿using Characters.Attributes;
+﻿using System.Collections.Generic;
+using Characters.Attributes;
+using Characters.Physical;
+using Characters.Physical.Proficiencies;
+using Characters.Physical.Sizes;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -34,6 +38,29 @@ namespace CharacterTests.Races
             expectedInt.Should().Be(new AttributeScore(0));
             expectedWiz.Should().Be(new AttributeScore(0));
             expectedChr.Should().Be(new AttributeScore(0));
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSpeed()
+        {
+            //arrange
+            ISpeed expectedSpeed = new Speed(25);
+
+            //act
+            ISpeed actualsSpeed = CharacterRace.HalflingStout.Speed();
+            //assert
+            actualsSpeed.Should().Be(expectedSpeed);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSize() => CharacterRace.HalflingStout.Size().Should().Be(new Small());
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnProficiencies()
+        {
+            //act
+            List<IProficiency> actualProfs = CharacterRace.HalflingStout.Proficiencies();
+
+            //assert
+            actualProfs.Count.Should().Be(0);
         }
     }
 }

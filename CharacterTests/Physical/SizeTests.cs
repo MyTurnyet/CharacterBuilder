@@ -12,6 +12,8 @@ namespace CharacterTests.Physical
         public void ShouldEquate() => new Medium().Should().Be(new Medium());
 
         [TestMethod, TestCategory("Unit")]
-        public void ShouldReturnName() => new Medium().Name().Should().Be(new TextObj("Medium"));
+        public void ShouldReturnMediumName() => new Medium().Name().Should().Be(new TextObj("Medium"));
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnSmallName() => new Small().Name().Should().Be(new TextObj("Small"));
     }
 }

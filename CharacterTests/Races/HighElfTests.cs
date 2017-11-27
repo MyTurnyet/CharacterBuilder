@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Characters.Attributes;
 using Characters.Physical;
 using Characters.Physical.Proficiencies;
@@ -69,7 +70,7 @@ namespace CharacterTests.Races
             List<IProficiency> actualProfs = CharacterRace.HighElf.Proficiencies();
 
             //assert
-            //actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
+            actualProfs.All(i => expectedProf.Contains(i)).Should().BeTrue();
         }
     }
 }
