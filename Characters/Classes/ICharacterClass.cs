@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Characters.Attributes;
 using Characters.Dice;
 using Characters.Display;
@@ -17,5 +18,6 @@ namespace Characters.Classes
         List<ISkill> Skills();
         ITextObj Name();
         IHitPoints BaseHitPoints();
+        void AddJsonToStringbuilder(StringBuilder stringbuilder);
     }
 }

@@ -177,7 +177,7 @@ namespace CharacterTests
             //arrange
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
             ICharacterAttribute attribute = _characterSheet.Attribute(CharacterAttributeName.Dexterity);
-            SleightOfHand slightOfHand = new SleightOfHand((DexterityAttribute)attribute,true);
+            SleightOfHand slightOfHand = new SleightOfHand((DexterityAttribute)attribute, true);
             //act
             _characterSheet.ActivateSkill(slightOfHand);
             //assert
@@ -190,15 +190,19 @@ namespace CharacterTests
         public void ShouldReturnJsonObject()
         {
             //arrange
+            string raceJson = "\"race\":\"Human\"";
+            string classJson = "\"class\":\"Wizard\"";
             string attributeSetJson = "\"characterAttributes\":[" +
-                                      "{\"characterAttribute\":\"STR\",\"value\":0}" +
-                                      "{\"characterAttribute\":\"CON\",\"value\":0}" +
-                                      "{\"characterAttribute\":\"INT\",\"value\":0}" +
-                                      "{\"characterAttribute\":\"WIS\",\"value\":0}" +
-                                      "{\"characterAttribute\":\"CHR\",\"value\":0}" +
-                                      "{\"characterAttribute\":\"DEX\",\"value\":10}" +
-                                      "]";
-            string expectedJson = $"{{characterSheet:{{{attributeSetJson}}}}}";
+                   
+                    "{\"characterAttribute\":\"STR\",\"value\":0}" +
+                    "{\"characterAttribute\":\"CON\",\"value\":0}" +
+                    "{\"characterAttribute\":\"INT\",\"value\":0}" +
+                    "{\"characterAttribute\":\"WIS\",\"value\":0}" +
+                    "{\"characterAttribute\":\"CHR\",\"value\":0}" +
+                    "{\"characterAttribute\":\"DEX\",\"value\":10}" +
+                    "]";
+            
+            string expectedJson = $"{{characterSheet:{{{raceJson},{classJson},{ attributeSetJson}}}}}";
             AttributeSet attributeSet = new AttributeSet();
             attributeSet.SetAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), attributeSet);

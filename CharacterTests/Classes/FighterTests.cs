@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Characters.Attributes;
 using Characters.Classes;
 using Characters.Dice;
@@ -91,6 +92,5 @@ namespace CharacterTests.Classes
             //assert
             actualSkills.All(i => expectedSkills.Contains(i)).Should().BeTrue();
         }
-
     }
 }

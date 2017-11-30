@@ -1,4 +1,5 @@
-﻿using Characters.Classes;
+﻿using System.Text;
+using Characters.Classes;
 using Characters.Display;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -40,6 +41,16 @@ namespace CharacterTests.Classes
             actualName.Should().Be(new TextObj("Fighter"));
         }
 
-
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnCorrectJson()
+        {
+            //assign
+            string expectedJson = "\"class\":\"Fighter\"";
+            StringBuilder stringBuilder = new StringBuilder();
+            //act
+            new Fighter().AddJsonToStringbuilder(stringBuilder);
+            //assert
+            stringBuilder.ToString().Should().Be(expectedJson);
+        }
     }
 }

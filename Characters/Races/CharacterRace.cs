@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
@@ -37,6 +38,14 @@ namespace Characters.Races
         {
             return _race;
         }
+        public void AddJsonToStringbuilder(StringBuilder stringBuilder)
+        {
+            stringBuilder.Append($"\"race\":\"");
+            _race.AddToStringBuilder(stringBuilder);
+            stringBuilder.Append($"\"");
+        }
+
+
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

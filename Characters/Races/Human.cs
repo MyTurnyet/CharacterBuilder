@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
@@ -17,5 +18,6 @@ namespace Characters.Races
         public override IHitPoints BonusHitPoints() => new HitPoints(0);
         public override ISize Size() => new Medium();
         public override List<IProficiency> Proficiencies() => _proficiencies;
+        
     }
 }

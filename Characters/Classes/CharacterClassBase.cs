@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Characters.Attributes;
 using Characters.Dice;
 using Characters.Display;
@@ -24,6 +25,13 @@ namespace Characters.Classes
         public abstract List<ISkill> Skills();
         public ITextObj Name() => _className;
         public IHitPoints BaseHitPoints() => HitDie().MaxHitPoints();
+        public void AddJsonToStringbuilder(StringBuilder stringbuilder)
+        {
+            stringbuilder.Append("\"class\":\"");
+            _className.AddToStringBuilder(stringbuilder);
+            stringbuilder.Append("\"");
+        }
+
     }
 #pragma warning restore CS0659 // Type overrides Object.Equals(object o) but does not override Object.GetHashCode()
 }

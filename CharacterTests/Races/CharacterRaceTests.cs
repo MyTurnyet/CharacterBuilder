@@ -1,4 +1,6 @@
-﻿using Characters.Display;
+﻿using System.Text;
+using Characters.Classes;
+using Characters.Display;
 using Characters.Races;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -38,6 +40,19 @@ namespace CharacterTests.Races
             //assert
             ITextObj name = race.Name();
             name.Should().Be(new TextObj("Human"));
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnCorrectJson()
+        {
+            //assign
+            string expectedJson = "\"race\":\"Human\"";
+            StringBuilder stringBuilder = new StringBuilder();
+            ICharacterRace humanRace = new Human();
+            //act
+            humanRace.AddJsonToStringbuilder(stringBuilder);
+            //assert
+            stringBuilder.ToString().Should().Be(expectedJson);
         }
     }
 }

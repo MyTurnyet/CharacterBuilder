@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
@@ -17,5 +18,6 @@ namespace Characters.Races
         List<IProficiency> Proficiencies();
         ITextObj Name();
         ISize Size();
+        void AddJsonToStringbuilder(StringBuilder stringBuilder);
     }
 }

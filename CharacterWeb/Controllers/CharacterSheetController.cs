@@ -1,5 +1,5 @@
-﻿using System.Web.Http;
-using System.Web.Http.Results;
+﻿using System.Text;
+using System.Web.Http;
 using Characters;
 using Characters.Attributes;
 using Characters.Classes;
@@ -9,7 +9,7 @@ namespace CharacterWeb.Controllers
 {
     public class CharacterSheetController : ApiController
     {
-        [Route("CharacterSheet/Create")]
+        [Route("api/CharacterSheet/Create")]
         [HttpGet]
         public IHttpActionResult CreateSheet(int strength, int dexterity, int constitution, int intellegence, int wisdom, int charisma)
         {
@@ -20,7 +20,10 @@ namespace CharacterWeb.Controllers
             attributeSet.SetAttribute(CharacterAttributeName.Intelligence, new AttributeScore(intellegence));
             attributeSet.SetAttribute(CharacterAttributeName.Wisdom, new AttributeScore(wisdom));
             attributeSet.SetAttribute(CharacterAttributeName.Charisma, new AttributeScore(charisma));
-            return Ok(new CharacterSheet(new Fighter(), new Human(), attributeSet));
+            CharacterSheet characterSheet = new CharacterSheet(new Fighter(), new Human(), attributeSet);
+            StringBuilder stringBuilder = new StringBuilder();
+            characterSheet.AddJsonToStringbuilder(stringBuilder);
+            return Ok(stringBuilder.ToString());
         }
     }
 }

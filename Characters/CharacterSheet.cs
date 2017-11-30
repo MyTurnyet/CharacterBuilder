@@ -54,6 +54,10 @@ namespace Characters
         public void AddJsonToStringbuilder(StringBuilder stringbuilder)
         {
             stringbuilder.Append("{characterSheet:{");
+            _race.AddJsonToStringbuilder(stringbuilder);
+            stringbuilder.Append(",");
+            _characterClass.AddJsonToStringbuilder(stringbuilder);
+            stringbuilder.Append(",");
             _attributeSet.AddJsonToStringbuilder(stringbuilder);
             stringbuilder.Append("}}");
         }
