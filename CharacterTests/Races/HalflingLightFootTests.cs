@@ -50,6 +50,17 @@ namespace CharacterTests.Races
             actualsSpeed.Should().Be(expectedSpeed);
         }
         [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnHitPointBonus()
+        {
+            //arrange
+            IHitPoints hitPoints = new HitPoints(0);
+                
+            //act
+            IHitPoints actualHitPoints = CharacterRace.HalflingLightfoot.BonusHitPoints();
+            //assert
+            actualHitPoints.Should().Be(hitPoints);
+        }
+        [TestMethod, TestCategory("Unit")]
         public void ShouldReturnProficiencies()
         {
             //act

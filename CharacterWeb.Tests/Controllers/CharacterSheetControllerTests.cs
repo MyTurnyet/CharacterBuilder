@@ -1,9 +1,10 @@
-﻿using System.Web.Http;
+﻿using System.Linq;
+using System.Web.Http;
 using System.Web.Http.Results;
 using CharacterWeb.Controllers;
+using CharacterWeb.Models;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json.Linq;
 
 namespace CharacterWeb.Tests.Controllers
 {
@@ -14,28 +15,35 @@ namespace CharacterWeb.Tests.Controllers
         public void ShouldReturnHumanFighter()
         {
             //arrange
+            const string expectedRace = "Human";
+            const string expectedClass = "Fighter";
             CharacterSheetController sheetController = new CharacterSheetController();
-            IHttpActionResult actionResult = sheetController.CreateSheet(10, 10, 10, 10, 10, 10);
-            OkNegotiatedContentResult<JObject> result = actionResult as OkNegotiatedContentResult<JObject>;
-            string raceJson = "\"race\":\"Human\"";
-            string classFighter = "\"class\":\"Fighter\"";
-            string attributeSetJson = "\"characterAttributes\":[" +
-                                      "{\"characterAttribute\":\"STR\",\"value\":10}," +
-                                      "{\"characterAttribute\":\"DEX\",\"value\":10}," +
-                                      "{\"characterAttribute\":\"CON\",\"value\":10}," +
-                                      "{\"characterAttribute\":\"INT\",\"value\":10}," +
-                                      "{\"characterAttribute\":\"WIS\",\"value\":10}," +
-                                      "{\"characterAttribute\":\"CHR\",\"value\":10}" +
-                                      "]";
-       
-            string expectedJson = "{\"characterSheet\":{" +
-                                  $"{raceJson}," +
-                                  $"{classFighter}," +
-                                  $"{attributeSetJson}" +
-                                  "}}";
+
+            //act
+            IHttpActionResult actionResult = sheetController.CreateSheet(expectedRace, expectedClass, 10, 10, 10, 10, 10, 10);
+            OkNegotiatedContentResult<CharacterWebModels> result = actionResult as OkNegotiatedContentResult<CharacterWebModels>;
+            CharacterWebModels actualCharacterModel = result?.Content;
+
             //assert
-            result.Should().NotBeNull();
-            result?.Content.ToString().Replace(" ", "").Replace("\r\n","").Should().Be(expectedJson);
+            actualCharacterModel?.CharacterSheet.Race.Should().Be(expectedRace);
+            actualCharacterModel?.CharacterSheet.Class.Should().Be(expectedClass);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnCorrectAttributes()
+        {
+            //arrange
+            CharacterSheetController sheetController = new CharacterSheetController();
+            const string expectedRace = "Human";
+            const string expectedClass = "Fighter";
+            int expectedValue = 10;
+            //act
+            IHttpActionResult actionResult = sheetController.CreateSheet(expectedRace, expectedClass, expectedValue, expectedValue, expectedValue, expectedValue, expectedValue, expectedValue);
+            OkNegotiatedContentResult<CharacterWebModels> result = actionResult as OkNegotiatedContentResult<CharacterWebModels>;
+            CharacterWebModels actualCharacterModel = result?.Content;
+
+            //assert
+            actualCharacterModel?.CharacterSheet.CharacterAttributes.All(att => att.Value == expectedValue).Should().BeTrue();
+
         }
     }
 }

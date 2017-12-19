@@ -7,8 +7,6 @@ namespace Characters.Attributes
     public class AttributeScore : IAttributeScore
     {
         private readonly int _value;
-
-        public AttributeScore() : this(0) { }
         public AttributeScore(int value)
         {
             _value = value;

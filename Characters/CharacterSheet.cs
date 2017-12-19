@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Characters.Attributes;
@@ -9,7 +8,6 @@ using Characters.Physical;
 using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
 using Characters.Races;
-using Newtonsoft.Json;
 
 namespace Characters
 {

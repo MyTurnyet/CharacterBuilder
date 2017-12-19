@@ -1,19 +1,18 @@
 ﻿using System.Text;
-using System.Web.Helpers;
 using System.Web.Http;
-using Characters;
 using Characters.Attributes;
 using Characters.Classes;
 using Characters.Races;
-using Newtonsoft.Json.Linq;
+using CharacterWeb.Models;
+using CharacterSheet = Characters.CharacterSheet;
 
 namespace CharacterWeb.Controllers
 {
     public class CharacterSheetController : ApiController
     {
-        [Route("api/CharacterSheet/Create")]
+        [Route("api/CharacterSheet/Create/{race}/{className}")]
         [HttpGet]
-        public IHttpActionResult CreateSheet(int strength, int dexterity, int constitution, int intellegence, int wisdom, int charisma)
+        public IHttpActionResult CreateSheet(string race, string className, int strength, int dexterity, int constitution, int intellegence, int wisdom, int charisma)
         {
             AttributeSet attributeSet = new AttributeSet();
             attributeSet.SetAttribute(CharacterAttributeName.Strength, new AttributeScore(strength));
@@ -25,8 +24,8 @@ namespace CharacterWeb.Controllers
             CharacterSheet characterSheet = new CharacterSheet(new Fighter(), new Human(), attributeSet);
             StringBuilder stringBuilder = new StringBuilder();
             characterSheet.AddJsonToStringbuilder(stringBuilder);
-            JObject jobj = JObject.Parse(stringBuilder.ToString());
-            return Ok(jobj);
+            CharacterWebModels characterWebModels = CharacterWebModels.FromJson(stringBuilder.ToString());
+            return Ok(characterWebModels);
         }
     }
 }

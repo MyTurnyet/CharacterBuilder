@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using Characters.Classes;
 using Characters.Display;
 using Characters.Races;
 using FluentAssertions;

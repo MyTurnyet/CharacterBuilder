@@ -1,10 +1,6 @@
 ﻿using System.Text;
-using Characters;
 using Characters.Attributes;
-using Characters.Classes;
 using Characters.Display;
-using Characters.Races;
-using CharacterTests.Fakes;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

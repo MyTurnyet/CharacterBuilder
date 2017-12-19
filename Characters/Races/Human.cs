@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
 using Characters.Attributes;
 using Characters.Display;
 using Characters.Physical;
