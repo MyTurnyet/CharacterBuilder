@@ -17,12 +17,33 @@ namespace CharacterWeb.Tests.Controllers
             //arrange
             const string expectedRace = "Human";
             const string expectedClass = "Fighter";
-            CharacterSheetController sheetController = new CharacterSheetController();
+            CharacterWebModels actualCharacterModel = CreateSheet(expectedRace, expectedClass);
 
-            //act
-            IHttpActionResult actionResult = sheetController.CreateSheet(expectedRace, expectedClass, 10, 10, 10, 10, 10, 10);
-            OkNegotiatedContentResult<CharacterWebModels> result = actionResult as OkNegotiatedContentResult<CharacterWebModels>;
-            CharacterWebModels actualCharacterModel = result?.Content;
+            //assert
+            actualCharacterModel?.CharacterSheet.Race.Should().Be(expectedRace);
+            actualCharacterModel?.CharacterSheet.Class.Should().Be(expectedClass);
+        }
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnHumanWizard()
+        {
+            //arrange
+            const string expectedRace = "Human";
+            const string expectedClass = "Wizard";
+            CharacterWebModels actualCharacterModel = CreateSheet(expectedRace, expectedClass);
+
+            //assert
+            actualCharacterModel?.CharacterSheet.Race.Should().Be(expectedRace);
+            actualCharacterModel?.CharacterSheet.Class.Should().Be(expectedClass);
+        }
+
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnHillDwarfWizard()
+        {
+            //arrange
+            const string expectedRace = "Hill Dwarf";
+            const string expectedClass = "Wizard";
+            CharacterWebModels actualCharacterModel = CreateSheet(expectedRace, expectedClass);
 
             //assert
             actualCharacterModel?.CharacterSheet.Race.Should().Be(expectedRace);
@@ -32,18 +53,27 @@ namespace CharacterWeb.Tests.Controllers
         public void ShouldReturnCorrectAttributes()
         {
             //arrange
-            CharacterSheetController sheetController = new CharacterSheetController();
             const string expectedRace = "Human";
             const string expectedClass = "Fighter";
             int expectedValue = 10;
             //act
-            IHttpActionResult actionResult = sheetController.CreateSheet(expectedRace, expectedClass, expectedValue, expectedValue, expectedValue, expectedValue, expectedValue, expectedValue);
-            OkNegotiatedContentResult<CharacterWebModels> result = actionResult as OkNegotiatedContentResult<CharacterWebModels>;
-            CharacterWebModels actualCharacterModel = result?.Content;
+            CharacterWebModels actualCharacterModel = CreateSheet(expectedRace, expectedClass);
 
             //assert
             actualCharacterModel?.CharacterSheet.CharacterAttributes.All(att => att.Value == expectedValue).Should().BeTrue();
 
         }
+        private CharacterWebModels CreateSheet(string expectedRace, string expectedClass)
+        {
+            CharacterSheetController sheetController = new CharacterSheetController();
+
+            //act
+            IHttpActionResult actionResult = sheetController.CreateSheet(expectedRace, expectedClass, 10, 10, 10, 10, 10, 10);
+            OkNegotiatedContentResult<CharacterWebModels> result = actionResult as OkNegotiatedContentResult<CharacterWebModels>;
+            CharacterWebModels actualCharacterModel = result?.Content;
+            actualCharacterModel.Should().NotBeNull();
+            return actualCharacterModel;
+        }
+
     }
 }
