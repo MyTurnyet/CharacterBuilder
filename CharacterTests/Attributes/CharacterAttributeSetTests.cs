@@ -114,7 +114,7 @@ namespace CharacterTests.Attributes
         public void ShouldReturnJsonObject()
         {
             //arrange
-            string expectedJson = "\"characterAttributes\":[{\"characterAttribute\":\"STR\",\"value\":0}{\"characterAttribute\":\"DEX\",\"value\":0}{\"characterAttribute\":\"CON\",\"value\":0}{\"characterAttribute\":\"INT\",\"value\":0}{\"characterAttribute\":\"WIS\",\"value\":0}{\"characterAttribute\":\"CHR\",\"value\":0}]";
+            string expectedJson = "\"characterAttributes\":[{\"characterAttribute\":\"STR\",\"value\":0},{\"characterAttribute\":\"DEX\",\"value\":0},{\"characterAttribute\":\"CON\",\"value\":0},{\"characterAttribute\":\"INT\",\"value\":0},{\"characterAttribute\":\"WIS\",\"value\":0},{\"characterAttribute\":\"CHR\",\"value\":0},]";
             
             StringBuilder sb = new StringBuilder();
             //act

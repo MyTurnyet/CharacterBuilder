@@ -33,7 +33,7 @@ namespace Characters.Attributes
         public void SetAttribute(IAttributeName attName, IAttributeScore attributeScore)
         {
             _attributes.Remove(GetAttributeFromName(attName));
-            _attributes.Add(new CharacterAttribute(attName,attributeScore));
+            _attributes.Add(new CharacterAttribute(attName, attributeScore));
         }
 
         public void AddJsonToStringbuilder(StringBuilder stringBuilder)
@@ -42,6 +42,8 @@ namespace Characters.Attributes
             foreach (ICharacterAttribute attribute in _attributes)
             {
                 attribute.AddJsonToStringbuilder(stringBuilder);
+                stringBuilder.Append(",");
+
             }
             stringBuilder.Append("]");
         }

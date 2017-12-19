@@ -1,9 +1,11 @@
 ﻿using System.Text;
+using System.Web.Helpers;
 using System.Web.Http;
 using Characters;
 using Characters.Attributes;
 using Characters.Classes;
 using Characters.Races;
+using Newtonsoft.Json.Linq;
 
 namespace CharacterWeb.Controllers
 {
@@ -23,7 +25,8 @@ namespace CharacterWeb.Controllers
             CharacterSheet characterSheet = new CharacterSheet(new Fighter(), new Human(), attributeSet);
             StringBuilder stringBuilder = new StringBuilder();
             characterSheet.AddJsonToStringbuilder(stringBuilder);
-            return Ok(stringBuilder.ToString());
+            JObject jobj = JObject.Parse(stringBuilder.ToString());
+            return Ok(jobj);
         }
     }
 }

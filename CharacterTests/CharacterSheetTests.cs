@@ -194,12 +194,12 @@ namespace CharacterTests
             string classJson = "\"class\":\"Wizard\"";
             string attributeSetJson = "\"characterAttributes\":[" +
                    
-                    "{\"characterAttribute\":\"STR\",\"value\":0}" +
-                    "{\"characterAttribute\":\"CON\",\"value\":0}" +
-                    "{\"characterAttribute\":\"INT\",\"value\":0}" +
-                    "{\"characterAttribute\":\"WIS\",\"value\":0}" +
-                    "{\"characterAttribute\":\"CHR\",\"value\":0}" +
-                    "{\"characterAttribute\":\"DEX\",\"value\":10}" +
+                    "{\"characterAttribute\":\"STR\",\"value\":0}," +
+                    "{\"characterAttribute\":\"CON\",\"value\":0}," +
+                    "{\"characterAttribute\":\"INT\",\"value\":0}," +
+                    "{\"characterAttribute\":\"WIS\",\"value\":0}," +
+                    "{\"characterAttribute\":\"CHR\",\"value\":0}," +
+                    "{\"characterAttribute\":\"DEX\",\"value\":10}," +
                     "]";
             
             string expectedJson = $"{{characterSheet:{{{raceJson},{classJson},{ attributeSetJson}}}}}";
