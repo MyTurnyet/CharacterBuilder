@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class LightCrossbow : EquatableProficiency, IProficiency
+    public class LightCrossbow : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public LightCrossbow():base(new TextObj("Light Crossbow"))
-        {
-            
-        }
-        public ITextObj Name => ProficiencyName;
+        public LightCrossbow():base(new TextObj("Light Crossbow")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

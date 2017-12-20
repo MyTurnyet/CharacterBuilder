@@ -159,6 +159,16 @@ namespace CharacterTests
         }
 
         [TestMethod, TestCategory("Unit")]
+        public void ShouldReturnProficiencyAsJson()
+        {
+            //arrange
+            //_characterSheet.Proficiencies().ForEach(prof => prof.AddJsonToStringbuilder(new StringBuilder()));
+            //act
+
+            //assert
+        }
+
+        [TestMethod, TestCategory("Unit")]
         public void ShouldReturnCorrectStatsList()
         {
             //assign

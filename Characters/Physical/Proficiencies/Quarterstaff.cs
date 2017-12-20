@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class Quarterstaff : EquatableProficiency, IProficiency
+    public class Quarterstaff : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public Quarterstaff():base(new TextObj("Quarterstaff"))
-        {
-            
-        }
-        public ITextObj Name => ProficiencyName;
+        public Quarterstaff():base(new TextObj("Quarterstaff")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class Darts : EquatableProficiency, IProficiency
+    public class Darts : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public Darts():base(new TextObj("Darts"))
-        {
-            
-        }
-        public ITextObj Name =>ProficiencyName;
+        public Darts():base(new TextObj("Darts")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

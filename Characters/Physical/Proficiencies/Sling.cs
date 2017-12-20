@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class Sling : EquatableProficiency, IProficiency
+    public class Sling : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public Sling():base(new TextObj("Sling"))
-        {
-            
-        }
-        public ITextObj Name => ProficiencyName;
+        public Sling():base(new TextObj("Sling")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

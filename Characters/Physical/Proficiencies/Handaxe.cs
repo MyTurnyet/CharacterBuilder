@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class Handaxe : EquatableProficiency, IProficiency
+    public class Handaxe : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public Handaxe():base(new TextObj("Handaxe"))
-        {
-            
-        }
-        public ITextObj Name => ProficiencyName;
+        public Handaxe():base(new TextObj("Handaxe")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

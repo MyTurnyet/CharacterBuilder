@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class BrewersSupplies : EquatableProficiency, IProficiency
+    public class BrewersSupplies : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public BrewersSupplies():base(new TextObj("Brewer's Supplies"))
-        {
-            
-        }
-        public ITextObj Name =>ProficiencyName;
+        public BrewersSupplies():base(new TextObj("Brewer's Supplies")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

@@ -3,7 +3,7 @@
 namespace Characters.Physical.Proficiencies
 {
 #pragma warning disable 660,661,659
-    public abstract class EquatableProficiency : IEquateableProficiency
+    public abstract class EquatableProficiency
     {
         protected readonly ITextObj ProficiencyName;
         protected EquatableProficiency(ITextObj name){ProficiencyName = name;}

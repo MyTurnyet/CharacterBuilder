@@ -18,16 +18,14 @@ namespace Characters.Physical.Skills
         }
 
         public override bool Equals(object obj) => Equals((SkillBase)obj);
-        private bool Equals(SkillBase other) => string.Equals(_skillName, other._skillName);
+        private bool Equals(SkillBase other) => Equals(_skillName, other._skillName);
         public ITextObj Name() => _skillName;
         public ICharacterAttribute BaseAttribute() => _baseAttribute;
         public IAttributeScore SkillBonus()
         {
             IAttributeScore score = _baseAttribute.Bonus();
-            if (_activateSkill)
-            {
-                score = score.Add(new AttributeScore(2));
-            }
+            if (!_activateSkill) return score;
+            score = score.Add(new AttributeScore(2));
             return score;
         }
     }

@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class Dagger : EquatableProficiency, IProficiency
+    public class Dagger : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public Dagger():base(new TextObj("Dagger"))
-        {
-            
-        }
-        public ITextObj Name => ProficiencyName;
+        public Dagger():base(new TextObj("Dagger")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

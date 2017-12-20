@@ -2,12 +2,10 @@ using Characters.Display;
 
 namespace Characters.Physical.Proficiencies
 {
-    public class AllShields : EquatableProficiency, IProficiency
+    public class AllShields : ProficiencyBase, IProficiency, IEquateableProficiency
     {
-        public AllShields():base(new TextObj("All Shields"))
-        {
-            
-        }
-        public ITextObj Name => ProficiencyName;
+        public AllShields():base(new TextObj("All Shields")){}
+
+        public ITextObj Name() => ProficiencyName;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Characters.Attributes;
+using Characters.Physical.Proficiencies;
 using Characters.Physical.Skills;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -28,6 +29,7 @@ namespace CharacterTests.Physical.Skills
             //assert
             actualSkillBase.Should().NotBe(expectedSkillBase);
         }
+
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldReturnInactiveSkillBonus()
