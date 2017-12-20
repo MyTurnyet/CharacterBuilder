@@ -7,14 +7,18 @@ namespace Characters.Attributes
 {
     public class AttributeSet : IAttributeSet
     {
-        public AttributeSet()
+        public AttributeSet() : this(0, 0, 0, 0, 0, 0)
         {
-            _attributes.Add(new StrengthAttribute());
-            _attributes.Add(new DexterityAttribute());
-            _attributes.Add(new ConstitutionAttribute());
-            _attributes.Add(new IntellegenceAttribute());
-            _attributes.Add(new WisdomAttribute());
-            _attributes.Add(new CharismaAttribute());
+        }
+
+        public AttributeSet(int strength , int dexterity, int intellegence, int constitution, int wisdom, int charisma)
+        {
+            _attributes.Add(new StrengthAttribute(new AttributeScore(strength)));
+            _attributes.Add(new DexterityAttribute(new AttributeScore(dexterity)));
+            _attributes.Add(new ConstitutionAttribute(new AttributeScore(intellegence)));
+            _attributes.Add(new IntellegenceAttribute(new AttributeScore(constitution)));
+            _attributes.Add(new WisdomAttribute(new AttributeScore(wisdom)));
+            _attributes.Add(new CharismaAttribute(new AttributeScore(charisma)));
 
         }
         private readonly List<ICharacterAttribute> _attributes = new List<ICharacterAttribute>();

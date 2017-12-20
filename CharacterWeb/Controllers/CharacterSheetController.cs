@@ -17,14 +17,7 @@ namespace CharacterWeb.Controllers
         {
             ICharacterClass selectedClass = CharacterClass(className);
             ICharacterRace selectedRace = Race(race);
-            AttributeSet attributeSet = new AttributeSet();
-            attributeSet.SetAttribute(CharacterAttributeName.Strength, new AttributeScore(strength));
-            attributeSet.SetAttribute(CharacterAttributeName.Dexterity, new AttributeScore(dexterity));
-            attributeSet.SetAttribute(CharacterAttributeName.Constitution, new AttributeScore(constitution));
-            attributeSet.SetAttribute(CharacterAttributeName.Intelligence, new AttributeScore(intellegence));
-            attributeSet.SetAttribute(CharacterAttributeName.Wisdom, new AttributeScore(wisdom));
-            attributeSet.SetAttribute(CharacterAttributeName.Charisma, new AttributeScore(charisma));
-
+            AttributeSet attributeSet = new AttributeSet(strength, dexterity,constitution,intellegence,wisdom,charisma);
             CharacterSheet characterSheet = new CharacterSheet(selectedClass, selectedRace, attributeSet);
             StringBuilder stringBuilder = new StringBuilder();
             characterSheet.AddJsonToStringbuilder(stringBuilder);
