@@ -51,6 +51,7 @@
     <Compile Include="Attributes\CharismaAttribute.cs" />
     <Compile Include="Attributes\ConstitutionAttribute.cs" />
     <Compile Include="Attributes\DexterityAttribute.cs" />
+    <Compile Include="Attributes\EmptyAttributeSet.cs" />
     <Compile Include="Attributes\IAttributeSet.cs" />
     <Compile Include="Attributes\ISavingThrowAttribute.cs" />
     <Compile Include="Attributes\SavingThrowAttribute.cs" />

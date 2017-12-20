@@ -7,15 +7,9 @@ namespace Characters.Attributes
 {
     public class AttributeSet : IAttributeSet
     {
-        public AttributeSet() : this(0, 0, 0, 0, 0, 0)
-        {
-        }
-
-        public AttributeSet(int strength, int dexterity, int constitution, int intellegence, int wisdom, int charisma) :
+        protected AttributeSet(int strength, int dexterity, int constitution, int intellegence, int wisdom, int charisma) :
             this(new AttributeScore(strength), new AttributeScore(dexterity), new AttributeScore(constitution),
-                new AttributeScore(intellegence), new AttributeScore(wisdom), new AttributeScore(charisma))
-        {
-        }
+                new AttributeScore(intellegence), new AttributeScore(wisdom), new AttributeScore(charisma)){}
 
         public AttributeSet(IAttributeScore strScore, IAttributeScore dexScore, IAttributeScore consScore, IAttributeScore intScore, IAttributeScore wisScore, IAttributeScore chrScore)
         {

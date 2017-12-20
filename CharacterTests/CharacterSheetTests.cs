@@ -193,7 +193,7 @@ namespace CharacterTests
             string raceJson = "\"race\":\"Human\"";
             string classJson = "\"class\":\"Wizard\"";
             string attributeSetJson = "\"characterAttributes\":[" +
-                   
+
                     "{\"characterAttribute\":\"STR\",\"value\":0}," +
                     "{\"characterAttribute\":\"CON\",\"value\":0}," +
                     "{\"characterAttribute\":\"INT\",\"value\":0}," +
@@ -201,9 +201,9 @@ namespace CharacterTests
                     "{\"characterAttribute\":\"CHR\",\"value\":0}," +
                     "{\"characterAttribute\":\"DEX\",\"value\":10}," +
                     "]";
-            
+
             string expectedJson = $"{{characterSheet:{{{raceJson},{classJson},{ attributeSetJson}}}}}";
-            AttributeSet attributeSet = new AttributeSet();
+            IAttributeSet attributeSet = new EmptyAttributeSet();
             attributeSet.SetAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), attributeSet);
             StringBuilder sb = new StringBuilder();

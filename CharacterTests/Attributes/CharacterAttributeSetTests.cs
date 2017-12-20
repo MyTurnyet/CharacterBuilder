@@ -14,7 +14,7 @@ namespace CharacterTests.Attributes
         [TestInitialize]
         public void Setup()
         {
-            _attributeSet = new AttributeSet();
+            _attributeSet = new EmptyAttributeSet();
         }
 
         [TestMethod, TestCategory("Unit")]
