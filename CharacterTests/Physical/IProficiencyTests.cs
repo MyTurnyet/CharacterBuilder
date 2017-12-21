@@ -1,4 +1,5 @@
-﻿using Characters.Display;
+﻿using System.Text;
+using Characters.Display;
 using Characters.Physical.Proficiencies;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -68,6 +69,19 @@ namespace CharacterTests.Physical
             IEquateableProficiency actualThrowingHammer = new ThrowingHammer();
             //assert
             actualThrowingHammer.Should().Be(expectedThrowingHammer);
+        }
+
+        [TestMethod, TestCategory("Unit")]
+        public void ShouldtestName()
+        {
+            //arrange
+            IProficiency throwingHammer = new ThrowingHammer();
+            string expectedProficiencyJson = "Throwing Hammer";
+            //act
+            StringBuilder stringBuilder = new StringBuilder();
+            throwingHammer.AddJsonToStringbuilder(stringBuilder);
+            //assert
+            stringBuilder.ToString().Should().Be(expectedProficiencyJson);
         }
     }
 }

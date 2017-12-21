@@ -1,3 +1,4 @@
+using System.Text;
 using Characters.Display;
 
 namespace Characters.Physical.Proficiencies

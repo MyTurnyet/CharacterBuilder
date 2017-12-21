@@ -57,6 +57,10 @@ namespace Characters
             _characterClass.AddJsonToStringbuilder(stringbuilder);
             stringbuilder.Append(",");
             _attributeSet.AddJsonToStringbuilder(stringbuilder);
+            stringbuilder.Append(",");
+            stringbuilder.Append("\"Proficiencies\":[");
+            stringbuilder.Append(string.Join(",", Proficiencies().Select(x => $"\"{x}\"")));
+            stringbuilder.Append("],");
             stringbuilder.Append("}}");
         }
     }

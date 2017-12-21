@@ -212,10 +212,13 @@ namespace CharacterTests
                     "{\"characterAttribute\":\"DEX\",\"value\":10}," +
                     "]";
 
-            string expectedJson = $"{{characterSheet:{{{raceJson},{classJson},{ attributeSetJson}}}}}";
             IAttributeSet attributeSet = new EmptyAttributeSet();
-            attributeSet.SetAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), attributeSet);
+            string proficienciesJson = $"\"Proficiencies\":[{string.Join(",", _characterSheet.Proficiencies().Select(x => $"\"{x}\""))}],";
+            string expectedJson = $"{{characterSheet:{{{raceJson},{classJson},{ attributeSetJson},{proficienciesJson}}}}}";
+            
+            attributeSet.SetAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
+            
             StringBuilder sb = new StringBuilder();
             //act
             _characterSheet.AddJsonToStringbuilder(sb);

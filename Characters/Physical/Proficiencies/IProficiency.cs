@@ -7,5 +7,6 @@ namespace Characters.Physical.Proficiencies
     {
         ITextObj Name();
         //void AddJsonToStringbuilder(StringBuilder stringBuilder);
+        void AddJsonToStringbuilder(StringBuilder stringBuilder);
     }
 }
