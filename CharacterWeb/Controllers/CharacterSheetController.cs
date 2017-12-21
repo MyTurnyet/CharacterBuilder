@@ -28,6 +28,11 @@ namespace CharacterWeb.Controllers
         private ICharacterRace Race(string race)
         {
             if (race == "Hill Dwarf") return new HillDwarf();
+            if (race == "Mountain Dwarf") return new MountainDwarf();
+            if(race== "Halfling Lightfoot") return new HalflingLightfoot();
+            if(race== "Stout Halfling") return new HalflingStout();
+            if(race== "High Elf") return new HighElf();
+            if(race== "Wood Elf") return new WoodElf();
             return new Human();
         }
 

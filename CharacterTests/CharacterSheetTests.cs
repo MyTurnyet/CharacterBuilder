@@ -203,7 +203,6 @@ namespace CharacterTests
             string raceJson = "\"race\":\"Human\"";
             string classJson = "\"class\":\"Wizard\"";
             string attributeSetJson = "\"characterAttributes\":[" +
-
                     "{\"characterAttribute\":\"STR\",\"value\":0}," +
                     "{\"characterAttribute\":\"CON\",\"value\":0}," +
                     "{\"characterAttribute\":\"INT\",\"value\":0}," +
