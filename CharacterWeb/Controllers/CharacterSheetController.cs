@@ -21,19 +21,35 @@ namespace CharacterWeb.Controllers
             CharacterSheet characterSheet = new CharacterSheet(selectedClass, selectedRace, attributeSet);
             StringBuilder stringBuilder = new StringBuilder();
             characterSheet.AddJsonToStringbuilder(stringBuilder);
-            CharacterWebModels characterWebModels = CharacterWebModels.FromJson(stringBuilder.ToString());
+            CharacterWebModels characterWebModels = new DeserializeWebModel(stringBuilder.ToString()).CharacterModels();
             return Ok(characterWebModels);
         }
 
         private ICharacterRace Race(string race)
         {
+            ICharacterRace actualRace = CheckDwarf(race, new Human());
+            actualRace = CheckHalfling(race, actualRace);
+            actualRace = CheckElf(race, actualRace);
+            return actualRace;
+        }
+
+        private ICharacterRace CheckElf(string race, ICharacterRace actualRace)
+        {
+            if (!race.Contains("Elf")) return actualRace;
+            if (race == "High Elf") return new HighElf();
+            return new WoodElf();
+        }
+        private ICharacterRace CheckDwarf(string race, ICharacterRace actualRace)
+        {
+            if (!race.Contains("Dwarf")) return actualRace;
             if (race == "Hill Dwarf") return new HillDwarf();
-            if (race == "Mountain Dwarf") return new MountainDwarf();
-            if(race== "Halfling Lightfoot") return new HalflingLightfoot();
-            if(race== "Stout Halfling") return new HalflingStout();
-            if(race== "High Elf") return new HighElf();
-            if(race== "Wood Elf") return new WoodElf();
-            return new Human();
+            return new MountainDwarf();
+        }
+        private ICharacterRace CheckHalfling(string race, ICharacterRace actualRace)
+        {
+            if (!race.Contains("Halfling")) return actualRace;
+            if (race == "Halfling Lightfoot") return new HalflingLightfoot();
+            return new HalflingStout();
         }
 
         private ICharacterClass CharacterClass(string className)

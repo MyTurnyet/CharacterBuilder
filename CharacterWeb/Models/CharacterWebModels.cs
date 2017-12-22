@@ -28,9 +28,32 @@
         public static CharacterWebModels FromJson(string json) => JsonConvert.DeserializeObject<CharacterWebModels>(json, Converter.Settings);
     }
 
-    public static class Serialize
+    public class DeserializeWebModel
     {
-        public static string ToJson(this CharacterWebModels self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        private readonly string _json;
+
+        public DeserializeWebModel(string json)
+        {
+            _json = json;
+        }
+
+        public CharacterWebModels CharacterModels() => JsonConvert.DeserializeObject<CharacterWebModels>(_json, Converter.Settings);
+    }
+
+    public class Serialize
+    {
+        private readonly CharacterWebModels _model;
+
+        private readonly JsonSerializerSettings settings = new JsonSerializerSettings
+        {
+            MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+            DateParseHandling = DateParseHandling.None,
+        };
+        public Serialize(CharacterWebModels model)
+        {
+            _model = model;
+        }
+        public string Json() => JsonConvert.SerializeObject(_model, settings);
     }
 
     internal static class Converter
