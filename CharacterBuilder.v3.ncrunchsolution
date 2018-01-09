@@ -23,6 +23,17 @@
       <Value>Display\IAttributeDisplayText.cs:Characters\Characters.csproj</Value>
       <Value>Display\ITextObj.cs:Characters\Characters.csproj</Value>
       <Value>CharacterWeb\CharacterWeb.csproj</Value>
+      <Value>Models\IdentityModels.cs:CharacterWeb\CharacterWeb.csproj</Value>
+      <Value>Models\AccountViewModels.cs:CharacterWeb\CharacterWeb.csproj</Value>
+      <Value>Models\AccountBindingModels.cs:CharacterWeb\CharacterWeb.csproj</Value>
+      <Value>Global.asax.cs:CharacterWeb\CharacterWeb.csproj</Value>
+      <Value>CharacterWeb\CharacterWeb.csproj\Areas</Value>
+      <Value>CharacterWeb\CharacterWeb.csproj\App_Start</Value>
+      <Value>Controllers\AccountController.cs:CharacterWeb\CharacterWeb.csproj</Value>
+      <Value>CharacterWeb\CharacterWeb.csproj\Properties</Value>
+      <Value>CharacterWeb\CharacterWeb.csproj\Providers</Value>
+      <Value>CharacterWeb\CharacterWeb.csproj\Results</Value>
+      <Value>Startup.cs:CharacterWeb\CharacterWeb.csproj</Value>
     </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
