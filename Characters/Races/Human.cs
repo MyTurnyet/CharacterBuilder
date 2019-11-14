@@ -12,11 +12,11 @@ namespace Characters.Races
         private readonly List<IProficiency> _proficiencies = new List<IProficiency>();
         private readonly AttributeScore _racialAttributeAdjustment = new AttributeScore(1);
         public Human() : base(new TextObj("Human")) { }
-        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => _racialAttributeAdjustment;
-        public override ISpeed Speed() => new Speed(30);
+        public virtual IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => _racialAttributeAdjustment;
+        public virtual ISpeed Speed() => new Speed(30);
         public override IHitPoints BonusHitPoints() => new HitPoints(0);
-        public override ISize Size() => new Medium();
-        public override List<IProficiency> Proficiencies() => _proficiencies;
+        public virtual ISize Size() => new Medium();
+        public virtual List<IProficiency> Proficiencies() => _proficiencies;
         
     }
 }

@@ -83,6 +83,7 @@
     <Compile Include="Physical\Proficiencies\Handaxe.cs" />
     <Compile Include="Physical\Proficiencies\IProficiency.cs" />
     <Compile Include="Physical\Proficiencies\ProficiencyBase.cs" />
+    <Compile Include="Physical\Proficiencies\ProficiencyList.cs" />
     <Compile Include="Physical\Sizes\ISize.cs" />
     <Compile Include="Physical\Sizes\Medium.cs" />
     <Compile Include="Physical\Sizes\Small.cs" />

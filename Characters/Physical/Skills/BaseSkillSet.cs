@@ -10,7 +10,7 @@ namespace Characters.Physical.Skills
         {
             _attributeSet = attributeSet;
         }
-        public List<ISkill> Skills() => new List<ISkill>()
+        public List<ISkill> Skills() => new List<ISkill>
         {
             new Acrobatics((DexterityAttribute) _attributeSet.MatchesName(CharacterAttributeName.Dexterity)),
             new SleightOfHand((DexterityAttribute) _attributeSet.MatchesName(CharacterAttributeName.Dexterity)),

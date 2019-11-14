@@ -10,11 +10,11 @@ namespace Characters.Races
     public abstract class Dwarf:CharacterRace, ICharacterRace
     {
         protected Dwarf(ITextObj race) : base(race){}
-        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyConstitutionBonus(attribute);
+        public virtual IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyConstitutionBonus(attribute);
         private IAttributeScore ApplyConstitutionBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Constitution) ? new AttributeScore(0) : new AttributeScore(2);
-        public override ISpeed Speed() => new Speed(25);
-        public override ISize Size() => new Medium();
-        public override List<IProficiency> Proficiencies()
+        public virtual ISpeed Speed() => new Speed(25);
+        public virtual ISize Size() => new Medium();
+        public virtual List<IProficiency> Proficiencies()
         {
             return new List<IProficiency>
             {

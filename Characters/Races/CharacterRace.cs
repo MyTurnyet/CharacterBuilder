@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using Characters.Attributes;
+﻿using System.Text;
 using Characters.Display;
 using Characters.Physical;
-using Characters.Physical.Proficiencies;
-using Characters.Physical.Sizes;
 
 namespace Characters.Races
 {
@@ -28,21 +24,18 @@ namespace Characters.Races
         }
 
         public override bool Equals(object obj) => (CharacterRace) obj != null && Equals((CharacterRace) obj);
-        private bool Equals(CharacterRace other) => string.Equals(_race, other._race);
-        public abstract IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute);
-        public abstract ISpeed Speed();
+        private bool Equals(CharacterRace other) => Equals(_race, other._race);
         public abstract IHitPoints BonusHitPoints();
-        public abstract ISize Size();
-        public abstract List<IProficiency> Proficiencies();
+
         public ITextObj Name()
         {
             return _race;
         }
         public void AddJsonToStringbuilder(StringBuilder stringBuilder)
         {
-            stringBuilder.Append($"\"race\":\"");
+            stringBuilder.Append("\"race\":\"");
             _race.AddToStringBuilder(stringBuilder);
-            stringBuilder.Append($"\"");
+            stringBuilder.Append("\"");
         }
 
 

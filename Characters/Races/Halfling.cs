@@ -13,10 +13,10 @@ namespace Characters.Races
         {
         }
 
-        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Dexterity) ? new AttributeScore(0) : new AttributeScore(2);
-        public override ISpeed Speed() => new Speed(25);
+        public virtual IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Dexterity) ? new AttributeScore(0) : new AttributeScore(2);
+        public virtual ISpeed Speed() => new Speed(25);
         public override IHitPoints BonusHitPoints() => new HitPoints(0);
-        public override ISize Size() => new Small();
-        public override List<IProficiency> Proficiencies() => new List<IProficiency>();
+        public virtual ISize Size() => new Small();
+        public virtual List<IProficiency> Proficiencies() => new List<IProficiency>();
     }
 }

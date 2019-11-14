@@ -10,11 +10,11 @@ namespace Characters.Races
     public abstract class Elf : CharacterRace, ICharacterRace
     {
         internal Elf(ITextObj race) : base(race){}
-        public override IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyDexterityBonus(attribute);
+        public virtual IAttributeScore RacialAttributeAdjustment(ICharacterAttribute attribute) => ApplyDexterityBonus(attribute);
         private AttributeScore ApplyDexterityBonus(ICharacterAttribute attribute) => !attribute.MatchesName(CharacterAttributeName.Dexterity) ? new AttributeScore(0) : new AttributeScore(2);
-        public override ISpeed Speed() => new Speed(30);
-        public override ISize Size() => new Medium();
-        public override List<IProficiency> Proficiencies()
+        public virtual ISpeed Speed() => new Speed(30);
+        public virtual ISize Size() => new Medium();
+        public virtual List<IProficiency> Proficiencies()
         {
             return new List<IProficiency>
             {

@@ -63,6 +63,7 @@
     <Compile Include="Dice\HitDieTests.cs" />
     <Compile Include="FakeAttribute.cs" />
     <Compile Include="Fakes\FakeAttributeSet.cs" />
+    <Compile Include="Physical\ProficiencyListTests.cs" />
     <Compile Include="Physical\Skills\CharismaSkillsTests.cs" />
     <Compile Include="Physical\Skills\DexteritySkillsTests.cs" />
     <Compile Include="Physical\Skills\StrengthSkillTestsTests.cs" />
@@ -75,7 +76,7 @@
     <Compile Include="Physical\HitPointsTests.cs" />
     <Compile Include="Physical\EquatableProficiencyTests.cs" />
     <Compile Include="Physical\Skills\SkillTests.cs" />
-    <Compile Include="Physical\IProficiencyTests.cs" />
+    <Compile Include="Physical\ProficiencyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\CharacterClassTests.cs" />
     <Compile Include="Races\CharacterRaceTests.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Display\TextObjTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

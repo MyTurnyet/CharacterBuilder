@@ -1,4 +1,5 @@
 ﻿using Characters.Physical;
+
 namespace Characters.Dice
 {
     public class HitDieBase : DieBase
