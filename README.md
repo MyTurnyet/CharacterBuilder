@@ -1,4 +1,5 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/MyTurnyet/CharacterBuilder?branch=master)](https://bettercodehub.com/)
+[![Travis CI(https://travis-ci.com/MyTurnyet/CharacterBuilder.svg?branch=master)](https://travis-ci.com/MyTurnyet/CharacterBuilder)
 
 # Introduction 
 TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
