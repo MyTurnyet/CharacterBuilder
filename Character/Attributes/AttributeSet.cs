@@ -47,7 +47,7 @@ namespace Character.Attributes
             foreach (ICharacterAttribute attribute in _attributes)
             {
                 attribute.AddJsonToStringbuilder(stringBuilder);
-                stringBuilder.Append(",");
+                stringBuilder.Append(',');
 
             }
             stringBuilder.Append("]");

@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.DirectoryServices.Protocols;
 using System.Linq;
 using System.Text;
+using ApprovalTests;
+using ApprovalTests.Reporters;
 using Character.Attributes;
 using Character.Classes;
 using Character.Display;
@@ -43,8 +46,10 @@ namespace Character.Tests
             _characterSheet.Attribute(CharacterAttributeName.Strength).Score().Should().Be(new FakeAttribute().Score());
 
             _characterSheet.Attribute(CharacterAttributeName.Dexterity).Score().Should().Be(expectedDexterityScore);
-            _characterSheet.Attribute(CharacterAttributeName.Constitution).Score().Should().Be(new FakeAttribute().Score());
-            _characterSheet.Attribute(CharacterAttributeName.Intelligence).Score().Should().Be(new FakeAttribute().Score());
+            _characterSheet.Attribute(CharacterAttributeName.Constitution).Score().Should()
+                .Be(new FakeAttribute().Score());
+            _characterSheet.Attribute(CharacterAttributeName.Intelligence).Score().Should()
+                .Be(new FakeAttribute().Score());
             _characterSheet.Attribute(CharacterAttributeName.Wisdom).Score().Should().Be(expectedWisdomScore);
             _characterSheet.Attribute(CharacterAttributeName.Charisma).Score().Should().Be(new FakeAttribute().Score());
         }
@@ -114,7 +119,7 @@ namespace Character.Tests
             {
                 new Battleaxe(),
                 new Handaxe(),
-                new ThrowingHammer()  ,
+                new ThrowingHammer(),
                 new Warhammer(),
                 new BrewersSupplies(),
                 new MasonsTools(),
@@ -130,6 +135,7 @@ namespace Character.Tests
             //assert
             actualProficiencies.All(i => expectedProficiencies.Contains(i)).Should().BeTrue();
         }
+
         [TestMethod, TestCategory("Unit")]
         public void ShouldShouldReturnProficienciesForDwarfWizard()
         {
@@ -177,7 +183,6 @@ namespace Character.Tests
             ITextObj actualTextOf = _characterSheet.StatsList();
             //assert
             actualTextOf.Should().Be(expectedTextOf);
-
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -186,13 +191,15 @@ namespace Character.Tests
             //arrange
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
             ICharacterAttribute attribute = _characterSheet.Attribute(CharacterAttributeName.Dexterity);
-            SleightOfHand slightOfHand = new SleightOfHand((DexterityAttribute)attribute, true);
+            SleightOfHand slightOfHand = new SleightOfHand((DexterityAttribute) attribute, true);
             //act
             _characterSheet.ActivateSkill(slightOfHand);
             //assert
             List<ISkill> actualSkills = _characterSheet.Skills();
-            actualSkills.First(item => item.Name().Equals(new TextObj("Sleight Of Hand"))).SkillBonus().Should().Be(new AttributeScore(1));
-            actualSkills.First(item => item.Name().Equals(new TextObj("Acrobatics"))).SkillBonus().Should().Be(new AttributeScore(-1));
+            actualSkills.First(item => item.Name().Equals(new TextObj("Sleight Of Hand"))).SkillBonus().Should()
+                .Be(new AttributeScore(1));
+            actualSkills.First(item => item.Name().Equals(new TextObj("Acrobatics"))).SkillBonus().Should()
+                .Be(new AttributeScore(-1));
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -202,21 +209,23 @@ namespace Character.Tests
             string raceJson = "\"race\":\"Human\"";
             string classJson = "\"class\":\"Wizard\"";
             string attributeSetJson = "\"characterAttributes\":[" +
-                    "{\"characterAttribute\":\"STR\",\"value\":0}," +
-                    "{\"characterAttribute\":\"CON\",\"value\":0}," +
-                    "{\"characterAttribute\":\"INT\",\"value\":0}," +
-                    "{\"characterAttribute\":\"WIS\",\"value\":0}," +
-                    "{\"characterAttribute\":\"CHR\",\"value\":0}," +
-                    "{\"characterAttribute\":\"DEX\",\"value\":10}," +
-                    "]";
+                                      "{\"characterAttribute\":\"STR\",\"value\":0}," +
+                                      "{\"characterAttribute\":\"CON\",\"value\":0}," +
+                                      "{\"characterAttribute\":\"INT\",\"value\":0}," +
+                                      "{\"characterAttribute\":\"WIS\",\"value\":0}," +
+                                      "{\"characterAttribute\":\"CHR\",\"value\":0}," +
+                                      "{\"characterAttribute\":\"DEX\",\"value\":10}," +
+                                      "]";
 
             IAttributeSet attributeSet = new EmptyAttributeSet();
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), attributeSet);
-            string proficienciesJson = $"\"Proficiencies\":[{string.Join(",", _characterSheet.Proficiencies().Select(x => $"\"{x}\""))}],";
-            string expectedJson = $"{{characterSheet:{{{raceJson},{classJson},{ attributeSetJson},{proficienciesJson}}}}}";
-            
+            string proficienciesJson =
+                $"\"Proficiencies\":[{string.Join(",", _characterSheet.Proficiencies().Select(x => $"\"{x}\""))}],";
+            string expectedJson =
+                $"{{characterSheet:{{{raceJson},{classJson},{attributeSetJson},{proficienciesJson}}}}}";
+
             attributeSet.SetAttribute(CharacterAttributeName.Dexterity, new AttributeScore(10));
-            
+
             StringBuilder sb = new StringBuilder();
             //act
             _characterSheet.AddJsonToStringbuilder(sb);
