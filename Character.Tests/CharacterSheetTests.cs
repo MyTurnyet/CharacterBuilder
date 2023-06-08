@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.DirectoryServices.Protocols;
 using System.Linq;
 using System.Text;
-using ApprovalTests;
-using ApprovalTests.Reporters;
 using Character.Attributes;
 using Character.Classes;
 using Character.Display;
@@ -20,8 +17,8 @@ namespace Character.Tests
     [TestClass]
     public class CharacterSheetTests
     {
-        private ICharacterSheet _characterSheet;
         private readonly IAttributeSet _attributeSet = new FakeAttributeSet();
+        private ICharacterSheet _characterSheet;
 
         [TestMethod, TestCategory("Unit")]
         public void ShouldEquateAttributes()
@@ -191,7 +188,7 @@ namespace Character.Tests
             //arrange
             _characterSheet = new CharacterSheet(new Wizard(), new Human(), new FakeWizardAttributeSet());
             ICharacterAttribute attribute = _characterSheet.Attribute(CharacterAttributeName.Dexterity);
-            SleightOfHand slightOfHand = new SleightOfHand((DexterityAttribute) attribute, true);
+            SleightOfHand slightOfHand = new SleightOfHand((DexterityAttribute)attribute, true);
             //act
             _characterSheet.ActivateSkill(slightOfHand);
             //assert

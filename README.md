@@ -1,4 +1,3 @@
-[![BCH compliance](https://bettercodehub.com/edge/badge/MyTurnyet/CharacterBuilder?branch=master)](https://bettercodehub.com/)
 [![Travis CI](https://travis-ci.com/MyTurnyet/CharacterBuilder.svg?branch=master)](https://travis-ci.com/MyTurnyet/CharacterBuilder)
 
 # Introduction 
